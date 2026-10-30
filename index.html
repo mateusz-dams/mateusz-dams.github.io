@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mateusz Dams – portfolio</title>
+<meta name="description" content="Portfolio Mateusza Damsa: autorskie motywy WordPress wdrożone dla firm oraz strony HTML i CSS zakodowane na podstawie profesjonalnych projektów graficznych.">
+<meta property="og:title" content="Mateusz Dams – portfolio">
+<meta property="og:description" content="Motywy WordPress wdrożone dla firm oraz strony HTML i CSS zakodowane 1:1 z projektów graficznych.">
+<meta property="og:image" content="https://mateusz-dams.github.io/assets/cod.jpg">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#eef1f5; --surface:#ffffff; --ink:#121620; --muted:#5a6476; --line:#d9dee6;
+    --accent:#2e4bf5; --accent-ink:#ffffff; --soft:#e6eaff; --shadow:0 1px 2px rgba(18,22,32,.06),0 12px 32px rgba(18,22,32,.08);
+    --radius:14px; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d1016; --surface:#151a22; --ink:#e9edf3; --muted:#98a2b3; --line:#262d38;
+      --accent:#7d93ff; --accent-ink:#0d1016; --soft:#1b2240; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+  /* nagłówek i stopka – te same pozycje menu */
+  .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+  .menu{display:flex;align-items:center;gap:24px}
+  .menu a{font-size:15px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap}
+  .menu a:hover{color:var(--ink)}
+  .menu a.btn{color:var(--accent-ink)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font:600 15px/1 inherit;font-family:inherit;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:color-mix(in srgb,var(--accent) 86%,var(--ink))}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:var(--surface)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .menu .btn{height:38px;padding:0 16px}
+
+  /* początek strony */
+  .intro{padding:88px 0 56px}
+  .intro h1{font-size:clamp(52px,9vw,124px);line-height:.92;letter-spacing:-.045em;font-weight:600;font-variation-settings:"opsz" 96}
+  .intro-lead{margin-top:28px;max-width:46ch;font-size:clamp(18px,1.8vw,21px);color:var(--muted)}
+  .intro-lead strong{color:var(--ink);font-weight:600}
+  .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
+  .stats{display:grid;gap:18px;padding-left:32px;border-left:1px solid var(--line)}
+  .stats div{display:flex;flex-direction:column-reverse}
+  .stats dd{font-size:44px;line-height:1;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .stats dt{font-size:14.5px;color:var(--muted);margin-top:4px}
+
+  /* przełącznik */
+  .filters{display:inline-flex;gap:4px;padding:4px;margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:999px;max-width:100%;overflow-x:auto}
+  .filter{appearance:none;border:0;background:none;font:500 15px/1 inherit;font-family:inherit;color:var(--muted);height:40px;padding:0 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+  .filter:hover{color:var(--ink)}
+  .filter[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+  .filter .count{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
+  .filter .short{display:none}
+  .row{scroll-margin-top:76px}
+
+  /* lista + podgląd */
+  .work{padding:0 0 96px}
+  .work-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start;margin-top:28px}
+  .list{list-style:none;border-top:1px solid var(--line)}
+  .item{border-bottom:1px solid var(--line)}
+  .item[hidden]{display:none}
+  .row{appearance:none;width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 16px;padding:20px 16px 20px 20px;background:none;border:0;border-radius:var(--radius);text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;position:relative;transition:background .2s}
+  .row::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .25s var(--ease)}
+  .row:hover{background:color-mix(in srgb,var(--surface) 60%,transparent)}
+  .row[aria-expanded="true"]{background:var(--surface)}
+  .row[aria-expanded="true"]::before{transform:scaleY(1)}
+  .row-name{grid-column:1;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+  .row-meta{grid-column:1;font-size:14.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .row-sep{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5}
+  .row-icon{grid-column:2;grid-row:1/3;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .25s var(--ease),background .2s,border-color .2s}
+  .row-icon::before{content:"";position:absolute;inset:0;margin:auto;width:8px;height:8px;border-right:2px solid var(--ink);border-top:2px solid var(--ink);transform:translateX(-1px) rotate(45deg)}
+  .row[aria-expanded="true"] .row-icon{background:var(--accent);border-color:var(--accent)}
+  .row[aria-expanded="true"] .row-icon::before{border-color:var(--accent-ink)}
+
+  .detail{display:none}
+  .js .preview .detail{display:block}
+  .preview{position:sticky;top:88px}
+  .preview .detail{max-height:calc(100vh - 112px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+  .preview.swap .detail{animation:swap .35s var(--ease)}
+  @keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .frame{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .frame-bar{display:flex;align-items:center;justify-content:center;height:40px;padding:0 14px}
+  .frame-addr{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .frame img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+  .detail-head{padding:24px 28px 22px}
+  .detail-body{padding:22px 28px 28px}
+  .detail-kind{font-size:14px;color:var(--muted)}
+  .detail-title{font-size:30px;line-height:1.15;letter-spacing:-.025em;font-weight:600;margin-top:4px;text-wrap:balance}
+  .detail-desc{color:var(--muted);max-width:62ch}
+  .note{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:14.5px;line-height:1.5}
+  .note a{color:var(--accent);font-weight:600;white-space:nowrap}
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chips li{font-size:13.5px;font-weight:500;padding:5px 12px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+  .actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+  /* kontakt */
+  .contact{padding:0 0 96px}
+  .contact-box{border-top:1px solid var(--line);padding-top:56px;display:flex;align-items:end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .contact h2{font-size:clamp(34px,5vw,56px);line-height:1;letter-spacing:-.035em;font-weight:600;max-width:14ch}
+  .contact p{color:var(--muted);margin-top:14px;max-width:44ch}
+  .contact .actions{margin-top:0}
+
+  .foot{border-top:1px solid var(--line)}
+  .foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;font-size:14px;color:var(--muted)}
+
+  /* telefon i tablet: lista rozwijana, bez podglądu z boku */
+  @media (max-width:980px),(max-height:700px){
+    .work-grid{grid-template-columns:1fr}
+    .intro-grid{grid-template-columns:1fr;gap:32px}
+    .stats{grid-auto-flow:column;justify-content:start;gap:40px;padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}
+    .preview{display:none}
+    .js .item .row[aria-expanded="true"] + .detail{display:block;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);animation:swap .3s var(--ease)}
+    .row[aria-expanded="true"] .row-icon{transform:rotate(90deg)}
+  }
+  @media (min-width:981px) and (min-height:701px){
+    .js .list .detail{display:none}
+    .js .work-grid{height:calc(100vh - 96px);min-height:540px;max-height:880px;align-items:stretch;margin-top:0}
+    .js .work{padding-top:16px;scroll-margin-top:64px}
+    .js .list{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:6px;align-self:start;max-height:100%}
+    .js .preview{position:relative;top:0;height:100%;min-height:0}
+    .js .preview .detail{max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+    .js .preview .detail-head,.js .preview .detail-body{flex:0 0 auto}
+    .js .preview .frame{flex:0 1 auto;min-height:150px;overflow:hidden}
+  }
+  /* bez JavaScriptu wszystko widać od razu */
+  html:not(.js) .detail{display:block;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  html:not(.js) .filters,html:not(.js) .preview,html:not(.js) .row-icon{display:none}
+
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
+    .menu{gap:16px}
+    .intro{padding:56px 0 40px}
+    .stats{gap:28px}
+    .stats dd{font-size:34px}
+    .filters{display:flex;width:100%}
+    .filter{flex:1 1 0;padding:0 8px;font-size:14.5px}
+    .filter .long{display:none}
+    .filter .short{display:inline}
+    .list .detail-title{display:none}
+    .row{padding:18px 12px 18px 16px}
+    .row-name{font-size:20px}
+    .detail-head{padding:20px 20px 18px}
+    .detail-body{padding:18px 20px 22px}
+    .detail-title{font-size:24px}
+    .actions .btn{flex:1 1 0}
+    .foot .wrap{flex-direction:column;justify-content:center;padding:20px 16px;text-align:center}
+  }
+  @media (max-width:380px){
+    .menu{gap:12px}
+    .menu a{font-size:14px}
+    .menu .btn{padding:0 12px}
+    .logo{font-size:16px}
+    .btn{padding:0 14px;font-size:14px}
+    .filter{padding:0 4px;font-size:13px}
+    .filter .count{margin-left:4px}
+  }
+  @media (max-width:350px){
+    .wrap{padding:0 12px}
+    .menu{gap:10px}
+    .menu a{font-size:13.5px}
+    .menu .btn{padding:0 10px;height:34px}
+    .logo{font-size:15px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">Mateusz Dams</a>
+    <nav class="menu" aria-label="Menu">
+      <a href="#projekty">Projekty</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div>
+          <h1>Mateusz<br>Dams</h1>
+          <p class="intro-lead">Projektuję i koduję strony internetowe. <strong>Trzy autorskie motywy WordPress</strong> działają u prawdziwych firm, a <strong>sześć stron HTML i CSS</strong> zakodowałem w ramach nauki, 1:1 na podstawie profesjonalnych projektów graficznych agencji Ajmer.</p>
+        </div>
+        <dl class="stats">
+          <div><dt>projektów</dt><dd>9</dd></div>
+          <div><dt>podstron</dt><dd>77</dd></div>
+          <div><dt>wersje językowe</dt><dd>4</dd></div>
+        </dl>
+      </div>
+      <div class="filters" role="group" aria-label="Pokaż projekty">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Wszystkie<span class="count">9</span></button>
+        <button class="filter" type="button" data-filter="wp" aria-pressed="false"><span class="long">Motywy WordPress</span><span class="short">WordPress</span><span class="count">3</span></button>
+        <button class="filter" type="button" data-filter="html" aria-pressed="false"><span class="long">Strony HTML i CSS</span><span class="short">HTML i CSS</span><span class="count">6</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="projekty" aria-label="Projekty">
+    <div class="wrap">
+      <div class="work-grid">
+        <ul class="list">
+        <li class="item" data-kind="wp">
+          <button class="row" type="button" aria-expanded="true" aria-controls="d-cod" data-target="d-cod">
+            <span class="row-name">Centrum Odkrywania Doskonałości</span>
+            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Psychologia</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-cod">
+            <div class="detail-head">
+              <p class="detail-kind">Motyw WordPress – psychologia, 15 podstron</p>
+              <h3 class="detail-title">Centrum Odkrywania Doskonałości</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="https://cod.biz.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Centrum Odkrywania Doskonałości (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/cod" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Centrum Odkrywania Doskonałości na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">cod.biz.pl</span></div>
+              <img src="assets/cod.jpg" alt="Strona główna Centrum Odkrywania Doskonałości" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Autorski motyw WordPress dla centrum psychologicznego w Radomiu: kreator „Od czego zacząć?”, który w dwóch pytaniach podpowiada usługę, oferta w zakładkach ze szczegółami w oknie, zespół, opinie, formularz kontaktowy, tryb ciemny i integracja ze sklepem WooCommerce oraz kursami LearnDash.</p>
+              
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Kreator usług</li><li>Tryb ciemny</li><li>WooCommerce i LearnDash</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="wp">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-pm-boxing" data-target="d-pm-boxing">
+            <span class="row-name">PM Boxing Studio</span>
+            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Sport</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-pm-boxing">
+            <div class="detail-head">
+              <p class="detail-kind">Motyw WordPress – sport, 5 podstron</p>
+              <h3 class="detail-title">PM Boxing Studio</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="https://pmboxingstudio.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> PM Boxing Studio (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/pm-boxing" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> PM Boxing Studio na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">pmboxingstudio.pl</span></div>
+              <img src="assets/pm-boxing.jpg" alt="Strona główna PM Boxing Studio" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Motyw WordPress dla studia boksu w Radomiu z treścią edytowaną w panelu: 17 sekcji strony głównej z menu budowanym z kotwic, cennik w zakładkach, grafik zajęć, landing pod reklamy „Trening wdrożeniowy”, formularz przekazujący zgłoszenia do własnego CRM, zgoda na cookies z GA4 i Meta Pixel oraz dane strukturalne.</p>
+              
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Landing pod reklamy</li><li>Integracja z CRM</li><li>Cennik w zakładkach</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="wp">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-movena" data-target="d-movena">
+            <span class="row-name">Movena Pilates Studio</span>
+            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Pilates</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-movena">
+            <div class="detail-head">
+              <p class="detail-kind">Motyw WordPress – pilates, 7 podstron</p>
+              <h3 class="detail-title">Movena Pilates Studio</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="https://www.movenapilates.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Movena Pilates Studio (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/movena" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Movena Pilates Studio na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">movenapilates.pl</span></div>
+              <img src="assets/movena.jpg" alt="Strona główna Movena Pilates Studio" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Motyw WordPress dla studia pilatesu na reformerach: cennik pakietów z grafikami, dwa landingi pod kampanie Meta Ads (pierwszy trening za 69 zł i program REFORMER 10), zapisy i płatności przez Fitssey z przygotowanym przełączeniem na własny CRM, vouchery, mapa ładowana po kliknięciu i pełne strony prawne.</p>
+              
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>2 landingi reklamowe</li><li>Zapisy online</li><li>Vouchery</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-azs" data-target="d-azs">
+            <span class="row-name">Portal leczenia AZS</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Medycyna</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-azs">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – medycyna, 13 podstron</p>
+              <h3 class="detail-title">Portal leczenia AZS</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="azs/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Portal leczenia AZS (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/azs" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Portal leczenia AZS na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/azs</span></div>
+              <img src="assets/azs.jpg" alt="Strona główna portalu o leczeniu AZS" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Serwis o refundowanym leczeniu atopowego zapalenia skóry z bazą specjalistów i ośrodków, aktualnościami, wydarzeniami i strefą dla lekarzy.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://azswpolsce.pl/" target="_blank" rel="noopener">Oryginał: azswpolsce.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Baza specjalistów</li><li>Rejestracja</li><li>Wydarzenia</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-leadtrust" data-target="d-leadtrust">
+            <span class="row-name">Leadtrust Group</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>HR i rekrutacja</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-leadtrust">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – hr i rekrutacja, 10 podstron</p>
+              <h3 class="detail-title">Leadtrust Group</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="leadtrust/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Leadtrust Group (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/leadtrust" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Leadtrust Group na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/leadtrust</span></div>
+              <img src="assets/leadtrust.jpg" alt="Strona główna Leadtrust" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Strona agencji pracy z osobnymi ścieżkami dla pracowników i pracodawców, ofertami pracy, formularzem aplikacji i strefą pracownika.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="http://www.leadtrust.eu/" target="_blank" rel="noopener">Oryginał: leadtrust.eu<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Oferty pracy</li><li>Formularz aplikacji</li><li>PL / EN</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-silvermedica" data-target="d-silvermedica">
+            <span class="row-name">Silver Medica</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Klinika medyczna</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-silvermedica">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – klinika medyczna, 9 podstron</p>
+              <h3 class="detail-title">Silver Medica</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="silvermedica/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Silver Medica (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/silvermedica" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Silver Medica na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/silvermedica</span></div>
+              <img src="assets/silvermedica.jpg" alt="Strona główna kliniki Silver Medica" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Strona kliniki dla całej rodziny z ofertą specjalizacji, cennikiem, artykułami, FAQ i promocjami zabiegów.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://silver-medica.pl/" target="_blank" rel="noopener">Oryginał: silver-medica.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Cennik</li><li>FAQ</li><li>PL / EN / UKR</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-topblind" data-target="d-topblind">
+            <span class="row-name">Topblind</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>E-commerce</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-topblind">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – e-commerce, 9 podstron</p>
+              <h3 class="detail-title">Topblind</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="topblind/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Topblind (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/topblind" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Topblind na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/topblind</span></div>
+              <img src="assets/topblind.jpg" alt="Strona główna sklepu Topblind" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Sklep z plisami i roletami na wymiar: oferta, karta produktu z galerią, blog z poradnikami, regulamin i formularz darmowego pomiaru.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://roletki24.pl/" target="_blank" rel="noopener">Oryginał: roletki24.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Karta produktu</li><li>Blog</li><li>Slider</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-austrowaren" data-target="d-austrowaren">
+            <span class="row-name">Austrowaren</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Przemysł</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-austrowaren">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – przemysł, 5 podstron</p>
+              <h3 class="detail-title">Austrowaren</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="austrowaren/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Austrowaren (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/austrowaren" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Austrowaren na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/austrowaren</span></div>
+              <img src="assets/austrowaren.jpg" alt="Strona główna Austrowaren" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Strona firmy projektującej systemy odbioru ścinki papieru, tektury i folii, z ofertą, realizacjami i kontaktem. Przygotowana też jako motyw WordPress.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://austrowaren.com.pl/" target="_blank" rel="noopener">Oryginał: austrowaren.com.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Realizacje</li><li>Slider</li><li>WordPress</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-staxx" data-target="d-staxx">
+            <span class="row-name">Staxx Polska</span>
+            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Katalog produktów</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-staxx">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – katalog produktów, 4 podstrony</p>
+              <h3 class="detail-title">Staxx Polska</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="staxx/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Staxx Polska (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/staxx" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Staxx Polska na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/staxx</span></div>
+              <img src="assets/staxx.jpg" alt="Strona główna Staxx Polska" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              <p class="detail-desc">Katalog producenta wózków paletowych z wyszukiwarką, rozbudowanym menu kategorii, listą produktów i kartą produktu.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://staxx.pl/" target="_blank" rel="noopener">Oryginał: staxx.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Lista produktów</li><li>Wyszukiwarka</li><li>PL / DE / UKR / EN</li></ul>
+            </div>
+          </div>
+        </li>
+        </ul>
+        <div class="preview" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Porozmawiajmy o pracy w Twoim zespole</h2>
+          <p>Chętnie opowiem, jak powstawały te projekty i co mogę wnieść do Twojej firmy.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">dams.mateusz@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Mateusz Dams</span>
+    <nav class="menu" aria-label="Menu w stopce">
+      <a href="#projekty">Projekty</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var list = document.querySelector('.list'), preview = document.querySelector('.preview');
+  var rows = [].slice.call(document.querySelectorAll('.row'));
+  var wide = window.matchMedia('(min-width: 981px) and (min-height: 701px)');
+
+  function show(row, animate) {
+    rows.forEach(function (r) { r.setAttribute('aria-expanded', r === row ? 'true' : 'false'); });
+    var src = document.getElementById(row.dataset.target);
+    preview.innerHTML = '';
+    var copy = src.cloneNode(true); copy.removeAttribute('id');
+    preview.appendChild(copy);
+    if (animate) { preview.classList.remove('swap'); void preview.offsetWidth; preview.classList.add('swap'); }
+  }
+
+  rows.forEach(function (row) {
+    row.addEventListener('click', function () {
+      if (!wide.matches && row.getAttribute('aria-expanded') === 'true') { row.setAttribute('aria-expanded', 'false'); return; }
+      show(row, true);
+      if (!wide.matches) { setTimeout(function () { row.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 60); }
+    });
+    row.addEventListener('mouseenter', function () { if (wide.matches && row.getAttribute('aria-expanded') !== 'true') show(row, true); });
+    row.addEventListener('focus', function () { if (wide.matches && row.getAttribute('aria-expanded') !== 'true') show(row, true); });
+  });
+
+  [].forEach.call(document.querySelectorAll('.filter'), function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.dataset.filter;
+      [].forEach.call(document.querySelectorAll('.filter'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      var first = null;
+      [].forEach.call(list.children, function (li) {
+        var on = f === 'all' || li.dataset.kind === f;
+        li.hidden = !on; if (on && !first) first = li;
+      });
+      var active = rows.filter(function (r) { return r.getAttribute('aria-expanded') === 'true' && !r.closest('.item').hidden; })[0];
+      if (!active && first) show(first.querySelector('.row'), true);
+    });
+  });
+
+  show(rows[0], false);
+  if (!wide.matches) rows[0].setAttribute('aria-expanded', 'false');
+})();
+</script>
+</body>
+</html>
