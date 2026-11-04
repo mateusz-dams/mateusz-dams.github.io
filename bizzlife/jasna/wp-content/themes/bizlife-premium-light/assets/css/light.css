@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Bizzlife Premium – wersja jasna
+   Nadpisuje wyłącznie kolorystykę main.css. Układ, typografia i komponenty bez zmian.
+   ========================================================================== */
+
+:root {
+	--c-ink: #1B1916;
+	--c-ink-muted: #5F594F;
+	--c-gold-deep: #7C5E2E;
+	--shadow: 0 18px 40px -26px rgba(60, 45, 25, .35);
+	--card-shadow: 0 1px 2px rgba(60, 45, 25, .05), 0 10px 30px -18px rgba(60, 45, 25, .22);
+}
+html, body { background: #FAF7F2; color: var(--c-ink); }
+::selection { background: #E7D6B8; color: var(--c-ink); }
+
+/* Tony sekcji: grafit → ciepła biel, czerń → beż, jasny → biel */
+.tone-dark {
+	--bg: #FAF7F2;
+	--surface: #FFFFFF;
+	--surface-2: #F4EEE5;
+	--fg: var(--c-ink);
+	--muted: var(--c-ink-muted);
+	--line: rgba(27, 25, 22, .1);
+	--line-strong: rgba(27, 25, 22, .22);
+	--accent: var(--c-gold);
+	--accent-fg: var(--c-gold-deep);
+	--accent-tint: rgba(185, 148, 90, .14);
+	--field: #FFFFFF;
+	--focus: var(--c-gold-deep);
+	--c-error: var(--c-error-strong);
+}
+.tone-darker {
+	--bg: #F2ECE2;
+	--surface: #FFFFFF;
+	--surface-2: #FAF6F0;
+	--fg: var(--c-ink);
+	--muted: var(--c-ink-muted);
+	--line: rgba(27, 25, 22, .1);
+	--line-strong: rgba(27, 25, 22, .22);
+	--accent: var(--c-gold);
+	--accent-fg: var(--c-gold-deep);
+	--accent-tint: rgba(185, 148, 90, .16);
+	--field: #FFFFFF;
+	--focus: var(--c-gold-deep);
+	--c-error: var(--c-error-strong);
+}
+.tone-light {
+	--bg: #FFFFFF;
+	--surface: #F8F4EE;
+	--surface-2: #F0E9DE;
+}
+
+/* Karty: delikatny cień zamiast ciemnego tła */
+.service-card, .post-card, .feature, .audience-card, .accordion__item, .contact-item,
+.panel, .map-card, .aside-card:not(.aside-card--plain):not(.aside-card--dark), .search-result, .post-nav a, .contact-chip {
+	box-shadow: var(--card-shadow);
+}
+.tone-light .feature, .tone-light .audience-card { box-shadow: none; }
+.service-card--cta { box-shadow: none; }
+
+/* Nagłówek */
+.site-header {
+	color: var(--c-ink);
+	--fg: var(--c-ink);
+	--muted: var(--c-ink-muted);
+	--line: rgba(27, 25, 22, .1);
+	--line-strong: rgba(27, 25, 22, .22);
+	--accent-fg: var(--c-gold-deep);
+	--focus: var(--c-gold-deep);
+}
+.site-header.is-scrolled::before, .nav-open .site-header::before { background: rgba(250, 247, 242, .9); }
+.nav-open .site-header::before { background: #FAF7F2; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.site-header.is-scrolled::before { background: rgba(250, 247, 242, .98); }
+}
+.brand__link { color: var(--c-ink); }
+.brand__sub { color: var(--c-ink-muted); }
+.nav-menu a { color: var(--c-ink-muted); }
+.nav-menu > li > a:hover, .nav-menu > li:focus-within > a,
+.nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a, .nav-menu .current_page_item > a { color: var(--c-ink); }
+.submenu-toggle { color: var(--c-ink-muted); }
+.header-phone { color: var(--c-ink); }
+.header-phone .icon, .header-phone:hover { color: var(--c-gold-deep); }
+@media (min-width: 1180px) {
+	.sub-menu { background: #FFFFFF; border-color: rgba(27, 25, 22, .08); }
+	.sub-menu a { color: var(--c-ink-muted); }
+	.sub-menu a:hover, .sub-menu a:focus-visible, .sub-menu .current-menu-item > a { background: #F4EEE5; color: var(--c-ink); }
+}
+@media (max-width: 1179px) {
+	.primary-nav { background: #FAF7F2; }
+	.nav-menu > li > a { color: var(--c-ink); }
+	.sub-menu a { color: var(--c-ink-muted); }
+	.sub-menu a:hover { color: var(--c-ink); }
+	.nav-contact { color: var(--c-ink); }
+	.nav-contact .icon { color: var(--c-gold-deep); }
+}
+
+/* Hero i nagłówki podstron */
+.hero__lines {
+	background-image: linear-gradient(to right, rgba(27, 25, 22, .05) 1px, transparent 1px);
+}
+.hero::before { background: radial-gradient(closest-side, rgba(185, 148, 90, .2), transparent); }
+.hero__points .icon { color: var(--c-gold-deep); }
+.hero__frame { background: #EFE8DD; }
+.hero__frame::after { background: none; box-shadow: inset 0 0 0 1px rgba(27, 25, 22, .06); }
+.hero__caption { color: #FFFFFF; text-shadow: 0 1px 8px rgba(0, 0, 0, .35); }
+.hero__card {
+	background: rgba(255, 255, 255, .92);
+	border-color: rgba(27, 25, 22, .08);
+	color: var(--c-ink);
+	--muted: var(--c-ink-muted);
+}
+.hero__card-label { color: var(--c-gold-deep); }
+.ghost-word { opacity: .05; }
+.ghost-word--hero { color: var(--c-ink); opacity: .045; }
+.page-hero__frame { background: #EFE8DD; }
+.breadcrumbs a:hover { color: var(--c-gold-deep); }
+.hero-art { color: var(--c-gold-deep); }
+.hero-art::before { background: radial-gradient(closest-side, rgba(185, 148, 90, .18), transparent); }
+.hero-art__ring { border-color: rgba(124, 94, 46, .45); }
+.hero-art__ring--outer { border-color: rgba(124, 94, 46, .15); }
+
+/* Zastępnik obrazu */
+.media-placeholder {
+	background: radial-gradient(circle at 30% 20%, rgba(185, 148, 90, .18), transparent 55%), repeating-linear-gradient(135deg, rgba(27, 25, 22, .04) 0 1px, transparent 1px 14px), #EFE8DD;
+	color: var(--c-gold-deep);
+}
+.media-placeholder__hint { color: var(--c-ink-muted); }
+
+/* Formularze */
+.select-wrap option { background: #FFFFFF; color: var(--c-ink); }
+.field--check input[type="checkbox"]::before { background: var(--c-black); }
+.notice--success { color: #1E5B28; background: rgba(46, 125, 50, .08); border-color: rgba(46, 125, 50, .3); }
+.notice--error { color: var(--c-error-strong); background: rgba(179, 38, 30, .06); border-color: rgba(179, 38, 30, .25); }
+.field [aria-invalid="true"]:focus { box-shadow: 0 0 0 3px rgba(179, 38, 30, .15); }
+
+/* Mapa */
+.map-card__map {
+	background:
+		radial-gradient(circle at 50% 50%, rgba(185, 148, 90, .22), transparent 30%),
+		linear-gradient(rgba(27, 25, 22, .06) 1px, transparent 1px) 0 0 / 32px 32px,
+		linear-gradient(90deg, rgba(27, 25, 22, .06) 1px, transparent 1px) 0 0 / 32px 32px,
+		#F4EEE5;
+}
+.map-card__note { color: var(--c-ink-muted); }
+.map-card__map iframe { filter: none; }
+
+/* Stopka */
+.site-footer {
+	--fg: var(--c-ink);
+	--muted: var(--c-ink-muted);
+	--line: rgba(27, 25, 22, .1);
+	--line-strong: rgba(27, 25, 22, .22);
+	--accent-fg: var(--c-gold-deep);
+	--focus: var(--c-gold-deep);
+	background: #EFE8DD;
+	color: var(--c-ink);
+}
+.site-footer__title { color: var(--c-gold-deep); }
+.footer-menu a:hover, .legal-menu a:hover, a.footer-list__item:hover { color: var(--c-ink); }
+.footer-list__item .icon { color: var(--c-gold-deep); }
+.company-ids dt { color: rgba(95, 89, 79, .8); }
+
+/* Drobne elementy */
+.socials__link { color: var(--fg, var(--c-ink)); }
+.share__btn:hover { background: var(--c-ink); border-color: var(--c-ink); color: #FFFFFF; }
+.post-card__media { background: var(--surface-2); }
+.error-page__code { -webkit-text-stroke: 1px var(--c-gold-deep); }
