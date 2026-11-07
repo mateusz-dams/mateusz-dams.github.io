@@ -1,0 +1,16 @@
+/*
+Theme Name: Bizzlife Premium
+Theme URI: https://bizzlife.pl/
+Author: Bizzlife Sp. z o.o.
+Description: Autorski motyw WordPress dla biura rachunkowego Bizzlife w Radomiu. Czarno-złota identyfikacja, sekcje edytowalne w Customizerze, usługi jako własny typ treści, FAQ, formularz kontaktowy z ochroną antyspamową, natywny edytor blokowy. Nie wymaga page buildera ani ACF.
+Version: 1.2.0
+Requires at least: 6.4
+Tested up to: 7.1
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bizlife
+Tags: dark, one-column, custom-logo, custom-menu, editor-style, featured-images, block-styles, translation-ready, accessibility-ready
+
+Style główny ładowany jest z assets/css/main.css.
+*/

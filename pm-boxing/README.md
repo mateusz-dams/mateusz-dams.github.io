@@ -2,13 +2,23 @@
 
 Motyw WordPress dla studia boksu PM Boxing Studio w Radomiu (treningi personalne, w duecie i grupowe dla dorosłych oraz młodzieży 12+).
 
-**Projekt i wdrożenie:** Mateusz Dams · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Współtworzenie i wdrożenie:** Mateusz Dams (w zespole z właścicielem studia) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
 
 | | |
 |---|---|
 | **Podgląd na żywo** | [mateusz-dams.github.io/pm-boxing](https://mateusz-dams.github.io/pm-boxing/) – statyczna kopia wygenerowana z motywu |
 | **Strona w działaniu** | [pmboxingstudio.pl](https://pmboxingstudio.pl/) |
+| **Kod motywu** | [kod-motywu/pm-boxing-studio](kod-motywu/pm-boxing-studio) – pliki PHP, CSS i JS do przejrzenia (bez kluczy, identyfikatorów pomiaru i adresu CRM) |
 | **Landing pod reklamy** | [Trening wdrożeniowy](https://mateusz-dams.github.io/pm-boxing/trening-wdrozeniowy/) |
+
+## Mój udział
+
+| | |
+|---|---|
+| **Cel** | Strona, która zamienia odwiedzających w zapisy na pierwszy trening, i którą właściciel studia edytuje sam, bez programisty. |
+| **Mój zakres** | Współtworzenie strony od podstaw (najpierw HTML, CSS i JS), a potem jej redesign i przeniesienie na własny motyw WordPress z treściami w panelu (Secure Custom Fields). Landing pod kampanie reklamowe, formularz przekazujący zgłoszenia do CRM studia, wdrożenie analityki (Google Tag Manager, GA4, Meta Pixel ze zgodą na cookies), Search Console i Profil firmy w Google. Współtworzenie, wdrażanie i testowanie systemu CRM, z którego studio korzysta na co dzień. |
+| **Najtrudniejsza część** | Przeniesienie gotowej strony HTML na motyw tak, żeby wygląd się nie zmienił, a każda z 17 sekcji była edytowalna w panelu. Menu buduje się samo z kotwic sekcji, więc dodanie lub ukrycie sekcji nie psuje nawigacji w nagłówku i stopce. Drugie wyzwanie to formularz: jedno zgłoszenie trafia jednocześnie na e-mail i do CRM, a zdarzenie konwersji liczy się raz (Meta Pixel i Conversions API ze wspólnym identyfikatorem). |
+| **Weryfikacja** | Testy na komputerze i telefonie, wysyłka formularza z podglądem zgłoszenia w CRM, sprawdzenie zdarzeń w podglądzie GA4 i Meta, przekierowania 301 ze starych adresów. |
 
 ![Strona główna](zrzuty/strona-glowna.jpg)
 
@@ -32,3 +42,7 @@ PHP 7.4+ · WordPress · Secure Custom Fields (pola elastyczne) · HTML · CSS b
 ## O podglądzie na żywo
 
 Podgląd to statyczny HTML wygenerowany z tego motywu – ten sam kod i wygląd, bez bazy danych WordPressa. Formularz sprawdza pola, ale zamiast wysyłki pokazuje informację, że to kopia. Kopia nie zawiera kodów pomiaru ani połączenia z CRM i ma znacznik `noindex`, żeby nie konkurowała w wyszukiwarce z oryginałem.
+
+## O kodzie motywu
+
+Kod w folderze `kod-motywu` jest udostępniony do wglądu za zgodą właściciela PM Boxing Studio. Przed publikacją usunąłem z niego wszystko, co dotyczy działającej strony: adres i klucz CRM, identyfikatory Google Analytics i Meta Pixel oraz wewnętrzną instrukcję wdrożenia. Hasła i tokeny motyw odczytuje z pliku `wp-config.php`, więc nigdy nie trafiają do kodu ani do bazy.

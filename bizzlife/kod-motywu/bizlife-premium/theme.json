@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"layout": {
+			"contentSize": "736px",
+			"wideSize": "1240px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"custom": true,
+			"palette": [
+				{ "slug": "black", "name": "Czerń", "color": "#101010" },
+				{ "slug": "graphite", "name": "Grafit", "color": "#171717" },
+				{ "slug": "surface", "name": "Powierzchnia", "color": "#202020" },
+				{ "slug": "gold", "name": "Złoto", "color": "#B9945A" },
+				{ "slug": "gold-soft", "name": "Złoto jasne", "color": "#C9AD78" },
+				{ "slug": "gold-deep", "name": "Złoto ciemne (tekst na jasnym)", "color": "#7C5E2E" },
+				{ "slug": "cream", "name": "Ciepła biel", "color": "#F6F2EB" },
+				{ "slug": "white", "name": "Biel", "color": "#FFFFFF" },
+				{ "slug": "ink", "name": "Atrament", "color": "#1B1916" },
+				{ "slug": "ink-muted", "name": "Tekst pomocniczy", "color": "#5F594F" }
+			]
+		},
+		"typography": {
+			"customFontSize": true,
+			"dropCap": false,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{ "slug": "sans", "name": "Manrope", "fontFamily": "\"Manrope\", ui-sans-serif, system-ui, sans-serif" },
+				{ "slug": "serif", "name": "EB Garamond", "fontFamily": "\"EB Garamond\", Georgia, serif" }
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Mały", "size": "0.875rem" },
+				{ "slug": "medium", "name": "Normalny", "size": "1.0625rem" },
+				{ "slug": "large", "name": "Duży", "size": "1.25rem" },
+				{ "slug": "x-large", "name": "Bardzo duży", "size": "1.75rem" }
+			]
+		},
+		"spacing": {
+			"units": [ "px", "rem", "%", "vw" ]
+		}
+	}
+}

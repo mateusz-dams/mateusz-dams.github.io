@@ -1,0 +1,816 @@
+{
+    "key": "group_pmbs_site",
+    "title": "PM Boxing: ustawienia strony",
+    "fields": [
+        {
+            "key": "field_pmbs_tab_dane",
+            "label": "Dane i kontakt",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_brand",
+            "name": "brand",
+            "label": "Nazwa studia",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_phone_display",
+            "name": "phone_display",
+            "label": "Telefon (jak wyświetlać)",
+            "type": "text",
+            "instructions": "np. 534 581 536"
+        },
+        {
+            "key": "field_pmbs_phone_tel",
+            "name": "phone_tel",
+            "label": "Telefon (do linku)",
+            "type": "text",
+            "instructions": "Format międzynarodowy z plusem, np. +48534581536"
+        },
+        {
+            "key": "field_pmbs_email",
+            "name": "email",
+            "label": "E-mail kontaktowy (na stronie)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_address",
+            "name": "address",
+            "label": "Adres (ulica i numer)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_city",
+            "name": "city",
+            "label": "Miasto",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_facebook",
+            "name": "facebook",
+            "label": "Facebook (adres profilu)",
+            "type": "url"
+        },
+        {
+            "key": "field_pmbs_instagram",
+            "name": "instagram",
+            "label": "Instagram (adres profilu)",
+            "type": "url"
+        },
+        {
+            "key": "field_pmbs_maps_url",
+            "name": "maps_url",
+            "label": "Link do Map Google (wyznacz trasę / opinie)",
+            "type": "url"
+        },
+        {
+            "key": "field_pmbs_whatsapp_number",
+            "name": "whatsapp_number",
+            "label": "Numer WhatsApp",
+            "type": "text",
+            "instructions": "Format międzynarodowy bez plusa, np. 48534581536"
+        },
+        {
+            "key": "field_pmbs_whatsapp_message",
+            "name": "whatsapp_message",
+            "label": "Pierwsza wiadomość na WhatsAppie",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_pmbs_hours",
+            "name": "hours",
+            "label": "Godziny otwarcia",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___hours__days",
+                    "name": "days",
+                    "label": "Dni",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___hours__hours",
+                    "name": "hours",
+                    "label": "Godziny",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_company_name",
+            "name": "company_name",
+            "label": "Pełna nazwa firmy",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_krs",
+            "name": "krs",
+            "label": "KRS",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_nip",
+            "name": "nip",
+            "label": "NIP",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_regon",
+            "name": "regon",
+            "label": "REGON",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_trainer_name",
+            "name": "trainer_name",
+            "label": "Imię i nazwisko trenera (do danych strukturalnych)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_qual_title",
+            "name": "qual_title",
+            "label": "Kwalifikacje trenera: tytuł",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_qual_note",
+            "name": "qual_note",
+            "label": "Kwalifikacje trenera: dopisek",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_tab_grupy",
+            "label": "Grupy zajęć",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_info_grupy",
+            "name": "info_grupy",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Grupy zasilają sekcję <strong>Grafik</strong> oraz zakładkę „Grupy” w sekcji <strong>Cennik</strong>.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pmbs_grupy",
+            "name": "grupy",
+            "label": "Grupy",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___grupy__name",
+                    "name": "name",
+                    "label": "Nazwa grupy",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___grupy__days",
+                    "name": "days",
+                    "label": "Dni",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___grupy__time",
+                    "name": "time",
+                    "label": "Godzina",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___grupy__length",
+                    "name": "length",
+                    "label": "Czas trwania",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___grupy__price",
+                    "name": "price",
+                    "label": "Cena miesięczna (zł)",
+                    "type": "number"
+                },
+                {
+                    "key": "field_pmbs___grupy__form",
+                    "name": "form",
+                    "label": "Forma treningu w formularzu",
+                    "type": "select",
+                    "choices": [],
+                    "allow_null": 0,
+                    "ui": 1,
+                    "allow_custom": 1,
+                    "return_format": "value",
+                    "default_value": "",
+                    "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_tab_wyglad",
+            "label": "Nagłówek i stopka",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_logo",
+            "name": "logo",
+            "label": "Logo (jasne, na ciemne tło)",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Zostaw puste, aby użyć logo z motywu. Najlepiej PNG lub WebP z przezroczystym tłem."
+        },
+        {
+            "key": "field_pmbs_info_menu",
+            "name": "info_menu",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Menu główne tworzy się automatycznie z sekcji strony głównej, które mają włączone „Pokaż w menu” (Strony → Strona główna).",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pmbs_header_cta",
+            "name": "header_cta",
+            "label": "Przycisk w nagłówku",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_header_call",
+            "name": "header_call",
+            "label": "Napis przy telefonie w menu mobilnym",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_mobile_call",
+            "name": "mobile_call",
+            "label": "Dolny pasek na telefonie: „Zadzwoń”",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_mobile_cta",
+            "name": "mobile_cta",
+            "label": "Dolny pasek na telefonie: przycisk główny",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_foot_tagline",
+            "name": "foot_tagline",
+            "label": "Opis pod logo w stopce",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_pmbs_foot_offer",
+            "name": "foot_offer",
+            "label": "Stopka: linki „Oferta”",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___foot_offer__label",
+                    "name": "label",
+                    "label": "Nazwa",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___foot_offer__cel",
+                    "name": "cel",
+                    "label": "Cel",
+                    "type": "select",
+                    "choices": [],
+                    "allow_null": 0,
+                    "ui": 1,
+                    "allow_custom": 1,
+                    "return_format": "value",
+                    "default_value": "",
+                    "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                },
+                {
+                    "key": "field_pmbs___foot_offer__form",
+                    "name": "form",
+                    "label": "Forma treningu w formularzu",
+                    "type": "select",
+                    "choices": [],
+                    "allow_null": 0,
+                    "ui": 1,
+                    "allow_custom": 1,
+                    "return_format": "value",
+                    "default_value": "",
+                    "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_tab_seo",
+            "label": "SEO i udostępnianie",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_seo_title",
+            "name": "seo_title",
+            "label": "Tytuł strony głównej (title)",
+            "type": "text",
+            "instructions": "Do ok. 60 znaków, z frazą lokalną (np. „Boks Radom”). Wtyczki SEO (Yoast, Rank Math) mają pierwszeństwo, jeśli są aktywne."
+        },
+        {
+            "key": "field_pmbs_seo_description",
+            "name": "seo_description",
+            "label": "Opis strony głównej (meta description)",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "Do ok. 160 znaków."
+        },
+        {
+            "key": "field_pmbs_og_image",
+            "name": "og_image",
+            "label": "Obraz przy udostępnianiu (Facebook, Messenger)",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Zalecane 1200×630 px. Puste = obraz z motywu."
+        },
+        {
+            "key": "field_pmbs_og_image_alt",
+            "name": "og_image_alt",
+            "label": "Opis obrazu przy udostępnianiu (alt)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_gsc_verification",
+            "name": "gsc_verification",
+            "label": "Google Search Console: kod weryfikacyjny",
+            "type": "text",
+            "instructions": "Sama wartość z metatagu google-site-verification (content=\"…\"). Puste = weryfikuj inną metodą."
+        },
+        {
+            "key": "field_pmbs_bing_verification",
+            "name": "bing_verification",
+            "label": "Bing Webmaster: kod weryfikacyjny",
+            "type": "text",
+            "instructions": "Wartość z metatagu msvalidate.01 (opcjonalnie)."
+        },
+        {
+            "key": "field_pmbs_geo_lat",
+            "name": "geo_lat",
+            "label": "Szerokość geograficzna (do danych lokalnych)",
+            "type": "text",
+            "instructions": "np. 51.4027. Poprawia dane strukturalne dla wyników lokalnych."
+        },
+        {
+            "key": "field_pmbs_geo_lng",
+            "name": "geo_lng",
+            "label": "Długość geograficzna",
+            "type": "text",
+            "instructions": "np. 21.1471"
+        },
+        {
+            "key": "field_pmbs_price_range",
+            "name": "price_range",
+            "label": "Przedział cen (dane strukturalne)",
+            "type": "text",
+            "instructions": "np. 40–500 zł. Puste = bez."
+        },
+        {
+            "key": "field_pmbs_rating_value",
+            "name": "rating_value",
+            "label": "Średnia ocena z Google (np. 5.0)",
+            "type": "text",
+            "instructions": "Wpisz tylko prawdziwą ocenę z wizytówki Google. Liczba opinii pochodzi z sekcji Opinie. Puste = bez oceny w danych strukturalnych."
+        },
+        {
+            "key": "field_pmbs_tab_schema",
+            "label": "Dane strukturalne",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_schema_info",
+            "name": "schema_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Dane strukturalne (JSON-LD) to ukryty opis strony dla Google: kim jesteście, gdzie, kiedy otwarci, jakie pytania i odpowiedzi macie. Google może na tej podstawie pokazać dane firmy i rozwijane pytania w wynikach. <strong>Nie są widoczne dla odwiedzających</strong>, ale muszą zgadzać się z treścią strony. Poniżej widzisz, co dokładnie jest wysyłane i skąd pochodzi każda wartość.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pmbs_schema_preview",
+            "name": "schema_preview",
+            "label": "Podgląd: co jest teraz w danych strukturalnych",
+            "type": "message",
+            "message": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pmbs_schema_business_on",
+            "name": "schema_business_on",
+            "label": "Firma lokalna (nazwa, adres, telefon, godziny…)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_schema_website_on",
+            "name": "schema_website_on",
+            "label": "Strona WWW (nazwa i adres strony)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_schema_faq_on",
+            "name": "schema_faq_on",
+            "label": "FAQ (pytania i odpowiedzi z sekcji FAQ)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1,
+            "instructions": "Odpowiedzi muszą być też widoczne na stronie; sekcja FAQ spełnia ten warunek."
+        },
+        {
+            "key": "field_pmbs_schema_offers_on",
+            "name": "schema_offers_on",
+            "label": "Oferta (karty z sekcji Oferta i trening wdrożeniowy z ceną)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_schema_hours_on",
+            "name": "schema_hours_on",
+            "label": "Godziny otwarcia (z „Dane i kontakt”)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_schema_type",
+            "name": "schema_type",
+            "label": "Typ firmy",
+            "type": "select",
+            "choices": {
+                "SportsActivityLocation": "Obiekt sportowy (SportsActivityLocation)",
+                "ExerciseGym": "Siłownia / klub fitness (ExerciseGym)",
+                "SportsClub": "Klub sportowy (SportsClub)",
+                "HealthClub": "Klub zdrowia (HealthClub)"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 0,
+            "return_format": "value",
+            "default_value": "SportsActivityLocation",
+            "instructions": "Zawsze dodawany jest też ogólny typ LocalBusiness."
+        },
+        {
+            "key": "field_pmbs_schema_name",
+            "name": "schema_name",
+            "label": "Nazwa firmy (nadpisanie)",
+            "type": "text",
+            "instructions": "Puste = nazwa studia z „Dane i kontakt”."
+        },
+        {
+            "key": "field_pmbs_schema_description",
+            "name": "schema_description",
+            "label": "Opis firmy (nadpisanie)",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "Puste = opis strony głównej z zakładki SEO."
+        },
+        {
+            "key": "field_pmbs_schema_area",
+            "name": "schema_area",
+            "label": "Obszar działania (nadpisanie)",
+            "type": "text",
+            "instructions": "Puste = miasto z „Dane i kontakt”. Można wpisać np. „Radom i okolice”."
+        },
+        {
+            "key": "field_pmbs_schema_same_as",
+            "name": "schema_same_as",
+            "label": "Dodatkowe profile (sameAs)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj profil",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___schema_same_as__url",
+                    "name": "url",
+                    "label": "Adres profilu",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_schema_extra",
+            "name": "schema_extra",
+            "label": "Własne dane (zaawansowane, JSON-LD)",
+            "type": "textarea",
+            "rows": 8,
+            "new_lines": "",
+            "instructions": "Opcjonalnie: wklej gotowy obiekt JSON-LD (np. dodatkowy typ). Zostanie dołączony do danych strony; błędny JSON jest pomijany i oznaczony w podglądzie. Bez znaczników <script>."
+        },
+        {
+            "key": "field_pmbs_tab_tracking",
+            "label": "Analityka i reklamy",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_tracking_info",
+            "name": "tracking_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Wszystkie narzędzia ładują się dopiero po zgodzie z banera cookies i respektują Consent Mode v2. <strong>Dwa tryby:</strong> (1) wpisz tylko <em>GTM</em> — wtedy GA4, piksel Meta, Google Ads i Hotjar konfigurujesz w Menedżerze Tagów, a motyw wysyła do niego zdarzenia (<code>generate_lead</code>, <code>contact</code>, <code>cta_click</code>) z <code>event_id</code>; (2) bez GTM — motyw ładuje bezpośrednio GA4, Meta Pixel, Google Ads i Hotjar z poniższych pól. Gdy wpiszesz GTM, pola bezpośrednie są ignorowane (żeby nie dublować zdarzeń). Po zmianach zaktualizuj strony Pliki cookies i Polityka prywatności.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_pmbs_gtm_id",
+            "name": "gtm_id",
+            "label": "Google Tag Manager: identyfikator kontenera",
+            "type": "text",
+            "instructions": "np. GTM-XXXXXXX. Puste = bez GTM.",
+            "placeholder": "GTM-XXXXXXX"
+        },
+        {
+            "key": "field_pmbs_ga4",
+            "name": "ga4",
+            "label": "Google Analytics 4: identyfikator pomiaru",
+            "type": "text",
+            "instructions": "np. G-XXXXXXXXXX (tryb bez GTM).",
+            "placeholder": "G-XXXXXXXXXX"
+        },
+        {
+            "key": "field_pmbs_ads_id",
+            "name": "ads_id",
+            "label": "Google Ads: identyfikator konwersji",
+            "type": "text",
+            "instructions": "np. AW-123456789 (tryb bez GTM).",
+            "placeholder": "AW-123456789"
+        },
+        {
+            "key": "field_pmbs_ads_label_lead",
+            "name": "ads_label_lead",
+            "label": "Google Ads: etykieta konwersji „Lead” (wysłany formularz)",
+            "type": "text",
+            "instructions": "Z Google Ads → Cele → Konwersje → fragment zdarzenia: wartość po ukośniku w send_to."
+        },
+        {
+            "key": "field_pmbs_ads_label_contact",
+            "name": "ads_label_contact",
+            "label": "Google Ads: etykieta konwersji „Kontakt” (telefon, WhatsApp, e-mail)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_meta_pixel",
+            "name": "meta_pixel",
+            "label": "Meta Pixel: identyfikator piksela",
+            "type": "text",
+            "instructions": "15–16 cyfr (tryb bez GTM).",
+            "placeholder": "1234567890123456"
+        },
+        {
+            "key": "field_pmbs_meta_capi_token",
+            "name": "meta_capi_token",
+            "label": "Meta Conversions API: token dostępu",
+            "type": "text",
+            "instructions": "Opcjonalnie: wysyłka zdarzenia Lead także z serwera (odporna na blokery), z deduplikacją po event_id. Token z Menedżera zdarzeń → Ustawienia → Conversions API. Działa tylko, gdy odwiedzający zgodził się na cookies marketingowe. Wymaga pola „Meta Pixel” (nawet w trybie GTM)."
+        },
+        {
+            "key": "field_pmbs_meta_test_code",
+            "name": "meta_test_code",
+            "label": "Meta: kod zdarzeń testowych",
+            "type": "text",
+            "instructions": "Tylko na czas testów (np. TEST12345). Potem usuń."
+        },
+        {
+            "key": "field_pmbs_fb_domain_verification",
+            "name": "fb_domain_verification",
+            "label": "Meta: weryfikacja domeny",
+            "type": "text",
+            "instructions": "Wartość z metatagu facebook-domain-verification (Business Manager → Domeny)."
+        },
+        {
+            "key": "field_pmbs_hotjar_id",
+            "name": "hotjar_id",
+            "label": "Hotjar: identyfikator witryny (Site ID)",
+            "type": "text",
+            "instructions": "Same cyfry (tryb bez GTM). Hotjar liczony jako analityczny."
+        },
+        {
+            "key": "field_pmbs_tab_form",
+            "label": "Formularz kontaktowy",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_form_options",
+            "name": "form_options",
+            "label": "Formy treningu (lista w formularzu)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___form_options__label",
+                    "name": "label",
+                    "label": "Nazwa w formularzu",
+                    "type": "text"
+                },
+                {
+                    "key": "field_pmbs___form_options__crm",
+                    "name": "crm",
+                    "label": "Wartość dla CRM",
+                    "type": "text",
+                    "instructions": "Dokładna wartość z listy „interest” w CRM, np. personal, duet, group_men, group_women, group_youth"
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_call_times",
+            "name": "call_times",
+            "label": "Pory oddzwonienia (pierwsza jest domyślna)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_pmbs___call_times__label",
+                    "name": "label",
+                    "label": "Pora",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_pmbs_mail_to",
+            "name": "mail_to",
+            "label": "Dokąd wysyłać zgłoszenia (e-mail)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_mail_from",
+            "name": "mail_from",
+            "label": "Nadawca wiadomości (najlepiej ta sama skrzynka co login SMTP)",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_smtp_enabled",
+            "name": "smtp_enabled",
+            "label": "Wysyłaj przez SMTP",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1,
+            "instructions": "Zalecane. Bez SMTP wiadomości idą zwykłą funkcją mail() i często trafiają do spamu."
+        },
+        {
+            "key": "field_pmbs_smtp_host",
+            "name": "smtp_host",
+            "label": "SMTP: serwer",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_smtp_port",
+            "name": "smtp_port",
+            "label": "SMTP: port",
+            "type": "number",
+            "instructions": "587 (TLS) lub 465 (SSL)"
+        },
+        {
+            "key": "field_pmbs_smtp_secure",
+            "name": "smtp_secure",
+            "label": "SMTP: szyfrowanie",
+            "type": "select",
+            "choices": {
+                "tls": "TLS (STARTTLS), port 587",
+                "ssl": "SSL, port 465",
+                "": "Bez szyfrowania (niezalecane)"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 0,
+            "return_format": "value",
+            "default_value": "tls"
+        },
+        {
+            "key": "field_pmbs_smtp_user",
+            "name": "smtp_user",
+            "label": "SMTP: login",
+            "type": "text"
+        },
+        {
+            "key": "field_pmbs_smtp_pass",
+            "name": "smtp_pass",
+            "label": "SMTP: hasło",
+            "type": "password",
+            "instructions": "Bezpieczniej: wpisz hasło w pliku wp-config.php jako define('PMBS_SMTP_PASS', '...'); — wtedy to pole jest ignorowane."
+        },
+        {
+            "key": "field_pmbs_smtp_verify",
+            "name": "smtp_verify",
+            "label": "SMTP: sprawdzaj certyfikat serwera",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_autoreply_enabled",
+            "name": "autoreply_enabled",
+            "label": "Wysyłaj klientowi automatyczne potwierdzenie (gdy poda e-mail)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_autoreply_max",
+            "name": "autoreply_max",
+            "label": "Limit potwierdzeń na dobę",
+            "type": "number",
+            "instructions": "Ochrona przed nadużyciami."
+        },
+        {
+            "key": "field_pmbs_min_fill",
+            "name": "min_fill",
+            "label": "Minimalny czas wypełniania formularza (sekundy)",
+            "type": "number",
+            "instructions": "Szybsze wysłanie uznajemy za bota."
+        },
+        {
+            "key": "field_pmbs_rate_max",
+            "name": "rate_max",
+            "label": "Maks. zgłoszeń z jednego adresu IP na godzinę",
+            "type": "number"
+        },
+        {
+            "key": "field_pmbs_tab_crm",
+            "label": "CRM",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_pmbs_crm_enabled",
+            "name": "crm_enabled",
+            "label": "Przekazuj zgłoszenia do CRM",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_pmbs_crm_url",
+            "name": "crm_url",
+            "label": "Adres przyjmowania leadów w CRM",
+            "type": "url",
+            "instructions": "Ten sam adres, który CRM podaje jako „action” formularza."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "pmbs-ustawienia"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1767225600
+}

@@ -1,0 +1,2997 @@
+{
+    "key": "group_pmbs_front",
+    "title": "PM Boxing: sekcje strony głównej",
+    "fields": [
+        {
+            "key": "field_pmbs_sekcje",
+            "label": "Sekcje strony",
+            "name": "sekcje",
+            "type": "flexible_content",
+            "instructions": "Każda sekcja to osobny blok. Przeciągaj, aby zmienić kolejność, dodawaj nowe lub wyłączaj istniejące. Sekcje z włączonym „Pokaż w menu” tworzą menu strony.",
+            "layouts": {
+                "layout_pmbs_hero": {
+                    "key": "layout_pmbs_hero",
+                    "name": "hero",
+                    "label": "Góra strony (hero)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_hero__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "W tekstach możesz użyć <code>**pogrubienia**</code> i <code>[tekstu linku](#kotwica)</code>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__badge",
+                            "name": "badge",
+                            "label": "Plakietka nad nagłówkiem",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__title_a",
+                            "name": "title_a",
+                            "label": "Nagłówek: pierwsza część",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__title_grad",
+                            "name": "title_grad",
+                            "label": "Nagłówek: część złota",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__lead",
+                            "name": "lead",
+                            "label": "Opis pod nagłówkiem",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__cta_primary",
+                            "name": "cta_primary",
+                            "label": "Przycisk główny (prowadzi do formularza)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__cta_secondary",
+                            "name": "cta_secondary",
+                            "label": "Przycisk dodatkowy",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__cta_secondary_cel",
+                            "name": "cta_secondary_cel",
+                            "label": "Przycisk dodatkowy: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#oferta",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__meta",
+                            "name": "meta",
+                            "label": "Wyróżniki pod przyciskami",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_hero__meta__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "award": "Nagroda",
+                                        "steps": "Schody",
+                                        "pin": "Pinezka",
+                                        "clock": "Zegar",
+                                        "star": "Gwiazdka",
+                                        "users": "Ludzie",
+                                        "phone": "Telefon"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_pmbs_s_hero__meta__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__image",
+                            "name": "image",
+                            "label": "Zdjęcie w hero",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__orbit_text",
+                            "name": "orbit_text",
+                            "label": "Napis na okręgu przy zdjęciu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__orbit_price",
+                            "name": "orbit_price",
+                            "label": "Cena w okręgu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__orbit_cel",
+                            "name": "orbit_cel",
+                            "label": "Okrąg: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "grafik",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_pmbs_s_hero__chips",
+                            "name": "chips",
+                            "label": "Plakietki przy zdjęciu (do 3)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_hero__chips__label",
+                                    "name": "label",
+                                    "label": "Napis",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_hero__chips__cel",
+                                    "name": "cel",
+                                    "label": "Cel",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                                }
+                            ],
+                            "max": 3
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                "layout_pmbs_oferta": {
+                    "key": "layout_pmbs_oferta",
+                    "name": "oferta",
+                    "label": "Oferta (karty)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_oferta__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__cards",
+                            "name": "cards",
+                            "label": "Karty oferty",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "user": "Osoba",
+                                        "users": "Dwie osoby",
+                                        "group": "Grupa",
+                                        "youth": "Młodzież"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__for",
+                                    "name": "for",
+                                    "label": "Dla kogo",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__bullets",
+                                    "name": "bullets",
+                                    "label": "Punkty (po jednym w osobnym wierszu, oddziel nową linią)",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__cta",
+                                    "name": "cta",
+                                    "label": "Napis na przycisku",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_oferta__cards__form",
+                                    "name": "form",
+                                    "label": "Forma treningu w formularzu",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__strip",
+                            "name": "strip",
+                            "label": "Pasek pod kartami",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_oferta__strip_cta",
+                            "name": "strip_cta",
+                            "label": "Przycisk na pasku",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                "layout_pmbs_krok": {
+                    "key": "layout_pmbs_krok",
+                    "name": "krok",
+                    "label": "Pierwszy krok (dwie ścieżki)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_krok__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Znacznik <code>{cena}</code> zamienia się w cenę treningu wdrożeniowego (z sekcji Cennik). Dostępne też <code>**pogrubienie**</code>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__a_title",
+                            "name": "a_title",
+                            "label": "Ścieżka A: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__a_lead",
+                            "name": "a_lead",
+                            "label": "Ścieżka A: zdanie wiodące",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__a_note",
+                            "name": "a_note",
+                            "label": "Ścieżka A: dopisek",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__a_feats",
+                            "name": "a_feats",
+                            "label": "Ścieżka A: punkty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_krok__a_feats__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__a_cta",
+                            "name": "a_cta",
+                            "label": "Ścieżka A: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__b_title",
+                            "name": "b_title",
+                            "label": "Ścieżka B: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__b_lead",
+                            "name": "b_lead",
+                            "label": "Ścieżka B: zdanie wiodące",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__b_note",
+                            "name": "b_note",
+                            "label": "Ścieżka B: dopisek",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__b_feats",
+                            "name": "b_feats",
+                            "label": "Ścieżka B: punkty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_krok__b_feats__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__b_cta",
+                            "name": "b_cta",
+                            "label": "Ścieżka B: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_krok__bring",
+                            "name": "bring",
+                            "label": "Pasek „co zabrać”",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_dla": {
+                    "key": "layout_pmbs_dla",
+                    "name": "dla",
+                    "label": "Dla kogo",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_dla__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__audience",
+                            "name": "audience",
+                            "label": "Lista „dla kogo”",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_dla__audience__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__muted",
+                            "name": "muted",
+                            "label": "Tekst pod listą",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_dla__concerns",
+                            "name": "concerns",
+                            "label": "Obawy i odpowiedzi",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_dla__concerns__q",
+                                    "name": "q",
+                                    "label": "Obawa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_dla__concerns__a",
+                                    "name": "a",
+                                    "label": "Odpowiedź",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_jak": {
+                    "key": "layout_pmbs_jak",
+                    "name": "jak",
+                    "label": "Jak trenujemy (umiejętności)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_jak__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__photo",
+                            "name": "photo",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__photo_alt",
+                            "name": "photo_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__skills",
+                            "name": "skills",
+                            "label": "Umiejętności (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_jak__skills__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_jak__skills__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__pull_title",
+                            "name": "pull_title",
+                            "label": "Ostatnia karta: tytuł (puste = bez karty)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__pull_text",
+                            "name": "pull_text",
+                            "label": "Ostatnia karta: tekst",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__pull_link",
+                            "name": "pull_link",
+                            "label": "Ostatnia karta: napis linku",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_jak__pull_cel",
+                            "name": "pull_cel",
+                            "label": "Ostatnia karta: cel linku",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "inspiracje",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_proces": {
+                    "key": "layout_pmbs_proces",
+                    "name": "proces",
+                    "label": "Proces nauki (etapy)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_proces__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_proces__steps",
+                            "name": "steps",
+                            "label": "Etapy (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_proces__steps__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_proces__steps__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_ko": {
+                    "key": "layout_pmbs_ko",
+                    "name": "ko",
+                    "label": "KO Coach ITS®",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_ko__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__photo",
+                            "name": "photo",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__photo_alt",
+                            "name": "photo_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__nums",
+                            "name": "nums",
+                            "label": "Liczby",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_ko__nums__num",
+                                    "name": "num",
+                                    "label": "Liczba",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_ko__nums__label",
+                                    "name": "label",
+                                    "label": "Opis",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__measures_title",
+                            "name": "measures_title",
+                            "label": "Lista 1: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__measures",
+                            "name": "measures",
+                            "label": "Lista 1: punkty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_ko__measures__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__uses_title",
+                            "name": "uses_title",
+                            "label": "Lista 2: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__uses",
+                            "name": "uses",
+                            "label": "Lista 2: punkty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_ko__uses__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__app",
+                            "name": "app",
+                            "label": "Akapit o aplikacji",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_ko__note",
+                            "name": "note",
+                            "label": "Uwaga końcowa",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_about": {
+                    "key": "layout_pmbs_about",
+                    "name": "about",
+                    "label": "O trenerze i studiu",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_about__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_about__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_about__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_about__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_about__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_about__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_about__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Kwalifikacje (tytuł i dopisek) edytujesz w ustawieniach „PM Boxing → Dane i kontakt”. W akapitach działa <code>**pogrubienie**</code> i <code>[link](#kotwica)</code>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_about__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_about__photo",
+                            "name": "photo",
+                            "label": "Zdjęcie trenera",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_about__photo_alt",
+                            "name": "photo_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_about__paragraphs",
+                            "name": "paragraphs",
+                            "label": "Akapity",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj akapit",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_about__paragraphs__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_about__quote",
+                            "name": "quote",
+                            "label": "Cytat",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_about__cta",
+                            "name": "cta",
+                            "label": "Przycisk",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_insp": {
+                    "key": "layout_pmbs_insp",
+                    "name": "insp",
+                    "label": "Inspiracje",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_insp__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__styles_title",
+                            "name": "styles_title",
+                            "label": "Grupa 1: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__styles",
+                            "name": "styles",
+                            "label": "Style boksu",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_insp__styles__title",
+                                    "name": "title",
+                                    "label": "Nazwa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_insp__styles__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__people_title",
+                            "name": "people_title",
+                            "label": "Grupa 2: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__people",
+                            "name": "people",
+                            "label": "Ludzie",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_insp__people__name",
+                                    "name": "name",
+                                    "label": "Imię i nazwisko",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_insp__people__tag",
+                                    "name": "tag",
+                                    "label": "Etykieta",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_insp__people__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__ana_title",
+                            "name": "ana_title",
+                            "label": "Grupa 3: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__ana",
+                            "name": "ana",
+                            "label": "Analogie",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_insp__ana__title",
+                                    "name": "title",
+                                    "label": "Nazwa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_insp__ana__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__ana_close",
+                            "name": "ana_close",
+                            "label": "Zdanie pod analogiami",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__creed",
+                            "name": "creed",
+                            "label": "Credo (akapity)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj akapit",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_insp__creed__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_insp__cta",
+                            "name": "cta",
+                            "label": "Przycisk",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_sala": {
+                    "key": "layout_pmbs_sala",
+                    "name": "sala",
+                    "label": "Sala i wyposażenie",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_sala__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 5,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__photo1",
+                            "name": "photo1",
+                            "label": "Zdjęcie 1 (panorama)",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__photo1_alt",
+                            "name": "photo1_alt",
+                            "label": "Opis zdjęcia 1 (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__photo2",
+                            "name": "photo2",
+                            "label": "Zdjęcie 2",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__photo2_alt",
+                            "name": "photo2_alt",
+                            "label": "Opis zdjęcia 2 (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_sala__gear",
+                            "name": "gear",
+                            "label": "Wyposażenie (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_sala__gear__title",
+                                    "name": "title",
+                                    "label": "Nazwa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_sala__gear__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_opinie": {
+                    "key": "layout_pmbs_opinie",
+                    "name": "opinie",
+                    "label": "Opinie",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_opinie__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__count",
+                            "name": "count",
+                            "label": "Liczba opinii w Google",
+                            "type": "number",
+                            "instructions": "Wyświetla się jako „43 opinie w Google” (z poprawną odmianą). Link „wszystkie opinie” bierze adres Map z ustawień."
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__suffix",
+                            "name": "suffix",
+                            "label": "Zdanie po liczbie opinii",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__btn",
+                            "name": "btn",
+                            "label": "Przycisk do wszystkich opinii",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_opinie__items",
+                            "name": "items",
+                            "label": "Opinie",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_opinie__items__name",
+                                    "name": "name",
+                                    "label": "Imię i inicjał",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_opinie__items__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_grafik": {
+                    "key": "layout_pmbs_grafik",
+                    "name": "grafik",
+                    "label": "Grafik zajęć grupowych",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_grafik__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Grupy (nazwa, dni, godzina, cena) edytujesz w <strong>PM Boxing → Grupy zajęć</strong>. Te same dane zasilają Grafik i Cennik.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__cta",
+                            "name": "cta",
+                            "label": "Napis linku zapisu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_grafik__note",
+                            "name": "note",
+                            "label": "Uwaga pod tabelą",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_cennik": {
+                    "key": "layout_pmbs_cennik",
+                    "name": "cennik",
+                    "label": "Cennik",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_cennik__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Ceny wpisuj jako liczby (bez „zł”). Ceny grup miesięcznych edytujesz w <strong>PM Boxing → Grupy zajęć</strong>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__onboarding",
+                            "name": "onboarding",
+                            "label": "Cena treningu wdrożeniowego (zł)",
+                            "type": "number"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__sp_free_title",
+                            "name": "sp_free_title",
+                            "label": "Kafel „bezpłatnie”: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__sp_free_text",
+                            "name": "sp_free_text",
+                            "label": "Kafel „bezpłatnie”: opis",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__sp_free_price",
+                            "name": "sp_free_price",
+                            "label": "Kafel „bezpłatnie”: cena",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__sp_paid_title",
+                            "name": "sp_paid_title",
+                            "label": "Kafel „wdrożeniowy”: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__sp_paid_text",
+                            "name": "sp_paid_text",
+                            "label": "Kafel „wdrożeniowy”: opis",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__ribbon",
+                            "name": "ribbon",
+                            "label": "Wstęga na ostatnim pakiecie",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__personal",
+                            "name": "personal",
+                            "label": "Personalne: pakiety",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__personal__name",
+                                    "name": "name",
+                                    "label": "Nazwa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__personal__price",
+                                    "name": "price",
+                                    "label": "Cena (zł)",
+                                    "type": "number"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__personal__per",
+                                    "name": "per",
+                                    "label": "Cena za trening (zł; 0 = nie pokazuj)",
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__personal_feats",
+                            "name": "personal_feats",
+                            "label": "Personalne: co zawiera",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__personal_feats__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__personal_cta",
+                            "name": "personal_cta",
+                            "label": "Personalne: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__duo",
+                            "name": "duo",
+                            "label": "Duet: pakiety (ceny za osobę)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__duo__name",
+                                    "name": "name",
+                                    "label": "Nazwa",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__duo__price",
+                                    "name": "price",
+                                    "label": "Cena (zł)",
+                                    "type": "number"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__duo__per",
+                                    "name": "per",
+                                    "label": "Cena za trening (zł; 0 = nie pokazuj)",
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__duo_feats",
+                            "name": "duo_feats",
+                            "label": "Duet: co zawiera",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__duo_feats__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__duo_cta",
+                            "name": "duo_cta",
+                            "label": "Duet: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__duo_note",
+                            "name": "duo_note",
+                            "label": "Duet: dopisek nad kartami",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__groups_feats",
+                            "name": "groups_feats",
+                            "label": "Grupy: co zawiera",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__groups_feats__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__groups_cta",
+                            "name": "groups_cta",
+                            "label": "Grupy: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__groups_note",
+                            "name": "groups_note",
+                            "label": "Grupy: dopisek nad kartami",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__guide_title",
+                            "name": "guide_title",
+                            "label": "Poradnik „co wybrać”: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_cennik__guide",
+                            "name": "guide",
+                            "label": "Poradnik: karty",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_cennik__guide__kicker",
+                                    "name": "kicker",
+                                    "label": "Zdanie wstępne",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__guide__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__guide__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__guide__cta",
+                                    "name": "cta",
+                                    "label": "Przycisk",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_cennik__guide__form",
+                                    "name": "form",
+                                    "label": "Forma treningu w formularzu",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                                }
+                            ],
+                            "max": 3
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                "layout_pmbs_partnerzy": {
+                    "key": "layout_pmbs_partnerzy",
+                    "name": "partnerzy",
+                    "label": "Partnerzy",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_partnerzy__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_partnerzy__items",
+                            "name": "items",
+                            "label": "Partnerzy (logo na białej karcie)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_partnerzy__items__logo",
+                                    "name": "logo",
+                                    "label": "Logo",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "PNG lub WebP, najlepiej z przezroczystym tłem."
+                                },
+                                {
+                                    "key": "field_pmbs_s_partnerzy__items__name",
+                                    "name": "name",
+                                    "label": "Nazwa (opis alt)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_partnerzy__items__url",
+                                    "name": "url",
+                                    "label": "Link (opcjonalnie)",
+                                    "type": "url"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_faq": {
+                    "key": "layout_pmbs_faq",
+                    "name": "faq",
+                    "label": "FAQ (pytania i odpowiedzi)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_faq__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_faq__items",
+                            "name": "items",
+                            "label": "Pytania i odpowiedzi",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pytanie",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_faq__items__q",
+                                    "name": "q",
+                                    "label": "Pytanie",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_faq__items__a",
+                                    "name": "a",
+                                    "label": "Odpowiedź",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_final": {
+                    "key": "layout_pmbs_final",
+                    "name": "final",
+                    "label": "Sekcja końcowa (wezwanie do działania)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_final__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_final__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_final__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_final__text",
+                            "name": "text",
+                            "label": "Tekst",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_final__btn1",
+                            "name": "btn1",
+                            "label": "Przycisk 1 (formularz, trening personalny)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_final__btn2",
+                            "name": "btn2",
+                            "label": "Przycisk 2 (formularz)",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_kontakt": {
+                    "key": "layout_pmbs_kontakt",
+                    "name": "kontakt",
+                    "label": "Kontakt i formularz",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_kontakt__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Telefon, e-mail, adres, godziny i WhatsApp edytujesz w <strong>PM Boxing → Dane i kontakt</strong>. Wszystkie przyciski „Umów…” prowadzą do tej sekcji.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__after_title",
+                            "name": "after_title",
+                            "label": "Tytuł „co dzieje się po wysłaniu”",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__after_steps",
+                            "name": "after_steps",
+                            "label": "Kroki po wysłaniu zgłoszenia",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_kontakt__after_steps__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_pmbs_s_kontakt__after_steps__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__proof_sub",
+                            "name": "proof_sub",
+                            "label": "Podpis pod liczbą opinii",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_title",
+                            "name": "form_title",
+                            "label": "Formularz: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_lead",
+                            "name": "form_lead",
+                            "label": "Formularz: opis",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_default",
+                            "name": "form_default",
+                            "label": "Formularz: domyślna forma treningu",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "",
+                            "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_button",
+                            "name": "form_button",
+                            "label": "Formularz: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_consent",
+                            "name": "form_consent",
+                            "label": "Formularz: treść zgody",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__form_note",
+                            "name": "form_note",
+                            "label": "Formularz: dopisek (po nazwie administratora)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__thanks_title",
+                            "name": "thanks_title",
+                            "label": "Po wysłaniu: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__thanks_text",
+                            "name": "thanks_text",
+                            "label": "Po wysłaniu: tekst",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__map_title",
+                            "name": "map_title",
+                            "label": "Karta mapy: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_kontakt__map_text",
+                            "name": "map_text",
+                            "label": "Karta mapy: opis",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                "layout_pmbs_lp_oferta": {
+                    "key": "layout_pmbs_lp_oferta",
+                    "name": "lp_oferta",
+                    "label": "Oferta z ceną (karta: trening wdrożeniowy)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_lp_oferta__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__badge",
+                            "name": "badge",
+                            "label": "Plakietka nad kartą",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__card_title",
+                            "name": "card_title",
+                            "label": "Karta: nazwa",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__price",
+                            "name": "price",
+                            "label": "Karta: cena (zł)",
+                            "type": "number"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__price_note",
+                            "name": "price_note",
+                            "label": "Karta: dopisek przy cenie",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__bullets",
+                            "name": "bullets",
+                            "label": "Karta: co dostajesz",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_lp_oferta__bullets__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__cta",
+                            "name": "cta",
+                            "label": "Karta: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__form",
+                            "name": "form",
+                            "label": "Forma treningu w formularzu",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "",
+                            "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                        },
+                        {
+                            "key": "field_pmbs_s_lp_oferta__note",
+                            "name": "note",
+                            "label": "Uwaga pod przyciskiem",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_tekst": {
+                    "key": "layout_pmbs_tekst",
+                    "name": "tekst",
+                    "label": "Tekst + zdjęcie (własna sekcja)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_tekst__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__paragraphs",
+                            "name": "paragraphs",
+                            "label": "Akapity",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj akapit",
+                            "sub_fields": [
+                                {
+                                    "key": "field_pmbs_s_tekst__paragraphs__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__image",
+                            "name": "image",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Wybierz zdjęcie z biblioteki. Puste = sekcja bez zdjęcia."
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__side",
+                            "name": "side",
+                            "label": "Zdjęcie po stronie",
+                            "type": "select",
+                            "choices": {
+                                "left": "Lewej",
+                                "right": "Prawej"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": "left"
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__btn",
+                            "name": "btn",
+                            "label": "Przycisk (puste = bez przycisku)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_pmbs_s_tekst__btn_form",
+                            "name": "btn_form",
+                            "label": "Przycisk: forma treningu w formularzu",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "",
+                            "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_pmbs_wlasna": {
+                    "key": "layout_pmbs_wlasna",
+                    "name": "wlasna",
+                    "label": "Własna sekcja (nagłówek + edytor tekstu)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_pmbs_s_wlasna__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__ghost",
+                            "name": "ghost",
+                            "label": "Duży napis w tle",
+                            "type": "text",
+                            "instructions": "Puste = bez napisu."
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Standardowe",
+                                "alt": "Jaśniejsze"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__content",
+                            "name": "content",
+                            "label": "Treść",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__btn",
+                            "name": "btn",
+                            "label": "Przycisk (puste = bez przycisku)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_pmbs_s_wlasna__btn_form",
+                            "name": "btn_form",
+                            "label": "Przycisk: forma treningu w formularzu",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "",
+                            "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Dodaj sekcję",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-landing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1767225600
+}

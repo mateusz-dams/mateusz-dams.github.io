@@ -1,0 +1,1086 @@
+{
+    "key": "group_mvn_site",
+    "title": "Movena: ustawienia strony",
+    "fields": [
+        {
+            "key": "field_mvn_tab_dane",
+            "label": "Dane i kontakt",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_brand",
+            "name": "brand",
+            "label": "Nazwa studia",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_phone_display",
+            "name": "phone_display",
+            "label": "Telefon (jak wyświetlać)",
+            "type": "text",
+            "instructions": "np. 508 923 051"
+        },
+        {
+            "key": "field_mvn_phone_tel",
+            "name": "phone_tel",
+            "label": "Telefon (do linku)",
+            "type": "text",
+            "instructions": "Format międzynarodowy z plusem, np. +48508923051"
+        },
+        {
+            "key": "field_mvn_email",
+            "name": "email",
+            "label": "E-mail kontaktowy (na stronie)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_address",
+            "name": "address",
+            "label": "Adres (ulica i numer)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_postal",
+            "name": "postal",
+            "label": "Kod pocztowy",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_city",
+            "name": "city",
+            "label": "Miasto",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_facebook",
+            "name": "facebook",
+            "label": "Facebook (adres profilu)",
+            "type": "url",
+            "instructions": "Puste = ikona się nie pokaże."
+        },
+        {
+            "key": "field_mvn_instagram",
+            "name": "instagram",
+            "label": "Instagram (adres profilu)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_maps_url",
+            "name": "maps_url",
+            "label": "Link „Wyznacz trasę” (Mapy Google)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_maps_embed",
+            "name": "maps_embed",
+            "label": "Adres mapy do osadzenia (iframe)",
+            "type": "url",
+            "instructions": "Mapy Google → Udostępnij → Umieść mapę → sam adres z src=\"…\"."
+        },
+        {
+            "key": "field_mvn_reviews_url",
+            "name": "reviews_url",
+            "label": "Link do opinii w Google (opcjonalnie)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_message_url",
+            "name": "message_url",
+            "label": "Link do rozmowy (Messenger lub Instagram DM)",
+            "type": "url",
+            "instructions": "Przyciski „Napisz do nas” otwierają ten adres. Messenger: https://m.me/NAZWA-STRONY, Instagram: https://ig.me/m/movenapilates. Puste = Instagram."
+        },
+        {
+            "key": "field_mvn_whatsapp_number",
+            "name": "whatsapp_number",
+            "label": "Numer WhatsApp (opcjonalnie)",
+            "type": "text",
+            "instructions": "Format międzynarodowy bez plusa, np. 48508923051. Puste = bez WhatsAppa."
+        },
+        {
+            "key": "field_mvn_whatsapp_message",
+            "name": "whatsapp_message",
+            "label": "Pierwsza wiadomość na WhatsAppie",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_mvn_hours",
+            "name": "hours",
+            "label": "Godziny otwarcia (opcjonalnie)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___hours__days",
+                    "name": "days",
+                    "label": "Dni",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___hours__hours",
+                    "name": "hours",
+                    "label": "Godziny",
+                    "type": "text"
+                }
+            ],
+            "instructions": "Pokazują się w stopce i w danych strukturalnych. Format godzin: 8:00–21:00."
+        },
+        {
+            "key": "field_mvn_company_name",
+            "name": "company_name",
+            "label": "Pełna nazwa firmy (do stron prawnych)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_company_address",
+            "name": "company_address",
+            "label": "Adres siedziby firmy",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_nip",
+            "name": "nip",
+            "label": "NIP",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_regon",
+            "name": "regon",
+            "label": "REGON",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_krs",
+            "name": "krs",
+            "label": "KRS (jeśli dotyczy)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_gdpr_email",
+            "name": "gdpr_email",
+            "label": "E-mail do spraw danych osobowych (RODO)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_founder_name",
+            "name": "founder_name",
+            "label": "Imię i nazwisko właścicielki (do danych strukturalnych, opcjonalnie)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_tab_fitssey",
+            "label": "Zapisy i zakupy (CRM)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_info_fitssey",
+            "name": "info_fitssey",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Zapisy na zajęcia i zakup karnetów działają w CRM Moveny. Puste adresy uzupełniają się same na podstawie adresu CRM z zakładki „CRM” (kalendarz zapisów na tej stronie, sklep, logowanie i vouchery w CRM).",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_fitssey_schedule",
+            "name": "fitssey_schedule",
+            "label": "Grafik zajęć (puste = kalendarz zapisów na tej stronie)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_fitssey_pricing",
+            "name": "fitssey_pricing",
+            "label": "Cennik / zakup karnetu (puste = cennik na tej stronie)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_fitssey_login",
+            "name": "fitssey_login",
+            "label": "Logowanie klientek (puste = panel klientki w CRM)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_fitssey_vouchers",
+            "name": "fitssey_vouchers",
+            "label": "Vouchery (puste = vouchery w CRM)",
+            "type": "url"
+        },
+        {
+            "key": "field_mvn_tab_zajecia",
+            "label": "Zajęcia",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_info_zajecia",
+            "name": "info_zajecia",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Lista zasila dane SEO i polecane zajęcia na stronie docelowej. W studiu jest jeden rodzaj zajęć — Pilates na reformerach.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_zajecia",
+            "name": "zajecia",
+            "label": "Zajęcia",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Dodaj zajęcia",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___zajecia__name",
+                    "name": "name",
+                    "label": "Nazwa",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___zajecia__tagline",
+                    "name": "tagline",
+                    "label": "Krótki opis",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_mvn___zajecia__for",
+                    "name": "for",
+                    "label": "Dla kogo",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_mvn___zajecia__duration",
+                    "name": "duration",
+                    "label": "Czas trwania (minuty)",
+                    "type": "number"
+                },
+                {
+                    "key": "field_mvn___zajecia__recommended",
+                    "name": "recommended",
+                    "label": "Dobry wybór na początek",
+                    "type": "true_false",
+                    "ui": 1,
+                    "default_value": 0,
+                    "message": ""
+                },
+                {
+                    "key": "field_mvn___zajecia__url",
+                    "name": "url",
+                    "label": "Własny adres „Sprawdź terminy” (puste = kalendarz zapisów)",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_mvn_tab_cennik",
+            "label": "Cennik",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_info_cennik",
+            "name": "info_cennik",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Ceny wpisuj jako liczby (bez „zł”). <strong>Pierwszy trening</strong> (cena promocyjna) pojawia się w hero, banerze promocji i na stronie docelowej jako <code>{cena}</code>.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_first_price",
+            "name": "first_price",
+            "label": "Cena pierwszego treningu (zł)",
+            "type": "number"
+        },
+        {
+            "key": "field_mvn_first_was",
+            "name": "first_was",
+            "label": "Cena zwykła przed promocją (zł)",
+            "type": "number",
+            "instructions": "Pokazuje się jako „zamiast …”. 0 = bez przekreślonej ceny."
+        },
+        {
+            "key": "field_mvn_cennik_grupa",
+            "name": "cennik_grupa",
+            "label": "Zajęcia grupowe: pakiety",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Dodaj pakiet",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___cennik_grupa__name",
+                    "name": "name",
+                    "label": "Nazwa pakietu",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__price",
+                    "name": "price",
+                    "label": "Cena (zł)",
+                    "type": "number"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__sessions",
+                    "name": "sessions",
+                    "label": "Liczba treningów",
+                    "type": "number"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__per",
+                    "name": "per",
+                    "label": "Cena za trening (zł; 0 = nie pokazuj)",
+                    "type": "number"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__per_note",
+                    "name": "per_note",
+                    "label": "Dopisek zamiast ceny za trening (np. „150 zł / os. za trening”)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__validity",
+                    "name": "validity",
+                    "label": "Ważność (np. „1 miesiąc od pierwszej wizyty”)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__recommended",
+                    "name": "recommended",
+                    "label": "Najczęściej wybierany",
+                    "type": "true_false",
+                    "ui": 1,
+                    "default_value": 0,
+                    "message": ""
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__badge",
+                    "name": "badge",
+                    "label": "Własna plakietka (np. „Dla pierwszej wizyty”)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__restriction",
+                    "name": "restriction",
+                    "label": "Ograniczenie (mały druk pod przyciskiem)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__url",
+                    "name": "url",
+                    "label": "Adres „Kup” (puste = sklep w CRM)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___cennik_grupa__img",
+                    "name": "img",
+                    "label": "Grafika (nazwa pliku z assets/img/pakiety bez „.jpg”; puste = dobierze się sama)",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_mvn_tab_wyglad",
+            "label": "Nagłówek i stopka",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_logo",
+            "name": "logo",
+            "label": "Logo (ciemne, do nagłówka)",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Zostaw puste, aby użyć logo z motywu."
+        },
+        {
+            "key": "field_mvn_logo_light",
+            "name": "logo_light",
+            "label": "Logo (jasne, do ciemnej stopki)",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Zostaw puste, aby użyć logo z motywu."
+        },
+        {
+            "key": "field_mvn_info_menu",
+            "name": "info_menu",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Menu główne tworzy się automatycznie z sekcji strony głównej, które mają włączone „Pokaż w menu” (Strony → Strona główna).",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_header_cta",
+            "name": "header_cta",
+            "label": "Przycisk w nagłówku",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_header_cta_cel",
+            "name": "header_cta_cel",
+            "label": "Przycisk w nagłówku: cel",
+            "type": "select",
+            "choices": [],
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 1,
+            "return_format": "value",
+            "default_value": "fitssey:schedule",
+            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+        },
+        {
+            "key": "field_mvn_header_call",
+            "name": "header_call",
+            "label": "Napis przy telefonie w menu mobilnym",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_mobile_call",
+            "name": "mobile_call",
+            "label": "Dolny pasek na telefonie: „Zadzwoń”",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_mobile_cta",
+            "name": "mobile_cta",
+            "label": "Dolny pasek na telefonie: przycisk główny",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_mobile_cta_cel",
+            "name": "mobile_cta_cel",
+            "label": "Dolny pasek na telefonie: cel przycisku",
+            "type": "select",
+            "choices": [],
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 1,
+            "return_format": "value",
+            "default_value": "fitssey:schedule",
+            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+        },
+        {
+            "key": "field_mvn_foot_tagline",
+            "name": "foot_tagline",
+            "label": "Opis pod logo w stopce",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_mvn_foot_photo_credit",
+            "name": "foot_photo_credit",
+            "label": "Podpis pod galerią lub w stopce (np. autor wizualizacji)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_tab_seo",
+            "label": "SEO i udostępnianie",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_seo_title",
+            "name": "seo_title",
+            "label": "Tytuł strony głównej (title)",
+            "type": "text",
+            "instructions": "Do ok. 60 znaków, z frazą lokalną (np. „Pilates Radom”). Wtyczki SEO (Yoast, Rank Math) mają pierwszeństwo, jeśli są aktywne."
+        },
+        {
+            "key": "field_mvn_seo_description",
+            "name": "seo_description",
+            "label": "Opis strony głównej (meta description)",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "Do ok. 160 znaków."
+        },
+        {
+            "key": "field_mvn_og_image",
+            "name": "og_image",
+            "label": "Obraz przy udostępnianiu (Facebook, Messenger)",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Zalecane 1200×630 px. Puste = obraz z motywu."
+        },
+        {
+            "key": "field_mvn_og_image_alt",
+            "name": "og_image_alt",
+            "label": "Opis obrazu przy udostępnianiu (alt)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_gsc_verification",
+            "name": "gsc_verification",
+            "label": "Google Search Console: kod weryfikacyjny",
+            "type": "text",
+            "instructions": "Sama wartość z metatagu google-site-verification (content=\"…\"). Puste = weryfikuj inną metodą."
+        },
+        {
+            "key": "field_mvn_bing_verification",
+            "name": "bing_verification",
+            "label": "Bing Webmaster: kod weryfikacyjny",
+            "type": "text",
+            "instructions": "Wartość z metatagu msvalidate.01 (opcjonalnie)."
+        },
+        {
+            "key": "field_mvn_geo_lat",
+            "name": "geo_lat",
+            "label": "Szerokość geograficzna (do danych lokalnych)",
+            "type": "text",
+            "instructions": "np. 51.3989. Poprawia dane strukturalne dla wyników lokalnych."
+        },
+        {
+            "key": "field_mvn_geo_lng",
+            "name": "geo_lng",
+            "label": "Długość geograficzna",
+            "type": "text",
+            "instructions": "np. 21.1470"
+        },
+        {
+            "key": "field_mvn_price_range",
+            "name": "price_range",
+            "label": "Przedział cen (dane strukturalne)",
+            "type": "text",
+            "instructions": "np. 69–1938 zł. Puste = bez."
+        },
+        {
+            "key": "field_mvn_rating_value",
+            "name": "rating_value",
+            "label": "Średnia ocena z Google (np. 5.0)",
+            "type": "text",
+            "instructions": "Wpisz tylko prawdziwą ocenę z wizytówki Google. Liczba opinii pochodzi z sekcji Opinie. Puste = bez oceny w danych strukturalnych."
+        },
+        {
+            "key": "field_mvn_tab_schema",
+            "label": "Dane strukturalne",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_schema_info",
+            "name": "schema_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Dane strukturalne (JSON-LD) to ukryty opis strony dla Google: kim jesteście, gdzie, kiedy otwarci, jakie pytania i odpowiedzi macie. Google może na tej podstawie pokazać dane firmy i rozwijane pytania w wynikach. <strong>Nie są widoczne dla odwiedzających</strong>, ale muszą zgadzać się z treścią strony. Poniżej widzisz, co dokładnie jest wysyłane i skąd pochodzi każda wartość.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_schema_preview",
+            "name": "schema_preview",
+            "label": "Podgląd: co jest teraz w danych strukturalnych",
+            "type": "message",
+            "message": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_schema_business_on",
+            "name": "schema_business_on",
+            "label": "Firma lokalna (nazwa, adres, telefon, godziny…)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_schema_website_on",
+            "name": "schema_website_on",
+            "label": "Strona WWW (nazwa i adres strony)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_schema_faq_on",
+            "name": "schema_faq_on",
+            "label": "FAQ (pytania i odpowiedzi z sekcji FAQ)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1,
+            "instructions": "Odpowiedzi muszą być też widoczne na stronie; sekcja FAQ spełnia ten warunek."
+        },
+        {
+            "key": "field_mvn_schema_offers_on",
+            "name": "schema_offers_on",
+            "label": "Oferta (pakiety z cennika, z cenami w zł)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_schema_hours_on",
+            "name": "schema_hours_on",
+            "label": "Godziny otwarcia (z „Dane i kontakt”)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_schema_type",
+            "name": "schema_type",
+            "label": "Typ firmy",
+            "type": "select",
+            "choices": {
+                "ExerciseGym": "Studio ćwiczeń / klub fitness (ExerciseGym) — zalecane",
+                "HealthClub": "Klub zdrowia (HealthClub)",
+                "SportsActivityLocation": "Obiekt sportowy (SportsActivityLocation)",
+                "SportsClub": "Klub sportowy (SportsClub)"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 0,
+            "return_format": "value",
+            "default_value": "ExerciseGym",
+            "instructions": "Zawsze dodawany jest też ogólny typ LocalBusiness."
+        },
+        {
+            "key": "field_mvn_schema_name",
+            "name": "schema_name",
+            "label": "Nazwa firmy (nadpisanie)",
+            "type": "text",
+            "instructions": "Puste = nazwa studia z „Dane i kontakt”."
+        },
+        {
+            "key": "field_mvn_schema_description",
+            "name": "schema_description",
+            "label": "Opis firmy (nadpisanie)",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "instructions": "Puste = opis strony głównej z zakładki SEO."
+        },
+        {
+            "key": "field_mvn_schema_area",
+            "name": "schema_area",
+            "label": "Obszar działania (nadpisanie)",
+            "type": "text",
+            "instructions": "Puste = miasto z „Dane i kontakt”. Można wpisać np. „Radom i okolice”."
+        },
+        {
+            "key": "field_mvn_schema_same_as",
+            "name": "schema_same_as",
+            "label": "Dodatkowe profile (sameAs)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj profil",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___schema_same_as__url",
+                    "name": "url",
+                    "label": "Adres profilu",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_mvn_schema_extra",
+            "name": "schema_extra",
+            "label": "Własne dane (zaawansowane, JSON-LD)",
+            "type": "textarea",
+            "rows": 8,
+            "new_lines": "",
+            "instructions": "Opcjonalnie: wklej gotowy obiekt JSON-LD (np. dodatkowy typ). Zostanie dołączony do danych strony; błędny JSON jest pomijany i oznaczony w podglądzie. Bez znaczników <script>."
+        },
+        {
+            "key": "field_mvn_tab_tracking",
+            "label": "Analityka i reklamy",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_tracking_info",
+            "name": "tracking_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Wszystkie narzędzia ładują się dopiero po zgodzie z banera cookies i respektują Consent Mode v2 (domyślnie wszystko odrzucone). <strong>Dwa tryby:</strong> (1) wpisz <em>GTM</em> — wtedy GA4, piksel Meta, Google Ads i Hotjar konfigurujesz w Menedżerze Tagów, a motyw wysyła do niego zdarzenia: <code>generate_lead</code> (wysłany formularz), <code>click_fitssey</code> (przejście do zakupu w CRM), <code>contact</code> (telefon, e-mail, WhatsApp), <code>cta_click</code> — każde z <code>event_id</code>; (2) bez GTM — motyw ładuje bezpośrednio GA4, Meta Pixel, Google Ads i Hotjar z poniższych pól. <strong>Gdy wpiszesz GTM, pola bezpośrednie są ignorowane</strong> (żeby nic nie liczyło się podwójnie). Po zmianach zaktualizuj strony Pliki cookies i Polityka prywatności (Narzędzia → Przywróć strony prawne).",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_gtm_id",
+            "name": "gtm_id",
+            "label": "Google Tag Manager: identyfikator kontenera",
+            "type": "text",
+            "instructions": "np. GTM-XXXXXXX. Puste = bez GTM.",
+            "placeholder": "GTM-XXXXXXX"
+        },
+        {
+            "key": "field_mvn_ga4",
+            "name": "ga4",
+            "label": "Google Analytics 4: identyfikator pomiaru",
+            "type": "text",
+            "instructions": "np. G-XXXXXXXXXX (tryb bez GTM).",
+            "placeholder": "G-XXXXXXXXXX"
+        },
+        {
+            "key": "field_mvn_ads_id",
+            "name": "ads_id",
+            "label": "Google Ads: identyfikator konwersji",
+            "type": "text",
+            "instructions": "np. AW-123456789 (tryb bez GTM).",
+            "placeholder": "AW-123456789"
+        },
+        {
+            "key": "field_mvn_ads_label_lead",
+            "name": "ads_label_lead",
+            "label": "Google Ads: etykieta konwersji „Lead” (wysłany formularz)",
+            "type": "text",
+            "instructions": "Z Google Ads → Cele → Konwersje → fragment zdarzenia: wartość po ukośniku w send_to."
+        },
+        {
+            "key": "field_mvn_ads_label_contact",
+            "name": "ads_label_contact",
+            "label": "Google Ads: etykieta konwersji „Kontakt” (telefon, WhatsApp, e-mail)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_ads_label_fitssey",
+            "name": "ads_label_fitssey",
+            "label": "Google Ads: etykieta konwersji „Przejście do zakupu” (opcjonalnie)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_meta_pixel",
+            "name": "meta_pixel",
+            "label": "Meta Pixel: identyfikator piksela",
+            "type": "text",
+            "instructions": "15–16 cyfr (tryb bez GTM). Do Conversions API potrzebny także w trybie GTM.",
+            "placeholder": "1234567890123456"
+        },
+        {
+            "key": "field_mvn_meta_capi_token",
+            "name": "meta_capi_token",
+            "label": "Meta Conversions API: token dostępu",
+            "type": "text",
+            "instructions": "Bezpieczniej: wpisz token w pliku wp-config.php jako define('MVN_CAPI_TOKEN', '...'); — wtedy to pole jest ignorowane. Wysyłka zdarzenia Lead z serwera, odporna na blokery, z deduplikacją po event_id. Działa tylko, gdy odwiedzający zgodził się na cookies marketingowe."
+        },
+        {
+            "key": "field_mvn_meta_test_code",
+            "name": "meta_test_code",
+            "label": "Meta: kod zdarzeń testowych",
+            "type": "text",
+            "instructions": "Tylko na czas testów (np. TEST12345). Potem usuń."
+        },
+        {
+            "key": "field_mvn_fb_domain_verification",
+            "name": "fb_domain_verification",
+            "label": "Meta: weryfikacja domeny",
+            "type": "text",
+            "instructions": "Wartość z metatagu facebook-domain-verification (Business Manager → Domeny)."
+        },
+        {
+            "key": "field_mvn_hotjar_id",
+            "name": "hotjar_id",
+            "label": "Hotjar: identyfikator witryny (Site ID)",
+            "type": "text",
+            "instructions": "Same cyfry (tryb bez GTM). Hotjar liczony jako analityczny."
+        },
+        {
+            "key": "field_mvn_tab_form",
+            "label": "Formularz kontaktowy",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_form_options",
+            "name": "form_options",
+            "label": "Formy treningu (lista w formularzu)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___form_options__label",
+                    "name": "label",
+                    "label": "Nazwa w formularzu",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___form_options__crm",
+                    "name": "crm",
+                    "label": "Wartość dla CRM",
+                    "type": "text",
+                    "instructions": "Wartość pola „interest” w CRM: group, first, other."
+                }
+            ]
+        },
+        {
+            "key": "field_mvn_call_times",
+            "name": "call_times",
+            "label": "Pory oddzwonienia (pierwsza jest domyślna)",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___call_times__label",
+                    "name": "label",
+                    "label": "Pora",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_mvn_mail_to",
+            "name": "mail_to",
+            "label": "Dokąd wysyłać zgłoszenia (e-mail)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_mail_from",
+            "name": "mail_from",
+            "label": "Nadawca wiadomości (najlepiej ta sama skrzynka co login SMTP)",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_smtp_enabled",
+            "name": "smtp_enabled",
+            "label": "Wysyłaj przez SMTP",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1,
+            "instructions": "Zalecane. Bez SMTP wiadomości idą zwykłą funkcją mail() i często trafiają do spamu."
+        },
+        {
+            "key": "field_mvn_smtp_host",
+            "name": "smtp_host",
+            "label": "SMTP: serwer",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_smtp_port",
+            "name": "smtp_port",
+            "label": "SMTP: port",
+            "type": "number",
+            "instructions": "587 (TLS) lub 465 (SSL)"
+        },
+        {
+            "key": "field_mvn_smtp_secure",
+            "name": "smtp_secure",
+            "label": "SMTP: szyfrowanie",
+            "type": "select",
+            "choices": {
+                "tls": "TLS (STARTTLS), port 587",
+                "ssl": "SSL, port 465",
+                "": "Bez szyfrowania (niezalecane)"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 0,
+            "return_format": "value",
+            "default_value": "tls"
+        },
+        {
+            "key": "field_mvn_smtp_user",
+            "name": "smtp_user",
+            "label": "SMTP: login",
+            "type": "text"
+        },
+        {
+            "key": "field_mvn_smtp_pass_info",
+            "name": "smtp_pass_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Hasło SMTP wpisz <strong>tylko w pliku wp-config.php</strong>: <code>define('MVN_SMTP_PASS', '…');</code> — nigdy w panelu ani w wiadomościach.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_smtp_verify",
+            "name": "smtp_verify",
+            "label": "SMTP: sprawdzaj certyfikat serwera",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_autoreply_enabled",
+            "name": "autoreply_enabled",
+            "label": "Wysyłaj klientce automatyczne potwierdzenie (gdy poda e-mail)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_autoreply_max",
+            "name": "autoreply_max",
+            "label": "Limit potwierdzeń na dobę",
+            "type": "number",
+            "instructions": "Ochrona przed nadużyciami."
+        },
+        {
+            "key": "field_mvn_min_fill",
+            "name": "min_fill",
+            "label": "Minimalny czas wypełniania formularza (sekundy)",
+            "type": "number",
+            "instructions": "Szybsze wysłanie uznajemy za bota."
+        },
+        {
+            "key": "field_mvn_rate_max",
+            "name": "rate_max",
+            "label": "Maks. zgłoszeń z jednego adresu IP na godzinę",
+            "type": "number"
+        },
+        {
+            "key": "field_mvn_tab_crm",
+            "label": "CRM",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_crm_enabled",
+            "name": "crm_enabled",
+            "label": "Przekazuj zgłoszenia do CRM",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1
+        },
+        {
+            "key": "field_mvn_booking_mode",
+            "name": "booking_mode",
+            "label": "Tryb zapisów i zakupów",
+            "type": "select",
+            "choices": {
+                "fitssey": "Fitssey (przejściowo — strona prowadzi do Fitssey)",
+                "crm": "CRM (własny kalendarz i sklep)"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 0,
+            "return_format": "value",
+            "instructions": "Dopóki zapisy działają w Fitssey, zostaw „Fitssey”. Gdy CRM będzie gotowy (Stripe, grafik), przełącz na „CRM”.",
+            "default_value": "fitssey"
+        },
+        {
+            "key": "field_mvn_grafik_mode",
+            "name": "grafik_mode",
+            "label": "Podstrona „Grafik” (/grafik/)",
+            "type": "select",
+            "choices": {
+                "auto": "Tak jak tryb zapisów powyżej",
+                "crm": "Własny grafik z CRM (test — reszta strony zostaje na Fitssey)",
+                "fitssey": "Przycisk do grafiku w Fitssey"
+            },
+            "allow_null": 0,
+            "ui": 1,
+            "allow_custom": 1,
+            "return_format": "value",
+            "instructions": "Pozwala włączyć własny grafik i zapis przez e-mail tylko na tej podstronie, zanim przełączysz całą stronę na CRM. Wymaga adresu CRM poniżej."
+        },
+        {
+            "key": "field_mvn_booking_on",
+            "name": "booking_on",
+            "label": "Kalendarz zapisów online (wolne miejsca z CRM + płatność)",
+            "type": "true_false",
+            "ui": 1,
+            "message": "",
+            "default_value": 1,
+            "instructions": "Pokazuje sekcję „Zapisy online”. Wymaga włączonego CRM i adresu CRM poniżej; w CRM muszą być podłączone płatności Stripe."
+        },
+        {
+            "key": "field_mvn_crm_url",
+            "name": "crm_url",
+            "label": "CRM: adres przyjmowania leadów",
+            "type": "url",
+            "instructions": "Bez tokena, np. https://crm.movenapilates.pl/leady/przyjmij/ (token dopisujemy automatycznie)."
+        },
+        {
+            "key": "field_mvn_crm_token",
+            "name": "crm_token",
+            "label": "CRM: token",
+            "type": "password",
+            "instructions": "Token z CRM → Leady → Podłączenie. Bezpieczniej: wpisz go w pliku wp-config.php jako define('MVN_CRM_TOKEN', '…'); — wtedy to pole jest ignorowane. Bez tokena wysyłka do CRM jest pomijana, a zgłoszenie i tak trafia e-mailem."
+        },
+        {
+            "key": "field_mvn_tab_redirects",
+            "label": "Przekierowania 301",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_mvn_redirects_info",
+            "name": "redirects_info",
+            "label": "Wskazówka",
+            "type": "message",
+            "message": "Stare adresy (z poprzedniej strony) są przekierowywane na nowe automatycznie — lista domyślna jest w pliku <code>inc/redirects.php</code>. Tutaj możesz dopisać własne: „z” to ścieżka, np. <code>/stary-adres.html</code>, „na” to ścieżka lub pełny adres.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_mvn_redirects",
+            "name": "redirects",
+            "label": "Dodatkowe przekierowania",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Dodaj przekierowanie",
+            "sub_fields": [
+                {
+                    "key": "field_mvn___redirects__from",
+                    "name": "from",
+                    "label": "Z (ścieżka)",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mvn___redirects__to",
+                    "name": "to",
+                    "label": "Na (ścieżka lub adres)",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "mvn-ustawienia"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1700000000
+}

@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mateusz Dams – portfolio</title>
-<meta name="description" content="Portfolio Mateusza Damsa: autorskie motywy WordPress wdrożone dla firm oraz strony HTML i CSS zakodowane na podstawie profesjonalnych projektów graficznych.">
+<meta name="description" content="Portfolio Mateusza Damsa, ucznia technikum (technik informatyk) z Radomia: strony i motywy WordPress współtworzone dla firm oraz projekty treningowe w HTML, CSS i JavaScript.">
 <meta property="og:title" content="Mateusz Dams – portfolio">
-<meta property="og:description" content="Motywy WordPress wdrożone dla firm oraz strony HTML i CSS zakodowane 1:1 z projektów graficznych.">
+<meta property="og:description" content="Strony i motywy WordPress współtworzone dla firm z Radomia oraz projekty treningowe w HTML, CSS i JavaScript.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e4bf5'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
 <meta property="og:image" content="https://mateusz-dams.github.io/assets/cod.jpg">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light dark">
@@ -42,7 +43,7 @@
   .menu a:hover{color:var(--ink)}
   .menu a.btn{color:var(--accent-ink)}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font:600 15px/1 inherit;font-family:inherit;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-family:inherit;font-weight:600;font-size:15px;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}
   .btn-primary:hover{background:color-mix(in srgb,var(--accent) 86%,var(--ink))}
   .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:var(--surface)}
@@ -50,19 +51,29 @@
   .menu .btn{height:38px;padding:0 16px}
 
   /* początek strony */
-  .intro{padding:88px 0 56px}
-  .intro h1{font-size:clamp(52px,9vw,124px);line-height:.92;letter-spacing:-.045em;font-weight:600;font-variation-settings:"opsz" 96}
-  .intro-lead{margin-top:28px;max-width:46ch;font-size:clamp(18px,1.8vw,21px);color:var(--muted)}
+  .intro{padding:64px 0 40px}
+  .intro h1{font-size:clamp(44px,6.4vw,84px);line-height:.95;letter-spacing:-.04em;font-weight:600;font-variation-settings:"opsz" 96}
+  .role{margin-top:14px;font-size:clamp(18px,1.9vw,22px);font-weight:600;letter-spacing:-.01em}
+  .intro-lead{margin-top:14px;max-width:52ch;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
+  .facts{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:16px;font-size:15px;color:var(--muted)}
+  .facts strong{color:var(--ink);font-weight:600}
+  .intro .actions{margin-top:24px}
+  .skip{position:absolute;left:16px;top:-60px;z-index:50;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+  .skip:focus{top:12px}
+  .badge{font-size:12.5px;font-weight:600;line-height:1;padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .badge-live{background:var(--soft);border-color:transparent;color:var(--accent)}
+  .mine{margin-bottom:12px;font-size:15.5px;line-height:1.5}
+  .mine strong{font-weight:600}
   .intro-lead strong{color:var(--ink);font-weight:600}
   .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
   .stats{display:grid;gap:18px;padding-left:32px;border-left:1px solid var(--line)}
   .stats div{display:flex;flex-direction:column-reverse}
-  .stats dd{font-size:44px;line-height:1;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .stats dd{font-size:40px;line-height:1;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
   .stats dt{font-size:14.5px;color:var(--muted);margin-top:4px}
 
   /* przełącznik */
-  .filters{display:inline-flex;gap:4px;padding:4px;margin-top:40px;background:var(--surface);border:1px solid var(--line);border-radius:999px;max-width:100%;overflow-x:auto}
-  .filter{appearance:none;border:0;background:none;font:500 15px/1 inherit;font-family:inherit;color:var(--muted);height:40px;padding:0 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+  .filters{display:inline-flex;gap:4px;padding:4px;margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:999px;max-width:100%;overflow-x:auto}
+  .filter{appearance:none;border:0;background:none;font-family:inherit;font-weight:500;font-size:15px;line-height:1;color:var(--muted);height:40px;padding:0 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
   .filter:hover{color:var(--ink)}
   .filter[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
   .filter .count{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
@@ -75,13 +86,13 @@
   .list{list-style:none;border-top:1px solid var(--line)}
   .item{border-bottom:1px solid var(--line)}
   .item[hidden]{display:none}
-  .row{appearance:none;width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 16px;padding:20px 16px 20px 20px;background:none;border:0;border-radius:var(--radius);text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;position:relative;transition:background .2s}
+  .row{appearance:none;width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 16px;padding:20px 16px 20px 20px;background:none;border:0;border-radius:var(--radius);text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;position:relative;transition:background .2s}
   .row::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .25s var(--ease)}
   .row:hover{background:color-mix(in srgb,var(--surface) 60%,transparent)}
   .row[aria-expanded="true"]{background:var(--surface)}
   .row[aria-expanded="true"]::before{transform:scaleY(1)}
   .row-name{grid-column:1;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
-  .row-meta{grid-column:1;font-size:14.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .row-meta{grid-column:1;font-size:14.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0}
   .row-sep{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5}
   .row-icon{grid-column:2;grid-row:1/3;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .25s var(--ease),background .2s,border-color .2s}
   .row-icon::before{content:"";position:absolute;inset:0;margin:auto;width:8px;height:8px;border-right:2px solid var(--ink);border-top:2px solid var(--ink);transform:translateX(-1px) rotate(45deg)}
@@ -135,9 +146,9 @@
     .js .work{padding-top:16px;scroll-margin-top:64px}
     .js .list{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:6px;align-self:start;max-height:100%}
     .js .preview{position:relative;top:0;height:100%;min-height:0}
-    .js .preview .detail{max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+    .js .preview .detail{max-height:100%;display:flex;flex-direction:column;overflow-y:auto}
     .js .preview .detail-head,.js .preview .detail-body{flex:0 0 auto}
-    .js .preview .frame{flex:0 1 auto;min-height:150px;overflow:hidden}
+    .js .preview .frame{flex:0 1 auto;min-height:170px;overflow:hidden}
   }
   /* bez JavaScriptu wszystko widać od razu */
   html:not(.js) .detail{display:block;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
@@ -160,6 +171,7 @@
     .detail-body{padding:18px 20px 22px}
     .detail-title{font-size:24px}
     .actions .btn{flex:1 1 0}
+    .intro .actions .btn{flex:1 1 auto}
     .foot .wrap{flex-direction:column;justify-content:center;padding:20px 16px;text-align:center}
   }
   @media (max-width:380px){
@@ -186,13 +198,14 @@
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#projekty">Przejdź do projektów</a>
 
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html">Mateusz Dams</a>
     <nav class="menu" aria-label="Menu">
       <a href="#projekty">Projekty</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="cv/CV-Mateusz-Dams.pdf">CV</a>
       <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
     </nav>
   </div>
@@ -203,13 +216,24 @@
     <div class="wrap">
       <div class="intro-grid">
         <div>
-          <h1>Mateusz<br>Dams</h1>
-          <p class="intro-lead">Tworzę strony internetowe, od kodu HTML i CSS po motywy WordPress. <strong>Cztery motywy WordPress</strong> powstały dla firm z Radomia (przy części pracowałem w zespole), a <strong>sześć stron HTML i CSS</strong> zakodowałem w ramach nauki, 1:1 na podstawie profesjonalnych projektów graficznych agencji Ajmer.</p>
+          <h1>Mateusz Dams</h1>
+          <p class="role">Strony WordPress i front-end · uczeń technikum, kierunek technik informatyk</p>
+          <p class="intro-lead">Współtworzę strony i motywy WordPress dla firm z Radomia: od kodu, przez wdrożenie, po analitykę i integrację z CRM. Szukam pracy lub stażu w branży IT.</p>
+          <ul class="facts">
+            <li><strong>Radom</strong> lub zdalnie</li>
+            <li>Dostępność: <strong>pon–pt od 16:00, weekendy, wakacje</strong></li>
+            <li>tel. <a href="tel:+48505309362"><strong>505 309 362</strong></a></li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projekty">Zobacz projekty</a>
+            <a class="btn btn-ghost" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV (PDF)</a>
+            <a class="btn btn-ghost" href="https://github.com/mateusz-dams" target="_blank" rel="noopener">GitHub<span class="sr-only"> (otworzy się w nowej karcie)</span></a>
+          </div>
         </div>
         <dl class="stats">
-          <div><dt>projektów</dt><dd>10</dd></div>
-          <div><dt>podstron</dt><dd>96</dd></div>
-          <div><dt>wersje językowe</dt><dd>4</dd></div>
+          <div><dt>strony dla firm</dt><dd>4</dd></div>
+          <div><dt>projektów treningowych</dt><dd>6</dd></div>
+          <div><dt>lata nauki programowania</dt><dd>4</dd></div>
         </dl>
       </div>
       <div class="filters" role="group" aria-label="Pokaż projekty">
@@ -220,14 +244,15 @@
     </div>
   </section>
 
-  <section class="work" id="projekty" aria-label="Projekty">
+  <section class="work" id="projekty" aria-labelledby="projekty-h" tabindex="-1">
     <div class="wrap">
+      <h2 class="sr-only" id="projekty-h">Projekty</h2>
       <div class="work-grid">
         <ul class="list">
         <li class="item" data-kind="wp">
           <button class="row" type="button" aria-expanded="true" aria-controls="d-cod" data-target="d-cod">
             <span class="row-name">Centrum Odkrywania Doskonałości</span>
-            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Psychologia</span>
+            <span class="row-meta"><span class="badge badge-live">Wdrożona</span>Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Psychologia</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-cod">
@@ -236,7 +261,7 @@
               <h3 class="detail-title">Centrum Odkrywania Doskonałości</h3>
               <div class="actions">
                 <a class="btn btn-primary" href="https://cod.biz.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Centrum Odkrywania Doskonałości (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/cod" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Centrum Odkrywania Doskonałości na GitHubie (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/cod/kod-motywu/cod-2026" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Centrum Odkrywania Doskonałości na GitHubie (otworzy się w nowej karcie)</span></a>
               </div>
             </div>
             <div class="frame">
@@ -244,7 +269,8 @@
               <img src="assets/cod.jpg" alt="Strona główna Centrum Odkrywania Doskonałości" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
-              <p class="detail-desc">Autorski motyw WordPress dla centrum psychologicznego w Radomiu: kreator „Od czego zacząć?”, który w dwóch pytaniach podpowiada usługę, oferta w zakładkach ze szczegółami w oknie, zespół, opinie, formularz kontaktowy, tryb ciemny i integracja ze sklepem WooCommerce oraz kursami LearnDash.</p>
+              <p class="mine"><strong>Mój udział:</strong> Współtworzenie redesignu i motywu, wdrożenie na stronie klienta, współtworzenie i testowanie systemu CRM.</p>
+              <p class="detail-desc">Motyw WordPress dla centrum psychologicznego w Radomiu: kreator „Od czego zacząć?”, który w dwóch pytaniach podpowiada usługę, oferta w zakładkach ze szczegółami w oknie, zespół, opinie, formularz kontaktowy, tryb ciemny i integracja ze sklepem WooCommerce oraz kursami LearnDash.</p>
               
               <ul class="chips" aria-label="Najważniejsze elementy"><li>Kreator usług</li><li>Tryb ciemny</li><li>WooCommerce i LearnDash</li></ul>
             </div>
@@ -253,7 +279,7 @@
         <li class="item" data-kind="wp">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-pm-boxing" data-target="d-pm-boxing">
             <span class="row-name">PM Boxing Studio</span>
-            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Sport</span>
+            <span class="row-meta"><span class="badge badge-live">Wdrożona</span>Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Sport</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-pm-boxing">
@@ -262,7 +288,7 @@
               <h3 class="detail-title">PM Boxing Studio</h3>
               <div class="actions">
                 <a class="btn btn-primary" href="https://pmboxingstudio.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> PM Boxing Studio (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/pm-boxing" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> PM Boxing Studio na GitHubie (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/pm-boxing/kod-motywu/pm-boxing-studio" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> PM Boxing Studio na GitHubie (otworzy się w nowej karcie)</span></a>
               </div>
             </div>
             <div class="frame">
@@ -270,6 +296,7 @@
               <img src="assets/pm-boxing.jpg" alt="Strona główna PM Boxing Studio" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
+              <p class="mine"><strong>Mój udział:</strong> Współtworzenie strony od podstaw, redesign i przeniesienie na własny motyw, landing pod reklamy, analityka i integracja z CRM.</p>
               <p class="detail-desc">Motyw WordPress dla studia boksu w Radomiu z treścią edytowaną w panelu: 17 sekcji strony głównej z menu budowanym z kotwic, cennik w zakładkach, grafik zajęć, landing pod reklamy „Trening wdrożeniowy”, formularz przekazujący zgłoszenia do własnego CRM, zgoda na cookies z GA4 i Meta Pixel oraz dane strukturalne.</p>
               
               <ul class="chips" aria-label="Najważniejsze elementy"><li>Landing pod reklamy</li><li>Integracja z CRM</li><li>Cennik w zakładkach</li></ul>
@@ -279,7 +306,7 @@
         <li class="item" data-kind="wp">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-movena" data-target="d-movena">
             <span class="row-name">Movena Pilates Studio</span>
-            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Pilates</span>
+            <span class="row-meta"><span class="badge badge-live">Wdrożona</span>Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Pilates</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-movena">
@@ -287,8 +314,8 @@
               <p class="detail-kind">Motyw WordPress – pilates, 7 podstron</p>
               <h3 class="detail-title">Movena Pilates Studio</h3>
               <div class="actions">
-                <a class="btn btn-primary" href="https://www.movenapilates.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Movena Pilates Studio (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/movena" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Movena Pilates Studio na GitHubie (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-primary" href="https://movenapilates.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Movena Pilates Studio (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/movena/kod-motywu/movena-pilates-studio" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Movena Pilates Studio na GitHubie (otworzy się w nowej karcie)</span></a>
               </div>
             </div>
             <div class="frame">
@@ -296,6 +323,7 @@
               <img src="assets/movena.jpg" alt="Strona główna Movena Pilates Studio" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
+              <p class="mine"><strong>Mój udział:</strong> Współtworzenie strony i motywu, landingi i współprowadzenie kampanii Meta Ads (ok. 100 zgłoszeń w 3 miesiące).</p>
               <p class="detail-desc">Motyw WordPress dla studia pilatesu na reformerach: cennik pakietów z grafikami, dwa landingi pod kampanie Meta Ads (pierwszy trening za 69 zł i program REFORMER 10), zapisy i płatności przez Fitssey z przygotowanym przełączeniem na własny CRM, vouchery, mapa ładowana po kliknięciu i pełne strony prawne.</p>
               
               <ul class="chips" aria-label="Najważniejsze elementy"><li>2 landingi reklamowe</li><li>Zapisy online</li><li>Vouchery</li></ul>
@@ -305,7 +333,7 @@
         <li class="item" data-kind="wp">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-bizzlife" data-target="d-bizzlife">
             <span class="row-name">Bizzlife</span>
-            <span class="row-meta">Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Księgowość</span>
+            <span class="row-meta"><span class="badge badge-live">Wdrożona</span>Motyw WordPress<span class="row-sep" aria-hidden="true"></span>Księgowość</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-bizzlife">
@@ -314,7 +342,7 @@
               <h3 class="detail-title">Bizzlife</h3>
               <div class="actions">
                 <a class="btn btn-primary" href="bizzlife/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Bizzlife (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/bizzlife" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Bizzlife na GitHubie (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/bizzlife/kod-motywu/bizlife-premium" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Bizzlife na GitHubie (otworzy się w nowej karcie)</span></a>
               </div>
             </div>
             <div class="frame">
@@ -322,94 +350,17 @@
               <img src="assets/bizzlife.jpg" alt="Strona główna biura rachunkowego Bizzlife w wersji ciemnej" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
-              <p class="detail-desc">Redesign strony biura rachunkowego w Radomiu jako motyw WordPress bez page buildera: 7 usług z podstronami, FAQ w tematach, aktualności z filtrami, formularz z ochroną przed spamem i zapisem zgłoszeń w panelu, mapa ładowana po kliknięciu i treści startowe tworzone automatycznie po aktywacji.</p>
-              <p class="note">Redesign przygotowany na praktykach, jeszcze niewdrożony na bizzlife.pl. Formularz działa w trybie demonstracyjnym. <a href="bizzlife/jasna/index.html" target="_blank" rel="noopener">Zobacz wersję jasną<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <p class="mine"><strong>Mój udział:</strong> Współtworzenie redesignu i jego wdrożenie na bizzlife.pl.</p>
+              <p class="detail-desc">Redesign strony biura rachunkowego w Radomiu. W portfolio wariant przygotowany jako motyw WordPress bez page buildera: 7 usług z podstronami, FAQ w tematach, aktualności z filtrami, formularz z ochroną przed spamem i zapisem zgłoszeń w panelu oraz treści startowe tworzone automatycznie.</p>
+              <p class="note">Wdrożona wersja działa na <a href="https://bizzlife.pl/" target="_blank" rel="noopener">bizzlife.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a>. Podgląd pokazuje wariant jako motyw WordPress, formularz działa w trybie pokazowym. <a href="bizzlife/jasna/index.html" target="_blank" rel="noopener">Zobacz wersję jasną<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
               <ul class="chips" aria-label="Najważniejsze elementy"><li>Dwie wersje kolorystyczne</li><li>Bez page buildera</li><li>Treści startowe</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-azs" data-target="d-azs">
-            <span class="row-name">Portal leczenia AZS</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Medycyna</span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-azs">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – medycyna, 13 podstron</p>
-              <h3 class="detail-title">Portal leczenia AZS</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="azs/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Portal leczenia AZS (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/azs" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Portal leczenia AZS na GitHubie (otworzy się w nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/azs</span></div>
-              <img src="assets/azs.jpg" alt="Strona główna portalu o leczeniu AZS" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="detail-desc">Serwis o refundowanym leczeniu atopowego zapalenia skóry z bazą specjalistów i ośrodków, aktualnościami, wydarzeniami i strefą dla lekarzy.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://azswpolsce.pl/" target="_blank" rel="noopener">Oryginał: azswpolsce.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Baza specjalistów</li><li>Rejestracja</li><li>Wydarzenia</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-leadtrust" data-target="d-leadtrust">
-            <span class="row-name">Leadtrust Group</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>HR i rekrutacja</span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-leadtrust">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – hr i rekrutacja, 10 podstron</p>
-              <h3 class="detail-title">Leadtrust Group</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="leadtrust/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Leadtrust Group (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/leadtrust" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Leadtrust Group na GitHubie (otworzy się w nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/leadtrust</span></div>
-              <img src="assets/leadtrust.jpg" alt="Strona główna Leadtrust" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="detail-desc">Strona agencji pracy z osobnymi ścieżkami dla pracowników i pracodawców, ofertami pracy, formularzem aplikacji i strefą pracownika.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="http://www.leadtrust.eu/" target="_blank" rel="noopener">Oryginał: leadtrust.eu<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Oferty pracy</li><li>Formularz aplikacji</li><li>PL / EN</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-silvermedica" data-target="d-silvermedica">
-            <span class="row-name">Silver Medica</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Klinika medyczna</span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-silvermedica">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – klinika medyczna, 9 podstron</p>
-              <h3 class="detail-title">Silver Medica</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="silvermedica/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Silver Medica (otworzy się w nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/silvermedica" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Silver Medica na GitHubie (otworzy się w nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/silvermedica</span></div>
-              <img src="assets/silvermedica.jpg" alt="Strona główna kliniki Silver Medica" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="detail-desc">Strona kliniki dla całej rodziny z ofertą specjalizacji, cennikiem, artykułami, FAQ i promocjami zabiegów.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://silver-medica.pl/" target="_blank" rel="noopener">Oryginał: silver-medica.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Cennik</li><li>FAQ</li><li>PL / EN / UKR</li></ul>
             </div>
           </div>
         </li>
         <li class="item" data-kind="html">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-topblind" data-target="d-topblind">
             <span class="row-name">Topblind</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>E-commerce</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>E-commerce</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-topblind">
@@ -426,16 +377,71 @@
               <img src="assets/topblind.jpg" alt="Strona główna sklepu Topblind" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
-              <p class="detail-desc">Sklep z plisami i roletami na wymiar: oferta, karta produktu z galerią, blog z poradnikami, regulamin i formularz darmowego pomiaru.</p>
+              
+              <p class="detail-desc">Sklep z plisami i roletami na wymiar: oferta, karta produktu z galerią, blog z poradnikami, regulamin i widok formularza darmowego pomiaru.</p>
               <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://roletki24.pl/" target="_blank" rel="noopener">Oryginał: roletki24.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Karta produktu</li><li>Blog</li><li>Slider</li></ul>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Karta produktu</li><li>Blog z poradnikami</li><li>Slider</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-silvermedica" data-target="d-silvermedica">
+            <span class="row-name">Silver Medica</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>Klinika medyczna</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-silvermedica">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – klinika medyczna, 9 podstron</p>
+              <h3 class="detail-title">Silver Medica</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="silvermedica/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Silver Medica (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/silvermedica" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Silver Medica na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/silvermedica</span></div>
+              <img src="assets/silvermedica.jpg" alt="Strona główna kliniki Silver Medica" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              
+              <p class="detail-desc">Strona kliniki dla całej rodziny z ofertą specjalizacji, cennikiem, artykułami, FAQ i promocjami zabiegów.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://silver-medica.pl/" target="_blank" rel="noopener">Oryginał: silver-medica.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Cennik</li><li>FAQ</li><li>Karuzela promocji</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-azs" data-target="d-azs">
+            <span class="row-name">Portal leczenia AZS</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>Medycyna</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-azs">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – medycyna, 13 podstron</p>
+              <h3 class="detail-title">Portal leczenia AZS</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="azs/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Portal leczenia AZS (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/azs" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Portal leczenia AZS na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/azs</span></div>
+              <img src="assets/azs.jpg" alt="Strona główna portalu o leczeniu AZS" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              
+              <p class="detail-desc">Serwis o refundowanym leczeniu atopowego zapalenia skóry z bazą specjalistów i ośrodków, aktualnościami, wydarzeniami i strefą dla lekarzy.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://azswpolsce.pl/" target="_blank" rel="noopener">Oryginał: azswpolsce.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Baza specjalistów</li><li>Widok rejestracji</li><li>Wydarzenia</li></ul>
             </div>
           </div>
         </li>
         <li class="item" data-kind="html">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-austrowaren" data-target="d-austrowaren">
             <span class="row-name">Austrowaren</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Przemysł</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>Przemysł</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-austrowaren">
@@ -452,16 +458,44 @@
               <img src="assets/austrowaren.jpg" alt="Strona główna Austrowaren" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
-              <p class="detail-desc">Strona firmy projektującej systemy odbioru ścinki papieru, tektury i folii, z ofertą, realizacjami i kontaktem. Przygotowana też jako motyw WordPress.</p>
+              
+              <p class="detail-desc">Strona firmy projektującej systemy odbioru ścinki papieru, tektury i folii, z ofertą, realizacjami i kontaktem.</p>
               <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://austrowaren.com.pl/" target="_blank" rel="noopener">Oryginał: austrowaren.com.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Realizacje</li><li>Slider</li><li>WordPress</li></ul>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Realizacje</li><li>Slider</li><li>Menu mobilne</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="item" data-kind="html">
+          <button class="row" type="button" aria-expanded="false" aria-controls="d-leadtrust" data-target="d-leadtrust">
+            <span class="row-name">Leadtrust Group</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>HR i rekrutacja</span>
+            <span class="row-icon" aria-hidden="true"></span>
+          </button>
+          <div class="detail" id="d-leadtrust">
+            <div class="detail-head">
+              <p class="detail-kind">Projekt treningowy: strona HTML i CSS – hr i rekrutacja, 10 podstron</p>
+              <h3 class="detail-title">Leadtrust Group</h3>
+              <div class="actions">
+                <a class="btn btn-primary" href="leadtrust/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Leadtrust Group (otworzy się w nowej karcie)</span></a>
+                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/leadtrust" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Leadtrust Group na GitHubie (otworzy się w nowej karcie)</span></a>
+              </div>
+            </div>
+            <div class="frame">
+              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/leadtrust</span></div>
+              <img src="assets/leadtrust.jpg" alt="Strona główna Leadtrust" width="960" height="600" loading="lazy">
+            </div>
+            <div class="detail-body">
+              
+              <p class="detail-desc">Strona agencji pracy z osobnymi ścieżkami dla pracowników i pracodawców, ofertami pracy, widokiem formularza aplikacji i strefą pracownika.</p>
+              <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="http://www.leadtrust.eu/" target="_blank" rel="noopener">Oryginał: leadtrust.eu<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Oferty pracy</li><li>Widok formularza aplikacji</li><li>Strefa pracownika</li></ul>
             </div>
           </div>
         </li>
         <li class="item" data-kind="html">
           <button class="row" type="button" aria-expanded="false" aria-controls="d-staxx" data-target="d-staxx">
             <span class="row-name">Staxx Polska</span>
-            <span class="row-meta">Projekt treningowy<span class="row-sep" aria-hidden="true"></span>Katalog produktów</span>
+            <span class="row-meta"><span class="badge">Ćwiczenie</span>HTML i CSS<span class="row-sep" aria-hidden="true"></span>Katalog produktów</span>
             <span class="row-icon" aria-hidden="true"></span>
           </button>
           <div class="detail" id="d-staxx">
@@ -478,14 +512,15 @@
               <img src="assets/staxx.jpg" alt="Strona główna Staxx Polska" width="960" height="600" loading="lazy">
             </div>
             <div class="detail-body">
-              <p class="detail-desc">Katalog producenta wózków paletowych z wyszukiwarką, rozbudowanym menu kategorii, listą produktów i kartą produktu.</p>
+              
+              <p class="detail-desc">Katalog producenta wózków paletowych z interfejsem wyszukiwarki, rozbudowanym menu kategorii, listą produktów i kartą produktu.</p>
               <p class="note">Projekt treningowy: kodowanie HTML, CSS i JS na podstawie projektu graficznego agencji Ajmer. <a href="https://staxx.pl/" target="_blank" rel="noopener">Oryginał: staxx.pl<span class="sr-only"> (otworzy się w nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Lista produktów</li><li>Wyszukiwarka</li><li>PL / DE / UKR / EN</li></ul>
+              <ul class="chips" aria-label="Najważniejsze elementy"><li>Lista produktów</li><li>Menu kategorii</li><li>Interfejs wyszukiwarki</li></ul>
             </div>
           </div>
         </li>
         </ul>
-        <div class="preview" aria-live="polite"></div>
+        <div class="preview" id="podglad" aria-live="polite"></div>
       </div>
     </div>
   </section>
@@ -499,6 +534,8 @@
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">dams.mateusz@gmail.com</a>
+          <a class="btn btn-ghost" href="tel:+48505309362">505 309 362</a>
+          <a class="btn btn-ghost" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV</a>
         </div>
       </div>
     </div>
@@ -510,7 +547,7 @@
     <span>© 2026 Mateusz Dams</span>
     <nav class="menu" aria-label="Menu w stopce">
       <a href="#projekty">Projekty</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="cv/CV-Mateusz-Dams.pdf">CV</a>
       <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
     </nav>
   </div>
@@ -521,6 +558,9 @@
   var list = document.querySelector('.list'), preview = document.querySelector('.preview');
   var rows = [].slice.call(document.querySelectorAll('.row'));
   var wide = window.matchMedia('(min-width: 981px) and (min-height: 701px)');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function wire() { rows.forEach(function (r) { r.setAttribute('aria-controls', wide.matches ? 'podglad' : r.dataset.target); }); }
+  wire(); if (wide.addEventListener) wide.addEventListener('change', wire);
 
   function show(row, animate) {
     rows.forEach(function (r) { r.setAttribute('aria-expanded', r === row ? 'true' : 'false'); });
@@ -528,17 +568,16 @@
     preview.innerHTML = '';
     var copy = src.cloneNode(true); copy.removeAttribute('id');
     preview.appendChild(copy);
-    if (animate) { preview.classList.remove('swap'); void preview.offsetWidth; preview.classList.add('swap'); }
+    if (animate && !calm.matches) { preview.classList.remove('swap'); void preview.offsetWidth; preview.classList.add('swap'); }
   }
 
   rows.forEach(function (row) {
     row.addEventListener('click', function () {
       if (!wide.matches && row.getAttribute('aria-expanded') === 'true') { row.setAttribute('aria-expanded', 'false'); return; }
       show(row, true);
-      if (!wide.matches) { setTimeout(function () { row.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 60); }
+      if (!wide.matches) { setTimeout(function () { row.scrollIntoView({ block: 'start', behavior: calm.matches ? 'auto' : 'smooth' }); }, 60); }
     });
     row.addEventListener('mouseenter', function () { if (wide.matches && row.getAttribute('aria-expanded') !== 'true') show(row, true); });
-    row.addEventListener('focus', function () { if (wide.matches && row.getAttribute('aria-expanded') !== 'true') show(row, true); });
   });
 
   [].forEach.call(document.querySelectorAll('.filter'), function (btn) {

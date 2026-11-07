@@ -1,0 +1,22 @@
+/* Fonty hostowane lokalnie (bez połączeń z Google Fonts – zgodność z RODO). Licencja: SIL OFL 1.1 (assets/fonts/OFL-*.txt). */
+@font-face {
+	font-family: "Manrope";
+	src: url("../fonts/manrope-var.woff") format("woff");
+	font-weight: 200 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "EB Garamond";
+	src: url("../fonts/ebgaramond-var.woff") format("woff");
+	font-weight: 400 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "EB Garamond";
+	src: url("../fonts/ebgaramond-italic-var.woff") format("woff");
+	font-weight: 400 800;
+	font-style: italic;
+	font-display: swap;
+}

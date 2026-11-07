@@ -1,14 +1,24 @@
 # Centrum Odkrywania Doskonałości – motyw WordPress
 
-Autorski motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego w Radomiu (diagnoza ADHD, terapia i treningi dla dzieci, wsparcie dla dorosłych, coaching i szkolenia dla firm).
+Motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego w Radomiu (diagnoza ADHD, terapia i treningi dla dzieci, wsparcie dla dorosłych, coaching i szkolenia dla firm).
 
-**Projekt i wdrożenie:** Mateusz Dams · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Współtworzenie redesignu i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
 
 | | |
 |---|---|
 | **Podgląd na żywo** | [mateusz-dams.github.io/cod](https://mateusz-dams.github.io/cod/) – statyczna kopia wygenerowana z motywu |
 | **Strona klienta** | [cod.biz.pl](https://cod.biz.pl/) – motyw w działaniu na produkcji |
+| **Kod motywu** | [kod-motywu/cod-2026](kod-motywu/cod-2026) – pliki do przejrzenia na GitHubie (ta sama wersja co w paczce zip) |
 | **Paczka motywu** | [cod-2026.zip](cod-2026.zip) – do instalacji w *Wygląd → Motywy → Dodaj nowy → Wyślij motyw* |
+
+## Mój udział
+
+| | |
+|---|---|
+| **Cel** | Nowa, czytelniejsza strona centrum psychologicznego, która szybko prowadzi rodzica lub dorosłego do właściwej usługi, z zachowaniem dotychczasowych treści, sklepu i kursów. |
+| **Mój zakres** | Współtworzenie redesignu i motywu WordPress, wdrożenie go na stronie klienta tak, żeby wszystko działało (treści, sklep WooCommerce, kursy LearnDash, formularz, pomiar). Współtworzenie, wdrażanie i testowanie systemu CRM dla centrum. Audyt i optymalizacja kampanii reklamowych pozyskujących nowych klientów. |
+| **Najtrudniejsza część** | Zgodność wstecz: nowy motyw korzysta z tych samych pól ACF, typu wpisu „Oferta” i menu co poprzedni, więc zmiana wyglądu nie wymagała przepisywania treści. Do tego kreator „Od czego zacząć?”, który w dwóch pytaniach podpowiada pierwszą usługę. |
+| **Weryfikacja** | Testy na komputerze i telefonie w trybie jasnym i ciemnym, formularz kontaktowy, sklep i kursy po wdrożeniu, zdarzenia pomiaru w trybie podglądu Google Tag Manager. |
 
 ![Strona główna](zrzuty/strona-glowna.jpg)
 

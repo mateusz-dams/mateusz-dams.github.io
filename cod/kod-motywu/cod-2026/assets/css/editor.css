@@ -1,0 +1,11 @@
+/*
+ * COD 2026 – podgląd treści w edytorze (Klasyczny edytor / TinyMCE).
+ * Fonty systemowe w edytorze; na stronie Fraunces i Manrope.
+ */
+body#tinymce,body.mce-content-body{max-width:780px; margin:1rem auto; padding:0 1rem; color:#14282c; font:400 17px/1.72 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif}
+body#tinymce h1,body#tinymce h2,body#tinymce h3,body#tinymce h4{font-family:Georgia, "Iowan Old Style", serif; font-weight:400; line-height:1.15; letter-spacing:-.01em}
+body#tinymce h2{font-size:2rem} body#tinymce h3{font-size:1.5rem}
+body#tinymce a{color:#1a6472}
+body#tinymce blockquote{margin-left:0; padding-left:1.25rem; border-left:3px solid #5fb8c9; font-family:Georgia, serif; font-size:1.2rem}
+body#tinymce img{max-width:100%; height:auto; border-radius:14px}
+body#tinymce em{font-style:italic}

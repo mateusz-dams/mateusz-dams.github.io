@@ -16,8 +16,8 @@ $( document ).ready(function($) {
         arrows: true,
         autoplay: true,
         autoplaySpeed: 2000,
-        pauseOnFocus: false,
-        pauseOnHover: false,
+        pauseOnFocus: true,
+        pauseOnHover: true,
         prevArrow: $('.sales__arrow--prev'),
         nextArrow: $('.sales__arrow--next'),
         appendDots: $('.sales__dots')

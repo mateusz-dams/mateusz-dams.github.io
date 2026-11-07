@@ -12,8 +12,8 @@ $( document ).ready(function($) {
       arrows: false,
       autoplay: true,
       autoplaySpeed: 2000,
-      pauseOnFocus: false,
-      pauseOnHover: false,
+      pauseOnFocus: true,
+      pauseOnHover: true,
   });
 
   $('.header__hamburger--open').click(function(){
@@ -40,8 +40,8 @@ $( document ).ready(function($) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnFocus: false,
-    pauseOnHover: false,
+    pauseOnFocus: true,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1200,

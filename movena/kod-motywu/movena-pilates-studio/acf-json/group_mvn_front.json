@@ -1,0 +1,3177 @@
+{
+    "key": "group_mvn_front",
+    "title": "Movena: sekcje strony",
+    "fields": [
+        {
+            "key": "field_mvn_sekcje",
+            "label": "Sekcje strony",
+            "name": "sekcje",
+            "type": "flexible_content",
+            "instructions": "Każda sekcja to osobny blok. Przeciągaj, aby zmienić kolejność, dodawaj nowe lub wyłączaj istniejące. Sekcje z włączonym „Pokaż w menu” tworzą menu strony.",
+            "layouts": [
+                {
+                    "key": "layout_mvn_hero",
+                    "name": "hero",
+                    "label": "Góra strony (hero)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_hero__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_hero__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_hero__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_hero__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_hero__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "W tekstach możesz użyć <code>**pogrubienia**</code>, <code>[tekstu linku](#kotwica)</code> oraz znaczników <code>{cena}</code> i <code>{cena_przed}</code> (cena pierwszego treningu z ustawień → Cennik).",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_hero__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis nad nagłówkiem",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_hero__title",
+                            "name": "title",
+                            "label": "Nagłówek (H1)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_hero__lead",
+                            "name": "lead",
+                            "label": "Opis pod nagłówkiem",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_hero__facts",
+                            "name": "facts",
+                            "label": "Wyróżniki (do 5)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_hero__facts__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "users": "Ludzie",
+                                        "user": "Osoba",
+                                        "clock": "Zegar",
+                                        "leaf": "Liść",
+                                        "pin": "Pinezka",
+                                        "reformer": "Reformer",
+                                        "heart": "Serce",
+                                        "calendar": "Kalendarz",
+                                        "check": "Ptaszek",
+                                        "star": "Gwiazdka",
+                                        "award": "Nagroda",
+                                        "phone": "Telefon",
+                                        "gift": "Prezent",
+                                        "info": "Informacja"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_mvn_s_hero__facts__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 5
+                        },
+                        {
+                            "key": "field_mvn_s_hero__cta_primary",
+                            "name": "cta_primary",
+                            "label": "Przycisk główny",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_hero__cta_primary_cel",
+                            "name": "cta_primary_cel",
+                            "label": "Przycisk główny: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_hero__cta_secondary",
+                            "name": "cta_secondary",
+                            "label": "Przycisk dodatkowy",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_hero__cta_secondary_cel",
+                            "name": "cta_secondary_cel",
+                            "label": "Przycisk dodatkowy: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#pricing",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_hero__image",
+                            "name": "image",
+                            "label": "Zdjęcie w hero",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_mvn_s_hero__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_promo",
+                    "name": "promo",
+                    "label": "Baner promocji",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_promo__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_promo__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_promo__text",
+                            "name": "text",
+                            "label": "Tekst (np. „**Pierwszy trening za {cena}** zamiast {cena_przed}”)",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_promo__btn",
+                            "name": "btn",
+                            "label": "Przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_promo__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#pricing",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_trust",
+                    "name": "trust",
+                    "label": "Pasek zaufania (krótkie atuty)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_trust__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_trust__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_trust__items",
+                            "name": "items",
+                            "label": "Atuty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_trust__items__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "users": "Ludzie",
+                                        "user": "Osoba",
+                                        "clock": "Zegar",
+                                        "leaf": "Liść",
+                                        "pin": "Pinezka",
+                                        "reformer": "Reformer",
+                                        "heart": "Serce",
+                                        "calendar": "Kalendarz",
+                                        "check": "Ptaszek",
+                                        "star": "Gwiazdka",
+                                        "award": "Nagroda",
+                                        "phone": "Telefon",
+                                        "gift": "Prezent",
+                                        "info": "Informacja"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_mvn_s_trust__items__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 6
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_pierwszy",
+                    "name": "pierwszy",
+                    "label": "Pierwszy raz (obawy + polecane zajęcia)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_pierwszy__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Znaczniki <code>{cena}</code> i <code>{cena_przed}</code> zamieniają się w ceny z ustawień.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__lead",
+                            "name": "lead",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__items",
+                            "name": "items",
+                            "label": "Obawy i odpowiedzi",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_pierwszy__items__title",
+                                    "name": "title",
+                                    "label": "Pogrubiony tekst",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_pierwszy__items__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__box_tag",
+                            "name": "box_tag",
+                            "label": "Ramka: plakietka z ceną",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__box_title",
+                            "name": "box_title",
+                            "label": "Ramka: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__box_items",
+                            "name": "box_items",
+                            "label": "Ramka: polecane zajęcia",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_pierwszy__box_items__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__box_btn",
+                            "name": "box_btn",
+                            "label": "Ramka: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_pierwszy__box_cel",
+                            "name": "box_cel",
+                            "label": "Ramka: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#rezerwacja",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_kroki",
+                    "name": "kroki",
+                    "label": "Jak zacząć (kroki)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_kroki__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kroki__steps",
+                            "name": "steps",
+                            "label": "Kroki (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_kroki__steps__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_kroki__steps__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_mvn_s_kroki__steps__link",
+                                    "name": "link",
+                                    "label": "Napis linku (opcjonalnie)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_kroki__steps__cel",
+                                    "name": "cel",
+                                    "label": "Cel linku",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_zajecia",
+                    "name": "zajecia",
+                    "label": "Zajęcia (karty z filtrem)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_zajecia__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Listę zajęć (nazwy, opisy, czas, „dobry wybór na początek”) edytujesz w <strong>Movena → Zajęcia</strong>. Te same dane zasilają stronę docelową.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__lead",
+                            "name": "lead",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__filter_all",
+                            "name": "filter_all",
+                            "label": "Filtr: wszystkie",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__filter_rec",
+                            "name": "filter_rec",
+                            "label": "Filtr: polecane na początek",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__badge",
+                            "name": "badge",
+                            "label": "Plakietka przy polecanych",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__btn",
+                            "name": "btn",
+                            "label": "Przycisk na karcie",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_zajecia__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk na karcie: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_rezerwacja",
+                    "name": "rezerwacja",
+                    "label": "Zapisy online (kalendarz z płatnością)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_rezerwacja__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Terminy i wolne miejsca pobierają się na żywo z CRM (grafik zajęć grupowych). Sekcja pokazuje się tylko, gdy w <strong>Movena → CRM</strong> jest włączony „Kalendarz zapisów online”.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__points",
+                            "name": "points",
+                            "label": "Punkty (każdy w osobnym wierszu)",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__call_title",
+                            "name": "call_title",
+                            "label": "Ramka „zadzwoń”: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__call_text",
+                            "name": "call_text",
+                            "label": "Ramka „zadzwoń”: tekst",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__call_btn",
+                            "name": "call_btn",
+                            "label": "Ramka „zadzwoń”: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rezerwacja__hint",
+                            "name": "hint",
+                            "label": "Mały druk pod przyciskiem płatności",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_formaty",
+                    "name": "formaty",
+                    "label": "Formy treningu (karty wyboru)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_formaty__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_formaty__cards",
+                            "name": "cards",
+                            "label": "Karty",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_formaty__cards__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_formaty__cards__bullets",
+                                    "name": "bullets",
+                                    "label": "Punkty (każdy w osobnym wierszu)",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_mvn_s_formaty__cards__btn",
+                                    "name": "btn",
+                                    "label": "Przycisk",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_formaty__cards__cel",
+                                    "name": "cel",
+                                    "label": "Cel",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                                },
+                                {
+                                    "key": "field_mvn_s_formaty__cards__featured",
+                                    "name": "featured",
+                                    "label": "Wyróżnij (ciemna karta)",
+                                    "type": "true_false",
+                                    "ui": 1,
+                                    "default_value": 0,
+                                    "message": ""
+                                }
+                            ],
+                            "max": 4
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_cennik",
+                    "name": "cennik",
+                    "label": "Cennik (pakiety z grafikami)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_cennik__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Ceny i pakiety edytujesz w <strong>Movena → Cennik</strong>. Przyciski „Kup” prowadzą do sklepu w CRM Moveny, „Poznaj REFORMER” otwiera kalendarz zapisów.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__lead",
+                            "name": "lead",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__note_group",
+                            "name": "note_group",
+                            "label": "Uwaga nad pakietami",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__buy",
+                            "name": "buy",
+                            "label": "Przycisk „Kup”",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__best",
+                            "name": "best",
+                            "label": "Plakietka „najczęściej wybierany”",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__help_title",
+                            "name": "help_title",
+                            "label": "Pasek pomocy: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__help_text",
+                            "name": "help_text",
+                            "label": "Pasek pomocy: tekst",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_cennik__help_btn",
+                            "name": "help_btn",
+                            "label": "Pasek pomocy: przycisk (dopisze numer telefonu)",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_dlaczego",
+                    "name": "dlaczego",
+                    "label": "Dlaczego kameralna grupa",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_dlaczego__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__items",
+                            "name": "items",
+                            "label": "Powody (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_dlaczego__items__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_dlaczego__items__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_dlaczego__disclaimer",
+                            "name": "disclaimer",
+                            "label": "Uwaga pod listą",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_o_studiu",
+                    "name": "o_studiu",
+                    "label": "O studiu i galeria",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_o_studiu__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__lead",
+                            "name": "lead",
+                            "label": "Opis",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__image",
+                            "name": "image",
+                            "label": "Zdjęcie główne",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__btn",
+                            "name": "btn",
+                            "label": "Przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__gallery",
+                            "name": "gallery",
+                            "label": "Galeria",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_o_studiu__gallery__image",
+                                    "name": "image",
+                                    "label": "Zdjęcie",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "PNG lub WebP."
+                                },
+                                {
+                                    "key": "field_mvn_s_o_studiu__gallery__alt",
+                                    "name": "alt",
+                                    "label": "Opis (alt)",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 12
+                        },
+                        {
+                            "key": "field_mvn_s_o_studiu__caption",
+                            "name": "caption",
+                            "label": "Podpis pod galerią",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_instruktorki",
+                    "name": "instruktorki",
+                    "label": "Instruktorki",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_instruktorki__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Bez dodanych osób sekcja pokazuje ogólny panel o opiece instruktorki. Dodaj osoby (zdjęcie, imię, krótki opis), gdy chcesz je przedstawić.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__panel_title",
+                            "name": "panel_title",
+                            "label": "Panel: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__panel_text",
+                            "name": "panel_text",
+                            "label": "Panel: tekst",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_instruktorki__people",
+                            "name": "people",
+                            "label": "Osoby (opcjonalnie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj osobę",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_instruktorki__people__photo",
+                                    "name": "photo",
+                                    "label": "Zdjęcie",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "PNG lub WebP."
+                                },
+                                {
+                                    "key": "field_mvn_s_instruktorki__people__name",
+                                    "name": "name",
+                                    "label": "Imię i nazwisko",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_instruktorki__people__role",
+                                    "name": "role",
+                                    "label": "Funkcja",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_instruktorki__people__bio",
+                                    "name": "bio",
+                                    "label": "Krótki opis",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_opinie",
+                    "name": "opinie",
+                    "label": "Opinie klientek",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_opinie__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Dodawaj wyłącznie prawdziwe opinie (z Google, Facebooka, wiadomości od klientek, za ich zgodą). Sekcja jest domyślnie wyłączona.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__count",
+                            "name": "count",
+                            "label": "Liczba opinii w Google",
+                            "type": "number",
+                            "instructions": "Opcjonalnie. Wyświetla się jako „43 opinie w Google” oraz trafia do danych strukturalnych (razem ze średnią oceną z ustawień SEO)."
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__btn",
+                            "name": "btn",
+                            "label": "Przycisk do wszystkich opinii (adres Map z ustawień)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_opinie__items",
+                            "name": "items",
+                            "label": "Opinie",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj opinię",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_opinie__items__name",
+                                    "name": "name",
+                                    "label": "Imię i inicjał",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_opinie__items__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_vouchery",
+                    "name": "vouchery",
+                    "label": "Vouchery prezentowe",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_vouchery__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__lead",
+                            "name": "lead",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__items",
+                            "name": "items",
+                            "label": "Vouchery",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_vouchery__items__kind",
+                                    "name": "kind",
+                                    "label": "Rodzaj",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_vouchery__items__sessions",
+                                    "name": "sessions",
+                                    "label": "Liczba wejść",
+                                    "type": "number"
+                                },
+                                {
+                                    "key": "field_mvn_s_vouchery__items__price",
+                                    "name": "price",
+                                    "label": "Cena (zł)",
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__btn",
+                            "name": "btn",
+                            "label": "Przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_vouchery__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:vouchers",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_faq",
+                    "name": "faq",
+                    "label": "FAQ (pytania i odpowiedzi)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_faq__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_faq__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_faq__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_faq__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_faq__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_faq__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_faq__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_faq__items",
+                            "name": "items",
+                            "label": "Pytania i odpowiedzi",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pytanie",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_faq__items__q",
+                                    "name": "q",
+                                    "label": "Pytanie",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_faq__items__a",
+                                    "name": "a",
+                                    "label": "Odpowiedź",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_lokalizacja",
+                    "name": "lokalizacja",
+                    "label": "Lokalizacja (mapa i dane)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_lokalizacja__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Adres, telefon, profile społecznościowe i mapę edytujesz w <strong>Movena → Dane i kontakt</strong>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__btn",
+                            "name": "btn",
+                            "label": "Przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lokalizacja__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_kontakt",
+                    "name": "kontakt",
+                    "label": "Kontakt i formularz",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_kontakt__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Telefon, e-mail, adres i profile edytujesz w <strong>Movena → Dane i kontakt</strong>. Zapisy i zakup karnetu odbywają się online w CRM Moveny; formularz służy do pytań i próśb o telefon.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__aside_title",
+                            "name": "aside_title",
+                            "label": "Obok formularza: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__aside_items",
+                            "name": "aside_items",
+                            "label": "Obok formularza: punkty",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_kontakt__aside_items__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__aside_btn",
+                            "name": "aside_btn",
+                            "label": "Obok formularza: przycisk zapisów (puste = bez)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__aside_cel",
+                            "name": "aside_cel",
+                            "label": "Obok formularza: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_title",
+                            "name": "form_title",
+                            "label": "Formularz: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_lead",
+                            "name": "form_lead",
+                            "label": "Formularz: opis",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_default",
+                            "name": "form_default",
+                            "label": "Formularz: domyślna forma treningu",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "",
+                            "instructions": "Wybór ustawia pole „Forma treningu” w formularzu po kliknięciu. Puste = klient wybiera sam."
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_button",
+                            "name": "form_button",
+                            "label": "Formularz: przycisk",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_consent",
+                            "name": "form_consent",
+                            "label": "Formularz: treść zgody",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__form_note",
+                            "name": "form_note",
+                            "label": "Formularz: dopisek pod zgodą",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__thanks_title",
+                            "name": "thanks_title",
+                            "label": "Po wysłaniu: tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_kontakt__thanks_text",
+                            "name": "thanks_text",
+                            "label": "Po wysłaniu: tekst",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_final",
+                    "name": "final",
+                    "label": "Sekcja końcowa (wezwanie do działania)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_final__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_final__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_final__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_final__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_final__text",
+                            "name": "text",
+                            "label": "Tekst",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_final__btn1",
+                            "name": "btn1",
+                            "label": "Przycisk 1",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_final__btn1_cel",
+                            "name": "btn1_cel",
+                            "label": "Przycisk 1: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_final__btn2",
+                            "name": "btn2",
+                            "label": "Przycisk 2",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_final__btn2_cel",
+                            "name": "btn2_cel",
+                            "label": "Przycisk 2: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#pricing",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_lp_hero",
+                    "name": "lp_hero",
+                    "label": "Landing: góra strony z ceną",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_lp_hero__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Cenę i cenę „przed” pobieramy z <strong>Movena → Cennik</strong> (pierwszy trening). W tekstach możesz użyć <code>{cena}</code> i <code>{cena_przed}</code>.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__title",
+                            "name": "title",
+                            "label": "Nagłówek (H1)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__lead",
+                            "name": "lead",
+                            "label": "Obietnica (opis pod nagłówkiem)",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__facts",
+                            "name": "facts",
+                            "label": "Wyróżniki (do 4)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_lp_hero__facts__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "users": "Ludzie",
+                                        "user": "Osoba",
+                                        "clock": "Zegar",
+                                        "leaf": "Liść",
+                                        "pin": "Pinezka",
+                                        "reformer": "Reformer",
+                                        "heart": "Serce",
+                                        "calendar": "Kalendarz",
+                                        "check": "Ptaszek",
+                                        "star": "Gwiazdka",
+                                        "award": "Nagroda",
+                                        "phone": "Telefon",
+                                        "gift": "Prezent",
+                                        "info": "Informacja"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_mvn_s_lp_hero__facts__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__price_label",
+                            "name": "price_label",
+                            "label": "Napis przy cenie (np. „pierwszy trening”)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__note",
+                            "name": "note",
+                            "label": "Dopisek pod przyciskami",
+                            "type": "text",
+                            "instructions": "np. warunki oferty."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__cta",
+                            "name": "cta",
+                            "label": "Przycisk główny",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__cta_cel",
+                            "name": "cta_cel",
+                            "label": "Przycisk główny: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__cta2",
+                            "name": "cta2",
+                            "label": "Przycisk dodatkowy",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__cta2_cel",
+                            "name": "cta2_cel",
+                            "label": "Przycisk dodatkowy: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__image",
+                            "name": "image",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_hero__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_lp_oferta",
+                    "name": "lp_oferta",
+                    "label": "Landing: karta oferty z ceną",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_lp_oferta__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__badge",
+                            "name": "badge",
+                            "label": "Plakietka nad kartą",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__card_title",
+                            "name": "card_title",
+                            "label": "Karta: nazwa",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__price_note",
+                            "name": "price_note",
+                            "label": "Karta: dopisek przy cenie",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__bullets",
+                            "name": "bullets",
+                            "label": "Karta: co dostajesz",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj punkt",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_lp_oferta__bullets__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__cta",
+                            "name": "cta",
+                            "label": "Przycisk główny",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__cta_cel",
+                            "name": "cta_cel",
+                            "label": "Przycisk główny: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "fitssey:schedule",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__cta2",
+                            "name": "cta2",
+                            "label": "Przycisk dodatkowy",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__cta2_cel",
+                            "name": "cta2_cel",
+                            "label": "Przycisk dodatkowy: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_lp_oferta__note",
+                            "name": "note",
+                            "label": "Uwaga pod przyciskami",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_rf_hero",
+                    "name": "rf_hero",
+                    "label": "Program: góra strony z ceną programu",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_rf_hero__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__info",
+                            "name": "info",
+                            "label": "Wskazówka",
+                            "type": "message",
+                            "message": "Cena programu wpisana ręcznie poniżej (nie z cennika). Przyciski mogą prowadzić do rozmowy (cel „Napisz do nas”) albo do formularza.",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__title",
+                            "name": "title",
+                            "label": "Nagłówek (H1)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__lead",
+                            "name": "lead",
+                            "label": "Obietnica (opis pod nagłówkiem)",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__price",
+                            "name": "price",
+                            "label": "Cena programu (np. 600 zł)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__price_label",
+                            "name": "price_label",
+                            "label": "Napis przy cenie (np. „za cały program”)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__price_note",
+                            "name": "price_note",
+                            "label": "Dopisek przy cenie (np. „10 treningów, 60 zł za trening”)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__facts",
+                            "name": "facts",
+                            "label": "Wyróżniki (do 4)",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_rf_hero__facts__icon",
+                                    "name": "icon",
+                                    "label": "Ikona",
+                                    "type": "select",
+                                    "choices": {
+                                        "users": "Ludzie",
+                                        "user": "Osoba",
+                                        "clock": "Zegar",
+                                        "leaf": "Liść",
+                                        "pin": "Pinezka",
+                                        "reformer": "Reformer",
+                                        "heart": "Serce",
+                                        "calendar": "Kalendarz",
+                                        "check": "Ptaszek",
+                                        "star": "Gwiazdka",
+                                        "award": "Nagroda",
+                                        "phone": "Telefon",
+                                        "gift": "Prezent",
+                                        "info": "Informacja"
+                                    },
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 0,
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_hero__facts__text",
+                                    "name": "text",
+                                    "label": "Tekst",
+                                    "type": "text"
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__cta",
+                            "name": "cta",
+                            "label": "Przycisk główny",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__cta_cel",
+                            "name": "cta_cel",
+                            "label": "Przycisk główny: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "msg",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__cta2",
+                            "name": "cta2",
+                            "label": "Przycisk dodatkowy",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__cta2_cel",
+                            "name": "cta2_cel",
+                            "label": "Przycisk dodatkowy: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__note",
+                            "name": "note",
+                            "label": "Dopisek pod przyciskami",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__image",
+                            "name": "image",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_mvn_s_rf_hero__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": 1
+                },
+                {
+                    "key": "layout_mvn_rf_grupy",
+                    "name": "rf_grupy",
+                    "label": "Program: wybór grupy (karty terminów)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_rf_grupy__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__groups",
+                            "name": "groups",
+                            "label": "Grupy (karty)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__name",
+                                    "name": "name",
+                                    "label": "Nazwa grupy (np. Grupa A)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__days",
+                                    "name": "days",
+                                    "label": "Dni (np. Poniedziałki + środy)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__time",
+                                    "name": "time",
+                                    "label": "Godzina (np. 17:00)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__spots",
+                                    "name": "spots",
+                                    "label": "Wolne miejsca (np. 4)",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__start",
+                                    "name": "start",
+                                    "label": "Start (np. od 4 listopada) — puste = nie pokazujemy",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__btn",
+                                    "name": "btn",
+                                    "label": "Przycisk",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_rf_grupy__groups__cel",
+                                    "name": "cel",
+                                    "label": "Cel przycisku",
+                                    "type": "select",
+                                    "choices": [],
+                                    "allow_null": 0,
+                                    "ui": 1,
+                                    "allow_custom": 1,
+                                    "return_format": "value",
+                                    "default_value": "",
+                                    "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                                }
+                            ],
+                            "max": 4
+                        },
+                        {
+                            "key": "field_mvn_s_rf_grupy__note",
+                            "name": "note",
+                            "label": "Uwaga pod kartami",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_przebieg",
+                    "name": "przebieg",
+                    "label": "Jak wygląda trening (kroki ze zdjęciem)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_przebieg__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__title",
+                            "name": "title",
+                            "label": "Tytuł sekcji",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__image",
+                            "name": "image",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Zostaw puste, aby użyć zdjęcia dołączonego do motywu."
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_przebieg__steps",
+                            "name": "steps",
+                            "label": "Etapy (numerowane automatycznie)",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj pozycję",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_przebieg__steps__title",
+                                    "name": "title",
+                                    "label": "Tytuł",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_mvn_s_przebieg__steps__text",
+                                    "name": "text",
+                                    "label": "Opis",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_tekst",
+                    "name": "tekst",
+                    "label": "Tekst + zdjęcie (własna sekcja)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_tekst__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__paragraphs",
+                            "name": "paragraphs",
+                            "label": "Akapity",
+                            "type": "repeater",
+                            "layout": "block",
+                            "button_label": "Dodaj akapit",
+                            "sub_fields": [
+                                {
+                                    "key": "field_mvn_s_tekst__paragraphs__text",
+                                    "name": "text",
+                                    "label": "Treść",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__image",
+                            "name": "image",
+                            "label": "Zdjęcie",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "Wybierz zdjęcie z biblioteki. Puste = sekcja bez zdjęcia."
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__image_alt",
+                            "name": "image_alt",
+                            "label": "Opis zdjęcia (alt)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__side",
+                            "name": "side",
+                            "label": "Zdjęcie po stronie",
+                            "type": "select",
+                            "choices": {
+                                "left": "Lewej",
+                                "right": "Prawej"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": "left"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__btn",
+                            "name": "btn",
+                            "label": "Przycisk (puste = bez przycisku)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_tekst__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "layout_mvn_wlasna",
+                    "name": "wlasna",
+                    "label": "Własna sekcja (nagłówek + edytor tekstu)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_mvn_s_wlasna__anchor",
+                            "name": "anchor",
+                            "label": "Kotwica (ID sekcji)",
+                            "type": "text",
+                            "instructions": "Adres sekcji na stronie, np. „oferta” → /#oferta. Małe litery, bez spacji. Używana w menu i w linkach."
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__show",
+                            "name": "show",
+                            "label": "Pokaż sekcję",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__in_menu",
+                            "name": "in_menu",
+                            "label": "Pokaż w menu",
+                            "type": "true_false",
+                            "ui": 1,
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__menu_label",
+                            "name": "menu_label",
+                            "label": "Nazwa w menu",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__tlo",
+                            "name": "tlo",
+                            "label": "Tło sekcji",
+                            "type": "select",
+                            "choices": {
+                                "": "Jasne",
+                                "alt": "Beżowy panel"
+                            },
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 0,
+                            "return_format": "value",
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__eyebrow",
+                            "name": "eyebrow",
+                            "label": "Mały napis",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__title",
+                            "name": "title",
+                            "label": "Tytuł",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__intro",
+                            "name": "intro",
+                            "label": "Wstęp",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__content",
+                            "name": "content",
+                            "label": "Treść",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__btn",
+                            "name": "btn",
+                            "label": "Przycisk (puste = bez przycisku)",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_mvn_s_wlasna__btn_cel",
+                            "name": "btn_cel",
+                            "label": "Przycisk: cel",
+                            "type": "select",
+                            "choices": [],
+                            "allow_null": 0,
+                            "ui": 1,
+                            "allow_custom": 1,
+                            "return_format": "value",
+                            "default_value": "#kontakt",
+                            "instructions": "Wybierz sekcję z listy albo wpisz własny adres (np. https://…)."
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ],
+            "button_label": "Dodaj sekcję",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-landing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1700000000
+}

@@ -1,0 +1,12 @@
+source,target,code,uwagi
+/ksiegowosc/,/uslugi/ksiegowosc/,301,automatycznie przez motyw po przeniesieniu starej strony do szkiców
+/doradztwo-podatkowe/,/uslugi/doradztwo-podatkowe/,301,jw.
+/kadry-i-place/,/uslugi/kadry-i-place/,301,jw.
+/rejestracja-i-obsluga-spolek/,/uslugi/rejestracja-i-obsluga-spolek/,301,jw.
+/obsluga-prawna-firm/,/uslugi/obsluga-prawna-firm/,301,jw.
+/ksiegowosc-dla-transportu/,/uslugi/ksiegowosc-dla-transportu/,301,jw.
+/dotacje-i-zakladanie-firm/,/uslugi/dotacje-i-zakladanie-firm/,301,jw.
+/aktualnosci/,/aktualnosci/,-,bez zmian
+/aktualnosci/{wpis}/,/aktualnosci/{wpis}/,-,bez zmian (struktura bezpośrednich odnośników zostaje)
+/polityka-prywatnosci/,/polityka-prywatnosci/,-,bez zmian
+/#kontakt /#uslugi /#faq /#o-nas /#aktualnosci /#dlaczego-my,-,-,kotwice na stronie głównej zachowane
