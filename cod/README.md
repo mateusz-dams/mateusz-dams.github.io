@@ -2,7 +2,7 @@
 
 Motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego w Radomiu (diagnoza ADHD, terapia i treningi dla dzieci, wsparcie dla dorosłych, coaching i szkolenia dla firm).
 
-**Współtworzenie redesignu i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Współtworzenie przebudowy i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
 
 | | |
 |---|---|
@@ -15,7 +15,7 @@ Motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego 
 | | |
 |---|---|
 | **Cel** | Nowa, czytelniejsza strona centrum psychologicznego, która szybko prowadzi rodzica lub dorosłego do właściwej usługi, z zachowaniem dotychczasowych treści, sklepu i kursów. |
-| **Mój zakres** | Współtworzenie redesignu i motywu WordPress, wdrożenie go na stronie klienta tak, żeby wszystko działało (treści, sklep WooCommerce, kursy LearnDash, formularz, pomiar). Współtworzenie, wdrażanie i testowanie systemu CRM dla centrum. Audyt i optymalizacja kampanii reklamowych pozyskujących nowych klientów. |
+| **Mój zakres** | Współtworzenie przebudowy strony i motywu WordPress, wdrożenie go na stronie klienta tak, żeby wszystko działało (treści, sklep WooCommerce, kursy LearnDash, formularz, pomiar). Współtworzenie, wdrażanie i testowanie systemu CRM dla centrum. Audyt i optymalizacja kampanii reklamowych pozyskujących nowych klientów. |
 | **Weryfikacja** | Testy na komputerze i telefonie w trybie jasnym i ciemnym, formularz kontaktowy, sklep i kursy po wdrożeniu, zdarzenia pomiaru w trybie podglądu Google Tag Manager. |
 | **Efekt** | Nowy wygląd strony na [cod.biz.pl](https://cod.biz.pl/) bez przepisywania treści – usługi, menu, sklep i kursy działają jak wcześniej. |
 

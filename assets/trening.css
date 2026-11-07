@@ -23,3 +23,4 @@
 .trn-mm form button img{width:20px;height:20px}
 @media (prefers-reduced-motion:reduce){.trn-toast{transition:none}}
 @media print{.trn-badge,.trn-toast{display:none}}
+a[aria-disabled="true"]{cursor:default}

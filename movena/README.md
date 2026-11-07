@@ -16,7 +16,7 @@ Motyw WordPress dla Movena Pilates Studio – studia pilatesu na reformerach w R
 | | |
 |---|---|
 | **Cel** | Strona nowego studia (działa od sierpnia 2026), która zbiera zapisy na pierwszy trening z kampanii reklamowych i jest gotowa na przejście z Fitssey na własny CRM. |
-| **Mój zakres** | Współtworzenie strony od podstaw, a potem jej redesign i przeniesienie na własny motyw WordPress oparty na motywie PM Boxing. Dwa landingi pod kampanie Meta Ads, cennik pakietów z grafikami, sekcja voucherów, analityka. Współprowadzenie kampanii Meta Ads. Współtworzenie systemu CRM dla studia (w fazie wdrożenia). |
+| **Mój zakres** | Współtworzenie strony od podstaw, a potem jej przebudowa i przeniesienie na własny motyw WordPress oparty na motywie PM Boxing. Dwa landingi pod kampanie Meta Ads, cennik pakietów z grafikami, sekcja voucherów, analityka. Prowadzenie kampanii Meta Ads: audyty, zmiany budżetów i optymalizacja. Współtworzenie systemu CRM dla studia (w fazie wdrożenia). |
 | **Weryfikacja** | Testy w prawdziwym WordPressie na komputerze i telefonie: formularz (e-mail i zgłoszenie w CRM), zgoda na cookies (bez zgody nic się nie ładuje), przekazywanie parametrów kampanii do linków zapisów, przekierowania 301. |
 | **Efekt** | Strona nowego studia działa od otwarcia w sierpniu 2026 na [movenapilates.pl](https://movenapilates.pl/). Kampanie Meta Ads z landingami dały ok. 100 zgłoszeń w 3 miesiące przy koszcie ok. 23 zł za zgłoszenie. |
 

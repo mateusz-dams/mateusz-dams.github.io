@@ -33,7 +33,7 @@
 
   // Linki prowadzące donikąd
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href="#"], a[href=""], a:not([href])');
+    var a = e.target.closest && e.target.closest('a[href="#"], a[href=""], a:not([href]):not([aria-disabled])');
     if (!a || a.classList.contains('trn-badge')) return;
     if (e.defaultPrevented) return;
     e.preventDefault();
@@ -72,6 +72,13 @@
       }, 0);
     });
   }
+
+  // Escape zamyka otwarte menu mobilne (także w projektach z własnym menu)
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !burger) return;
+    var closeImg = burger.querySelector('.header__hamburger--close');
+    if (closeImg && closeImg.offsetParent !== null) { closeImg.click(); burger.focus(); }
+  });
 
   // Menu mobilne dla projektów, które go nie miały
   if (burger && !document.querySelector('.menu-mobile')) {

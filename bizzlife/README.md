@@ -1,8 +1,8 @@
-# Bizzlife – redesign strony biura rachunkowego
+# Bizzlife – przebudowa strony biura rachunkowego
 
-Redesign strony biura rachunkowego **Bizzlife** z Radomia. Wdrożona wersja działa na [bizzlife.pl](https://bizzlife.pl/). W tym folderze jest wariant tego redesignu przygotowany jako **motyw WordPress** w dwóch wersjach kolorystycznych: ciemnej (czerń i złoto) i jasnej (ciepła biel i złoto).
+Przebudowa strony biura rachunkowego **Bizzlife** z Radomia. Wersja produkcyjna działa na [bizzlife.pl](https://bizzlife.pl/). W tym folderze jest wariant tej przebudowy przygotowany jako **motyw WordPress** w dwóch wersjach kolorystycznych: ciemnej (czerń i złoto) i jasnej (ciepła biel i złoto).
 
-**Współtworzenie redesignu i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Współtworzenie przebudowy i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
 
 | | |
 |---|---|
@@ -16,9 +16,9 @@ Redesign strony biura rachunkowego **Bizzlife** z Radomia. Wdrożona wersja dzia
 | | |
 |---|---|
 | **Cel** | Nowoczesna strona biura rachunkowego, która jasno pokazuje usługi i zachęca do kontaktu, a biuro może ją edytować samo, bez page buildera. |
-| **Mój zakres** | Współtworzenie redesignu i jego wdrożenie na bizzlife.pl. Przygotowanie wariantu jako motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. |
+| **Mój zakres** | Współtworzenie przebudowy strony i jej wdrożenie na bizzlife.pl. Przygotowanie wariantu jako motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. |
 | **Weryfikacja** | Wszystkie 19 podstron sprawdzone w przeglądarce na komputerze i telefonie: brak błędów skryptów, brak przewijania w bok, działające linki i kotwice, formularz w trybie pokazowym. |
-| **Efekt** | Redesign wdrożony na [bizzlife.pl](https://bizzlife.pl/). |
+| **Efekt** | Przebudowa wdrożona na [bizzlife.pl](https://bizzlife.pl/). |
 
 Podgląd motywu to statyczna kopia wygenerowana z motywu uruchomionego na WordPressie. Formularz kontaktowy działa w niej w trybie pokazowym i niczego nie wysyła.
 

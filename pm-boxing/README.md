@@ -16,7 +16,7 @@ Motyw WordPress dla studia boksu PM Boxing Studio w Radomiu (treningi personalne
 | | |
 |---|---|
 | **Cel** | Strona, która zamienia odwiedzających w zapisy na pierwszy trening, i którą właściciel studia edytuje sam, bez programisty. |
-| **Mój zakres** | Współtworzenie strony od podstaw (najpierw HTML, CSS i JS), a potem jej redesign i przeniesienie na własny motyw WordPress z treściami w panelu (Secure Custom Fields). Landing pod kampanie reklamowe, formularz przekazujący zgłoszenia do CRM studia, wdrożenie analityki (Google Tag Manager, GA4, Meta Pixel ze zgodą na cookies), Search Console i Profil firmy w Google. Współtworzenie, wdrażanie i testowanie systemu CRM, z którego studio korzysta na co dzień. |
+| **Mój zakres** | Współtworzenie strony od podstaw (najpierw HTML, CSS i JS), a potem jej przebudowa i przeniesienie na własny motyw WordPress z treściami w panelu (Secure Custom Fields). Landing pod kampanie reklamowe, formularz przekazujący zgłoszenia do CRM studia, wdrożenie analityki (Google Tag Manager, GA4, Meta Pixel ze zgodą na cookies), Search Console i Profil firmy w Google. Współtworzenie, wdrażanie i testowanie systemu CRM, z którego studio korzysta na co dzień. |
 | **Weryfikacja** | Testy na komputerze i telefonie, wysyłka formularza z podglądem zgłoszenia w CRM, sprawdzenie zdarzeń w podglądzie GA4 i Meta, przekierowania 301 ze starych adresów. |
 | **Efekt** | Strona działa na [pmboxingstudio.pl](https://pmboxingstudio.pl/). Właściciel sam zmienia treści w panelu, bez programisty, a zgłoszenia z formularza trafiają od razu do CRM studia. |
 

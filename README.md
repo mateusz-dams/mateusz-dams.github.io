@@ -10,10 +10,10 @@ Każdy projekt ma w swoim folderze opis „Mój udział”: cel, mój zakres, na
 
 | Projekt | Status | Mój udział | Strona | Fragmenty kodu |
 |---|---|---|---|---|
-| [Centrum Odkrywania Doskonałości](cod/) | Wdrożona | Współtworzenie redesignu i motywu WordPress, wdrożenie, CRM | [cod.biz.pl](https://cod.biz.pl/) | [cod/kod-motywu](cod/kod-motywu) |
+| [Centrum Odkrywania Doskonałości](cod/) | Wdrożona | Współtworzenie przebudowy i motywu WordPress, wdrożenie, CRM | [cod.biz.pl](https://cod.biz.pl/) | [cod/kod-motywu](cod/kod-motywu) |
 | [PM Boxing Studio](pm-boxing/) | Wdrożona | Współtworzenie strony, przeniesienie na motyw WordPress, landing, analityka, CRM | [pmboxingstudio.pl](https://pmboxingstudio.pl/) | [pm-boxing/kod-motywu](pm-boxing/kod-motywu) |
-| [Movena Pilates Studio](movena/) | Wdrożona | Współtworzenie strony i motywu WordPress, landingi i kampanie Meta Ads | [movenapilates.pl](https://movenapilates.pl/) | [movena/kod-motywu](movena/kod-motywu) |
-| [Bizzlife](bizzlife/) | Wdrożona (podgląd: wariant jako motyw WordPress) | Współtworzenie redesignu i wdrożenie | [bizzlife.pl](https://bizzlife.pl/) | [bizzlife/kod-motywu](bizzlife/kod-motywu) |
+| [Movena Pilates Studio](movena/) | Wdrożona | Współtworzenie strony i motywu WordPress, landingi i prowadzenie kampanii Meta Ads | [movenapilates.pl](https://movenapilates.pl/) | [movena/kod-motywu](movena/kod-motywu) |
+| [Bizzlife](bizzlife/) | Wdrożona (demo: wariant jako motyw WordPress) | Współtworzenie przebudowy i wdrożenie | [bizzlife.pl](https://bizzlife.pl/) | [bizzlife/kod-motywu](bizzlife/kod-motywu) |
 
 W folderach tych projektów są statyczne kopie stron wygenerowane z motywów (podgląd bez bazy danych, formularze w trybie pokazowym), zrzuty ekranu oraz wybrane fragmenty kodu motywów. Pełne motywy nie są publikowane, a kod nie zawiera kluczy, tokenów, adresów CRM ani identyfikatorów pomiaru.
 
