@@ -6,7 +6,7 @@ Uczeń technikum w Radomiu (kierunek technik informatyk). Współtworzę strony 
 
 ## Strony dla firm
 
-Każdy projekt ma w swoim folderze opis „Mój udział”: cel, mój zakres, najtrudniejszą część i sposób sprawdzenia przed publikacją.
+Każdy projekt ma w swoim folderze opis „Mój udział”: cel, mój zakres, sposób sprawdzenia przed publikacją i efekt.
 
 | Projekt | Status | Mój udział | Strona | Fragmenty kodu |
 |---|---|---|---|---|
