@@ -1,14 +1,17 @@
-# Centrum Odkrywania Doskonałości – motyw WordPress
+# Centrum Odkrywania Doskonałości – redesign i motyw WordPress
 
-Motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego w Radomiu (diagnoza ADHD, terapia i treningi dla dzieci, wsparcie dla dorosłych, coaching i szkolenia dla firm).
+Redesign strony i motyw WordPress dla Centrum Odkrywania Doskonałości, centrum psychologicznego w Radomiu (diagnoza ADHD, terapia i treningi dla dzieci, wsparcie dla dorosłych, coaching i szkolenia dla firm).
 
-**Współtworzenie przebudowy i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Status:** Wdrożona, działa na [cod.biz.pl](https://cod.biz.pl/)  
+**Moja rola:** redesign i motyw WordPress, wdrożenie u klienta (treści, sklep, kursy, formularz, pomiar), projekt, testy i wdrożenie CRM oraz audyt kampanii reklamowych  
+**Narzędzia:** kod pisany z pomocą narzędzi AI (Claude), nadzór i decyzje po stronie właściciela
 
 | | |
 |---|---|
+| **Podstrona w portfolio** | [mateusz-dams.github.io/projekty/cod.html](https://mateusz-dams.github.io/projekty/cod.html) – zlecenie, rozwiązanie i galeria |
 | **Podgląd na żywo** | [mateusz-dams.github.io/cod](https://mateusz-dams.github.io/cod/) – statyczna kopia wygenerowana z motywu |
-| **Strona klienta** | [cod.biz.pl](https://cod.biz.pl/) – motyw w działaniu na produkcji |
-| **Kod** | [kod-motywu](kod-motywu) – wybrane fragmenty kodu motywu (5 plików z opisem), do wglądu |
+| **Strona klienta** | [cod.biz.pl](https://cod.biz.pl/) – motyw w działaniu |
+| **Kod** | [kod-motywu](kod-motywu) – 5 wybranych plików motywu z opisem, do wglądu |
 
 ## Mój udział
 
@@ -48,7 +51,21 @@ Dostępność: nawigacja klawiaturą, link „Przejdź do treści”, poprawne r
 
 ![Podstrona usługi](zrzuty/podstrona-uslugi.jpg)
 
-## Struktura pełnego motywu (niepublikowany w całości)
+## O podglądzie na żywo
+
+Podgląd to statyczny HTML wygenerowany z tego motywu – ten sam kod, ten sam wygląd, bez bazy danych WordPressa. Działa w nim wszystko poza funkcjami serwera:
+
+- formularz sprawdza pola, ale zamiast wysyłki pokazuje informację, że to kopia,
+- nie ma sklepu i kursów (wymagają WooCommerce i LearnDash),
+- nie ma kodów pomiaru klienta, a strona ma znacznik `noindex`, żeby nie konkurowała w wyszukiwarce z oryginałem.
+
+Pełną wersję ze sklepem i kursami zobaczysz na [cod.biz.pl](https://cod.biz.pl/).
+
+## O kodzie
+
+W folderze `kod-motywu` jest 5 wybranych plików z opisem, co pokazuje każdy z nich. Pełny motyw nie jest publikowany. Kod jest wyłącznie do wglądu (zobacz [LICENSE](../LICENSE)) i nie zawiera kluczy, tokenów, adresów CRM ani identyfikatorów pomiaru.
+
+### Struktura pełnego motywu (niepublikowany w całości)
 
 ```
 cod-2026/
@@ -62,21 +79,7 @@ cod-2026/
 └── assets/         css, js, fonty, obrazy
 ```
 
-## O podglądzie na żywo
-
-Podgląd to statyczny HTML wygenerowany z tego motywu – ten sam kod, ten sam wygląd, bez bazy danych WordPressa. Działa w nim wszystko poza funkcjami serwera:
-
-- formularz sprawdza pola, ale zamiast wysyłki pokazuje informację, że to kopia,
-- nie ma sklepu i kursów (wymagają WooCommerce i LearnDash),
-- nie ma kodów pomiaru klienta, a strona ma znacznik `noindex`, żeby nie konkurowała w wyszukiwarce z oryginałem.
-
-Pełną wersję ze sklepem i kursami zobaczysz na [cod.biz.pl](https://cod.biz.pl/).
-
-
-## O kodzie
-
-W folderze `kod-motywu` jest 5 wybranych plików z opisem, co pokazuje każdy z nich. Pełny motyw nie jest publikowany. Kod jest wyłącznie do wglądu (zobacz [LICENSE](../LICENSE)) i nie zawiera kluczy, tokenów, adresów CRM ani identyfikatorów pomiaru.
-
 ---
 
-Projekt wykonany dla Centrum Odkrywania Doskonałości, ul. Żeromskiego 51, 26-600 Radom. Zdjęcia i treści należą do klienta.
+Projekt wykonany dla: Centrum Odkrywania Doskonałości, ul. Żeromskiego 51, 26-600 Radom. Zdjęcia i treści należą do klienta.  
+Mateusz Dams · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)

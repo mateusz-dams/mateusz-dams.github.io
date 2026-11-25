@@ -1,26 +1,25 @@
-# Bizzlife – przebudowa strony biura rachunkowego
+# Bizzlife – redesign i motyw WordPress
 
-Przebudowa strony biura rachunkowego **Bizzlife** z Radomia. Wersja produkcyjna działa na [bizzlife.pl](https://bizzlife.pl/). W tym folderze jest wariant tej przebudowy przygotowany jako **motyw WordPress** w dwóch wersjach kolorystycznych: ciemnej (czerń i złoto) i jasnej (ciepła biel i złoto).
+Redesign strony i motyw WordPress dla biura rachunkowego Bizzlife z Radomia, w dwóch wersjach kolorystycznych: ciemnej (czerń i złoto) i jasnej (ciepła biel i złoto). Motyw został wdrożony u klienta. Później biuro zdecydowało się na inną stronę, dlatego pod adresem bizzlife.pl działa dziś inna wersja niż ta opisana tutaj.
 
-**Współtworzenie przebudowy i wdrożenie:** Mateusz Dams (w zespole) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Status:** Zrealizowana (wdrożona u klienta, obecnie zastąpiona inną stroną)  
+**Moja rola:** projekt strony (redesign), motyw WordPress w dwóch wersjach kolorystycznych, instalacja i wdrożenie u klienta  
+**Narzędzia:** kod pisany z pomocą narzędzi AI (Claude), kluczowe decyzje projektowe po stronie zleceniodawcy
 
 | | |
 |---|---|
-| **Strona w działaniu** | [bizzlife.pl](https://bizzlife.pl/) |
-| **Motyw WordPress – wersja ciemna** | [mateusz-dams.github.io/bizzlife](https://mateusz-dams.github.io/bizzlife/) – statyczna kopia wygenerowana z motywu |
-| **Motyw WordPress – wersja jasna** | [mateusz-dams.github.io/bizzlife/jasna](https://mateusz-dams.github.io/bizzlife/jasna/) |
-| **Kod** | [kod-motywu](kod-motywu) – wybrane fragmenty kodu motywu (5 plików z opisem), do wglądu |
+| **Podstrona w portfolio** | [mateusz-dams.github.io/projekty/bizzlife.html](https://mateusz-dams.github.io/projekty/bizzlife.html) – zlecenie, rozwiązanie i galeria |
+| **Podgląd na żywo** | [wersja ciemna](https://mateusz-dams.github.io/bizzlife/) · [wersja jasna](https://mateusz-dams.github.io/bizzlife/jasna/) – statyczne kopie wygenerowane z motywu |
+| **Kod** | [kod-motywu](kod-motywu) – 5 wybranych plików motywu z opisem, do wglądu |
 
 ## Mój udział
 
 | | |
 |---|---|
 | **Cel** | Nowoczesna strona biura rachunkowego, która jasno pokazuje usługi i zachęca do kontaktu, a biuro może ją edytować samo, bez page buildera. |
-| **Mój zakres** | Współtworzenie przebudowy strony i jej wdrożenie na bizzlife.pl. Przygotowanie wariantu jako motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. |
+| **Mój zakres** | Nowy projekt strony (redesign) i motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. Kod pisałem z pomocą Claude. Instalację i wdrożenie u klienta wykonałem sam. Kluczowe decyzje projektowe należały do zleceniodawcy. |
 | **Weryfikacja** | Wszystkie 19 podstron sprawdzone w przeglądarce na komputerze i telefonie: brak błędów skryptów, brak przewijania w bok, działające linki i kotwice, formularz w trybie pokazowym. |
-| **Efekt** | Przebudowa wdrożona na [bizzlife.pl](https://bizzlife.pl/). |
-
-Podgląd motywu to statyczna kopia wygenerowana z motywu uruchomionego na WordPressie. Formularz kontaktowy działa w niej w trybie pokazowym i niczego nie wysyła.
+| **Efekt** | Motyw wdrożony u klienta. Biuro później zastąpiło go inną stroną, więc ten projekt można dziś obejrzeć w podglądzie z linków powyżej. |
 
 ![Strona główna – wersja ciemna](zrzuty/strona-glowna.jpg)
 
@@ -46,6 +45,15 @@ PHP 8 · WordPress 6.4+ · edytor bloków (`theme.json`) · HTML · CSS bez fram
 
 ![Podstrona usługi](zrzuty/podstrona-uslugi.jpg)
 
+## O podglądzie na żywo
+
+Podgląd to statyczny HTML wygenerowany z tego motywu uruchomionego na WordPressie – ten sam kod i wygląd, bez bazy danych. Formularz kontaktowy sprawdza pola, ale działa w trybie pokazowym i niczego nie wysyła. Kopia ma znacznik `noindex`, żeby nie konkurowała w wyszukiwarce ze stroną biura.
+
 ## O kodzie
 
 W folderze `kod-motywu` jest 5 wybranych plików z opisem, co pokazuje każdy z nich. Pełny motyw nie jest publikowany. Kod jest wyłącznie do wglądu (zobacz [LICENSE](../LICENSE)) i nie zawiera kluczy, tokenów, adresów CRM ani identyfikatorów pomiaru.
+
+---
+
+Projekt wykonany dla: Biuro rachunkowe Bizzlife, Radom. Zdjęcia i treści należą do klienta.  
+Mateusz Dams · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)

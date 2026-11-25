@@ -29,7 +29,8 @@
   badge.className = 'trn-badge';
   badge.href = '../index.html';
   badge.innerHTML = '<b>Projekt treningowy</b> · wróć do portfolio';
-  document.body.appendChild(badge);
+  // W podglądzie na stronie portfolio plakietka jest zbędna
+  if (window.self === window.top) document.body.appendChild(badge);
 
   // Linki prowadzące donikąd
   document.addEventListener('click', function (e) {

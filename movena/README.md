@@ -1,15 +1,18 @@
-# Movena Pilates Studio – motyw WordPress
+# Movena Pilates Studio – strona i motyw WordPress
 
-Motyw WordPress dla Movena Pilates Studio – studia pilatesu na reformerach w Radomiu (zajęcia w grupach do 4 osób).
+Strona i motyw WordPress dla Movena Pilates Studio, studia pilatesu na reformerach w Radomiu (zajęcia w grupach do 4 osób).
 
-**Współtworzenie i wdrożenie:** Mateusz Dams (w zespole z właścicielem studia) · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)
+**Status:** Wdrożona, działa na [movenapilates.pl](https://movenapilates.pl/)  
+**Moja rola:** strona od podstaw, redesign i motyw WordPress, landingi pod reklamy, nowe funkcje CRM zintegrowane ze stroną oraz kampania Meta Ads, w zespole z właścicielem  
+**Narzędzia:** kod pisany ręcznie i z pomocą narzędzi AI (Claude)
 
 | | |
 |---|---|
+| **Podstrona w portfolio** | [mateusz-dams.github.io/projekty/movena.html](https://mateusz-dams.github.io/projekty/movena.html) – zlecenie, rozwiązanie i galeria |
 | **Podgląd na żywo** | [mateusz-dams.github.io/movena](https://mateusz-dams.github.io/movena/) – statyczna kopia wygenerowana z motywu |
-| **Strona w działaniu** | [movenapilates.pl](https://movenapilates.pl/) |
-| **Kod** | [kod-motywu](kod-motywu) – wybrane fragmenty kodu motywu (5 plików z opisem), do wglądu |
+| **Strona klienta** | [movenapilates.pl](https://movenapilates.pl/) – motyw w działaniu |
 | **Landingi pod reklamy** | [Pierwszy trening za 69 zł](https://mateusz-dams.github.io/movena/pierwszy-trening/) · [Program REFORMER 10](https://mateusz-dams.github.io/movena/reformer-10/) |
+| **Kod** | [kod-motywu](kod-motywu) – 5 wybranych plików motywu z opisem, do wglądu |
 
 ## Mój udział
 
@@ -45,3 +48,8 @@ Podgląd to statyczny HTML wygenerowany z tego motywu – ten sam kod i wygląd,
 ## O kodzie
 
 W folderze `kod-motywu` jest 5 wybranych plików z opisem, co pokazuje każdy z nich. Pełny motyw nie jest publikowany. Kod jest wyłącznie do wglądu (zobacz [LICENSE](../LICENSE)) i nie zawiera kluczy, tokenów, adresów CRM ani identyfikatorów pomiaru.
+
+---
+
+Projekt wykonany dla: Movena Pilates Studio, Radom. Zdjęcia i treści należą do klienta.  
+Mateusz Dams · [dams.mateusz@gmail.com](mailto:dams.mateusz@gmail.com) · [portfolio](https://mateusz-dams.github.io/)

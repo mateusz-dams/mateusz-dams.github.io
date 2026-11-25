@@ -1,609 +1,416 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mateusz Dams – portfolio</title>
-<meta name="description" content="Portfolio Mateusza Damsa, ucznia technikum (technik informatyk) z Radomia: strony i motywy WordPress współtworzone dla firm oraz projekty treningowe w HTML, CSS i JavaScript.">
-<meta property="og:title" content="Mateusz Dams – portfolio">
-<meta property="og:description" content="Strony i motywy WordPress współtworzone dla firm z Radomia oraz projekty treningowe w HTML, CSS i JavaScript.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e4bf5'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
-<meta property="og:image" content="https://mateusz-dams.github.io/assets/og-portfolio.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:type" content="website">
-<meta name="color-scheme" content="light dark">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#eef1f5; --surface:#ffffff; --ink:#121620; --muted:#5a6476; --line:#d9dee6;
-    --accent:#2e4bf5; --accent-ink:#ffffff; --soft:#e6eaff; --shadow:0 1px 2px rgba(18,22,32,.06),0 12px 32px rgba(18,22,32,.08);
-    --radius:14px; --ease:cubic-bezier(.2,.7,.2,1);
-  }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#0d1016; --surface:#151a22; --ink:#e9edf3; --muted:#98a2b3; --line:#262d38;
-      --accent:#7d93ff; --accent-ink:#0d1016; --soft:#1b2240; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35);
-    }
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
-
-  /* nagłówek i stopka – te same pozycje menu */
-  .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-  .logo{font-weight:700;font-size:18px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
-  .menu{display:flex;align-items:center;gap:24px}
-  .menu a{font-size:15px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap}
-  .menu a:hover{color:var(--ink)}
-  .menu a.btn{color:var(--accent-ink)}
-
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-family:inherit;font-weight:600;font-size:15px;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{background:color-mix(in srgb,var(--accent) 86%,var(--ink))}
-  .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:var(--surface)}
-  .btn-ghost:hover{border-color:var(--ink)}
-  .menu .btn{height:38px;padding:0 16px}
-
-  /* początek strony */
-  .intro{padding:64px 0 40px}
-  .intro h1{font-size:clamp(44px,6.4vw,84px);line-height:.95;letter-spacing:-.04em;font-weight:600;font-variation-settings:"opsz" 96}
-  .role{margin-top:14px;font-size:clamp(18px,1.9vw,22px);font-weight:600;letter-spacing:-.01em}
-  .intro-lead{margin-top:14px;max-width:52ch;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
-  .facts{list-style:none;display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:16px;font-size:15px;color:var(--muted)}
-  .facts strong{color:var(--ink);font-weight:600}
-  .intro .actions{margin-top:24px}
-  .skip{position:absolute;left:16px;top:-60px;z-index:50;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
-  .skip:focus{top:12px}
-  .badge{font-size:12.5px;font-weight:600;line-height:1;padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-  .badge-live{background:var(--soft);border-color:transparent;color:var(--accent)}
-  .mine{margin-bottom:12px;font-size:15.5px;line-height:1.5}
-  .mine strong{font-weight:600}
-  .intro-lead strong{color:var(--ink);font-weight:600}
-  .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
-  .stats{display:grid;gap:18px;padding-left:32px;border-left:1px solid var(--line)}
-  .stats div{display:flex;flex-direction:column-reverse}
-  .stats dd{font-size:40px;line-height:1;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-  .stats dt{font-size:14.5px;color:var(--muted);margin-top:4px}
-
-  /* przełącznik */
-  .filters{display:inline-flex;gap:4px;padding:4px;margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:999px;max-width:100%;overflow-x:auto}
-  .filter{appearance:none;border:0;background:none;font-family:inherit;font-weight:500;font-size:15px;line-height:1;color:var(--muted);height:40px;padding:0 16px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
-  .filter:hover{color:var(--ink)}
-  .filter[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-  .filter .count{opacity:.6;margin-left:6px;font-variant-numeric:tabular-nums}
-  .filter .short{display:none}
-  .row{scroll-margin-top:76px}
-
-  /* lista + podgląd */
-  .work{padding:0 0 96px}
-  .work-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start;margin-top:28px}
-  .list{list-style:none;border-top:1px solid var(--line)}
-  .item{border-bottom:1px solid var(--line)}
-  .item[hidden]{display:none}
-  .row{appearance:none;width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 16px;padding:20px 16px 20px 20px;background:none;border:0;border-radius:var(--radius);text-align:left;font-family:inherit;color:var(--ink);cursor:pointer;position:relative;transition:background .2s}
-  .row::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .25s var(--ease)}
-  .row:hover{background:color-mix(in srgb,var(--surface) 60%,transparent)}
-  .row[aria-expanded="true"]{background:var(--surface)}
-  .row[aria-expanded="true"]::before{transform:scaleY(1)}
-  .row-name{grid-column:1;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
-  .row-meta{grid-column:1;font-size:14.5px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0}
-  .row-tag{white-space:nowrap}
-  .row-sep{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5}
-  .row-icon{grid-column:2;grid-row:1/3;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .25s var(--ease),background .2s,border-color .2s}
-  .row-icon::before{content:"";position:absolute;inset:0;margin:auto;width:8px;height:8px;border-right:2px solid var(--ink);border-top:2px solid var(--ink);transform:translateX(-1px) rotate(45deg)}
-  .row[aria-expanded="true"] .row-icon{background:var(--accent);border-color:var(--accent)}
-  .row[aria-expanded="true"] .row-icon::before{border-color:var(--accent-ink)}
-
-  .detail{display:none}
-  .js .preview .detail{display:block}
-  .preview{position:sticky;top:88px}
-  .preview .detail{max-height:calc(100vh - 112px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
-  .preview.swap .detail{animation:swap .35s var(--ease)}
-  @keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-  .frame{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .frame-bar{display:flex;align-items:center;justify-content:center;height:40px;padding:0 14px}
-  .frame-addr{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .frame img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
-  .detail-head{padding:24px 28px 22px}
-  .detail-body{padding:22px 28px 28px}
-  .detail-kind{font-size:14px;color:var(--muted)}
-  .detail-title{font-size:30px;line-height:1.15;letter-spacing:-.025em;font-weight:600;margin-top:4px;text-wrap:balance}
-  .detail-desc{color:var(--muted);max-width:62ch}
-  .note{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--soft);font-size:14.5px;line-height:1.5}
-  .note a{color:var(--accent);font-weight:600;white-space:nowrap}
-  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .chips li{font-size:13.5px;font-weight:500;padding:5px 12px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
-  .actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-
-  /* kontakt */
-  .contact{padding:0 0 96px}
-  .contact-box{border-top:1px solid var(--line);padding-top:56px;display:flex;align-items:end;justify-content:space-between;gap:32px;flex-wrap:wrap}
-  .contact h2{font-size:clamp(34px,5vw,56px);line-height:1;letter-spacing:-.035em;font-weight:600;max-width:14ch}
-  .contact p{color:var(--muted);margin-top:14px;max-width:44ch}
-  .contact .actions{margin-top:0}
-
-  .foot{border-top:1px solid var(--line)}
-  .foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;font-size:14px;color:var(--muted)}
-
-  /* telefon i tablet: lista rozwijana, bez podglądu z boku */
-  @media (max-width:980px),(max-height:700px){
-    .work-grid{grid-template-columns:1fr}
-    .intro-grid{grid-template-columns:1fr;gap:32px}
-    .stats{grid-auto-flow:column;justify-content:start;gap:40px;padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}
-    .preview{display:none}
-    .js .item .row[aria-expanded="true"] + .detail{display:block;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);animation:swap .3s var(--ease)}
-    .row[aria-expanded="true"] .row-icon{transform:rotate(90deg)}
-  }
-  @media (min-width:981px) and (min-height:701px){
-    .js .list .detail{display:none}
-    .js .work-grid{align-items:start;margin-top:0}
-    .js .work{padding-top:16px;scroll-margin-top:64px}
-    
-    .js .preview{position:sticky;top:88px;height:calc(100vh - 112px);max-height:880px;min-height:0}
-    .js .preview .detail{max-height:100%;display:flex;flex-direction:column;overflow-y:auto}
-    .js .preview .detail-head,.js .preview .detail-body{flex:0 0 auto}
-    .js .preview .frame{flex:0 1 auto;min-height:170px;overflow:hidden}
-  }
-  /* bez JavaScriptu wszystko widać od razu */
-  html:not(.js) .detail{display:block;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-  html:not(.js) .filters,html:not(.js) .preview,html:not(.js) .row-icon{display:none}
-
-  @media (max-width:640px){
-    .wrap{padding:0 16px}
-    .menu{gap:16px}
-    .intro{padding:56px 0 40px}
-    .stats{gap:28px}
-    .stats dd{font-size:34px}
-    .filters{display:flex;width:100%}
-    .filter{flex:1 1 0;padding:0 8px;font-size:14.5px}
-    .filter .long{display:none}
-    .filter .short{display:inline}
-    .list .detail-title{display:none}
-    .row{padding:18px 12px 18px 16px}
-    .row-name{font-size:20px}
-    .detail-head{padding:20px 20px 18px}
-    .detail-body{padding:18px 20px 22px}
-    .detail-title{font-size:24px}
-    .actions .btn{flex:1 1 0}
-    .intro .actions .btn{flex:1 1 auto}
-    .foot .wrap{flex-direction:column;justify-content:center;padding:20px 16px;text-align:center}
-  }
-  @media (max-width:380px){
-    .menu{gap:12px}
-    .menu a{font-size:14px}
-    .menu .btn{padding:0 12px}
-    .logo{font-size:16px}
-    .btn{padding:0 14px;font-size:14px}
-    .filter{padding:0 4px;font-size:13px}
-    .filter .count{margin-left:4px}
-  }
-  @media (max-width:350px){
-    .wrap{padding:0 12px}
-    .menu{gap:10px}
-    .menu a{font-size:13.5px}
-    .menu .btn{padding:0 10px;height:34px}
-    .logo{font-size:15px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation:none!important;transition:none!important}
-  }
-</style>
-<script>document.documentElement.classList.add('js')</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mateusz Dams – strony WWW, serwis komputerowy, praca z klientem</title>
+    <meta name="description" content="Portfolio Mateusza Damsa, technika informatyka z Radomia: strony WWW dla firm, praktyki w serwisie komputerowym, system CRM i praca z klientem.">
+    <meta property="og:title" content="Mateusz Dams – portfolio">
+    <meta property="og:description" content="Strony WWW dla firm z Radomia, serwis komputerowy i praca z klientem.">
+    <meta property="og:image" content="https://mateusz-dams.github.io/assets/og-portfolio.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f4f6fb">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/bricolage-regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="assets/fonts/bricolage-bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <!-- Znacznik "js" od razu, żeby elementy do animacji nie mignęły przed ukryciem -->
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="js/main.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip" href="#projekty">Przejdź do projektów</a>
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">Mateusz Dams</a>
-    <nav class="menu" aria-label="Menu">
-      <a href="#projekty">Projekty</a>
-      <a href="cv/CV-Mateusz-Dams.pdf">CV</a>
-      <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
-    </nav>
-  </div>
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a class="header__logo" href="#" aria-label="Mateusz Dams – początek strony">MD</a>
+        <p class="header__status" aria-hidden="true"><span class="header__dot"></span>Szukam stażu lub pracy</p>
+        <nav class="header__menu" id="menu" aria-label="Menu">
+            <a class="header__link" href="#o-mnie">O mnie</a>
+            <a class="header__link" href="#projekty">Projekty</a>
+            <a class="header__link" href="#doswiadczenie">Doświadczenie</a>
+            <a class="header__link" href="#w-czym-pracuje">W czym pracuję</a>
+            <a class="btn btn--line btn--small" href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
 </header>
 
 <main>
-  <section class="intro">
-    <div class="wrap">
-      <div class="intro-grid">
-        <div>
-          <h1>Mateusz Dams</h1>
-          <p class="role">Strony WordPress i&nbsp;front-end · uczeń technikum, kierunek technik informatyk</p>
-          <p class="intro-lead">Współtworzę strony i&nbsp;motywy WordPress dla firm z&nbsp;Radomia: od kodu, przez wdrożenie, po analitykę i&nbsp;integrację z&nbsp;CRM. Szukam pracy lub stażu w&nbsp;IT, serwisie lub doradztwie technicznym.</p>
-          <ul class="facts">
-            <li><strong>Radom</strong> – praca stacjonarna</li>
-            <li><strong>Praca zdalna</strong></li>
-            <li>Dostępność: <strong>pon–pt 16:00–21:00, <span style="white-space:nowrap">w&nbsp;wakacje pełny etat</span></strong></li>
-            <li>tel. <a href="tel:+48505309362"><strong>505 309 362</strong></a></li>
-          </ul>
-          <div class="actions">
-            <a class="btn btn-primary" href="#projekty">Zobacz projekty</a>
-            <a class="btn btn-ghost" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV (PDF)</a>
-            <a class="btn btn-ghost" href="https://github.com/mateusz-dams" target="_blank" rel="noopener">GitHub<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a>
-          </div>
-        </div>
-        <dl class="stats">
-          <div><dt>strony dla firm</dt><dd>4</dd></div>
-          <div><dt>projektów treningowych</dt><dd>6</dd></div>
-          <div><dt>lata nauki programowania</dt><dd>4</dd></div>
-        </dl>
-      </div>
-      <div class="filters" role="group" aria-label="Pokaż projekty">
-        <button class="filter" type="button" data-filter="all" aria-pressed="true">Wszystkie<span class="count">10</span></button>
-        <button class="filter" type="button" data-filter="wp" aria-pressed="false"><span class="long">Motywy WordPress</span><span class="short">WordPress</span><span class="count">4</span></button>
-        <button class="filter" type="button" data-filter="html" aria-pressed="false"><span class="long">Strony HTML i&nbsp;CSS</span><span class="short">HTML i&nbsp;CSS</span><span class="count">6</span></button>
-      </div>
-    </div>
-  </section>
+    <!-- Początek strony -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <p class="status reveal"><span class="status__dot" aria-hidden="true"></span>Szukam stażu lub pracy popołudniowej</p>
+                <div class="hero__name">
+                    <p class="hero__hello reveal">Cześć, jestem</p>
+                    <h1 class="hero__title reveal" id="hero-title">Mateusz Dams</h1>
+                </div>
+                <div class="hero__intro">
+                    <p class="hero__role reveal">Strony WWW, serwis komputerowy i&nbsp;praca z&nbsp;klientem</p>
+                    <p class="hero__lead reveal">Uczeń IV klasy technikum informatycznego w&nbsp;Radomiu. Buduję strony i&nbsp;system CRM dla lokalnych firm, a&nbsp;na praktykach w&nbsp;serwisie naprawiałem i&nbsp;składałem komputery dla klientów.</p>
+                    <div class="hero__buttons reveal">
+                        <a class="btn btn--fill" href="#projekty">Zobacz projekty</a>
+                        <a class="btn btn--line" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV (PDF)</a>
+                    </div>
+                </div>
+                <ul class="hero__facts reveal">
+                    <li class="pill">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                        <span><strong>Radom</strong>, stacjonarnie lub zdalnie</span>
+                    </li>
+                    <li class="pill">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        <span><strong>pon–pt 16:00–21:00</strong>, w&nbsp;wakacje pełny etat</span>
+                    </li>
+                </ul>
+            </div>
 
-  <section class="work" id="projekty" aria-labelledby="projekty-h" tabindex="-1">
-    <div class="wrap">
-      <h2 class="sr-only" id="projekty-h">Projekty</h2>
-      <div class="work-grid">
-        <ul class="list">
-        <li class="item" data-kind="wp">
-          <button class="row" type="button" aria-expanded="true" aria-controls="d-cod" data-target="d-cod">
-            <span class="row-name">Centrum Odkrywania Doskonałości</span>
-            <span class="row-meta"><span class="badge badge-live">Wdrożona</span><span class="row-tag">Psychologia</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-cod">
-            <div class="detail-head">
-              <p class="detail-kind">Motyw WordPress – psychologia, 15 podstron</p>
-              <h3 class="detail-title">Centrum Odkrywania Doskonałości</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://cod.biz.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Centrum Odkrywania Doskonałości (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/cod/kod-motywu" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Centrum Odkrywania Doskonałości na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
+            <div class="portrait reveal">
+                <div class="portrait__frame">
+                    <img src="assets/img/o-mnie/zdjecie-gora.webp" alt="Mateusz Dams w zimowy wieczór" width="720" height="900" fetchpriority="high">
+                </div>
+                <p class="float-card float-card--top">
+                    <span class="float-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg></span>
+                    <span><strong>3 strony</strong> działają u&nbsp;klientów</span>
+                </p>
+                <p class="float-card float-card--bottom">
+                    <span class="float-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span>
+                    <span><strong>30+ komputerów</strong> naprawionych na praktykach</span>
+                </p>
             </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">cod.biz.pl</span></div>
-              <img src="assets/cod.jpg" alt="Strona główna Centrum Odkrywania Doskonałości" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="mine"><strong>Mój udział:</strong> Współtworzenie przebudowy i&nbsp;motywu, wdrożenie na stronie klienta, współtworzenie i&nbsp;testowanie systemu CRM.</p>
-              <p class="detail-desc">Motyw WordPress dla centrum psychologicznego w&nbsp;Radomiu: kreator „Od czego zacząć?”, który w&nbsp;dwóch pytaniach podpowiada usługę, oferta w&nbsp;zakładkach ze szczegółami w&nbsp;oknie, zespół, opinie, formularz kontaktowy, tryb ciemny i&nbsp;integracja ze sklepem WooCommerce oraz kursami LearnDash.</p>
-              
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Kreator usług</li><li>Tryb ciemny</li><li>WooCommerce i&nbsp;LearnDash</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="wp">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-pm-boxing" data-target="d-pm-boxing">
-            <span class="row-name">PM Boxing Studio</span>
-            <span class="row-meta"><span class="badge badge-live">Wdrożona</span><span class="row-tag">Sport</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-pm-boxing">
-            <div class="detail-head">
-              <p class="detail-kind">Motyw WordPress – sport, 5 podstron</p>
-              <h3 class="detail-title">PM Boxing Studio</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://pmboxingstudio.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> PM Boxing Studio (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/pm-boxing/kod-motywu" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> PM Boxing Studio na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">pmboxingstudio.pl</span></div>
-              <img src="assets/pm-boxing.jpg" alt="Strona główna PM Boxing Studio" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="mine"><strong>Mój udział:</strong> Współtworzenie strony od podstaw, przebudowa i&nbsp;przeniesienie na własny motyw, landing pod reklamy, analityka i&nbsp;integracja z&nbsp;CRM.</p>
-              <p class="detail-desc">Motyw WordPress dla studia boksu w&nbsp;Radomiu z&nbsp;treścią edytowaną w&nbsp;panelu: 17 sekcji strony głównej z&nbsp;menu budowanym z&nbsp;kotwic, cennik w&nbsp;zakładkach, grafik zajęć, landing pod reklamy „Trening wdrożeniowy”, formularz przekazujący zgłoszenia do własnego CRM, zgoda na cookies z&nbsp;GA4 i&nbsp;Meta Pixel oraz dane strukturalne.</p>
-              
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Landing pod reklamy</li><li>Integracja z&nbsp;CRM</li><li>Cennik w&nbsp;zakładkach</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="wp">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-movena" data-target="d-movena">
-            <span class="row-name">Movena Pilates Studio</span>
-            <span class="row-meta"><span class="badge badge-live">Wdrożona</span><span class="row-tag">Pilates</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-movena">
-            <div class="detail-head">
-              <p class="detail-kind">Motyw WordPress – pilates, 7 podstron</p>
-              <h3 class="detail-title">Movena Pilates Studio</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://movenapilates.pl/" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Movena Pilates Studio (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/movena/kod-motywu" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Movena Pilates Studio na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">movenapilates.pl</span></div>
-              <img src="assets/movena.jpg" alt="Strona główna Movena Pilates Studio" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="mine"><strong>Mój udział:</strong> Współtworzenie strony i&nbsp;motywu, landingi oraz prowadzenie kampanii Meta Ads (ok. 100 zgłoszeń w&nbsp;3 miesiące).</p>
-              <p class="detail-desc">Motyw WordPress dla studia pilatesu na reformerach: cennik pakietów z&nbsp;grafikami, dwa landingi pod kampanie Meta Ads (pierwszy trening za 69 zł i&nbsp;program REFORMER 10), zapisy i&nbsp;płatności przez Fitssey z&nbsp;przygotowanym przełączeniem na własny CRM, vouchery, mapa ładowana po kliknięciu i&nbsp;pełne strony prawne.</p>
-              
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>2 landingi reklamowe</li><li>Zapisy online</li><li>Vouchery</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="wp">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-bizzlife" data-target="d-bizzlife">
-            <span class="row-name">Bizzlife</span>
-            <span class="row-meta"><span class="badge badge-live">Wdrożona</span><span class="row-tag">Księgowość</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-bizzlife">
-            <div class="detail-head">
-              <p class="detail-kind">Motyw WordPress – księgowość, 19 podstron</p>
-              <h3 class="detail-title">Bizzlife</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://bizzlife.pl/" target="_blank" rel="noopener">Strona produkcyjna<span class="sr-only"> Bizzlife (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="bizzlife/index.html" target="_blank" rel="noopener">Demo motywu<span class="sr-only"> Bizzlife (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/bizzlife/kod-motywu" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Bizzlife na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/bizzlife · demo motywu</span></div>
-              <img src="assets/bizzlife.jpg" alt="Strona główna biura rachunkowego Bizzlife w wersji ciemnej" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              <p class="mine"><strong>Mój udział:</strong> Współtworzenie przebudowy strony i&nbsp;jej wdrożenie na bizzlife.pl.</p>
-              <p class="detail-desc">Przebudowa strony biura rachunkowego w&nbsp;Radomiu. W&nbsp;portfolio wariant przygotowany jako motyw WordPress bez page buildera: 7 usług z&nbsp;podstronami, FAQ w&nbsp;tematach, aktualności z&nbsp;filtrami, formularz z&nbsp;ochroną przed spamem i&nbsp;zapisem zgłoszeń w&nbsp;panelu oraz treści startowe tworzone automatycznie.</p>
-              <p class="note">Strona produkcyjna działa na bizzlife.pl. Zrzut i&nbsp;demo pokazują wariant tej przebudowy przygotowany jako motyw WordPress (formularz w&nbsp;trybie pokazowym). <a href="bizzlife/jasna/index.html" target="_blank" rel="noopener">Zobacz wersję jasną demo<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Dwie wersje kolorystyczne</li><li>Bez page buildera</li><li>Treści startowe</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-topblind" data-target="d-topblind">
-            <span class="row-name">Topblind</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">E-commerce</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-topblind">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – e-commerce, 9 podstron</p>
-              <h3 class="detail-title">Topblind</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="topblind/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Topblind (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/topblind" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Topblind na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/topblind</span></div>
-              <img src="assets/topblind.jpg" alt="Strona główna sklepu Topblind" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Sklep z&nbsp;plisami i&nbsp;roletami na wymiar: oferta, karta produktu z&nbsp;galerią, blog z&nbsp;poradnikami, regulamin i&nbsp;widok formularza darmowego pomiaru.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="https://roletki24.pl/" target="_blank" rel="noopener">Oryginał: roletki24.pl<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Karta produktu</li><li>Blog z&nbsp;poradnikami</li><li>Slider</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-silvermedica" data-target="d-silvermedica">
-            <span class="row-name">Silver Medica</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">Klinika medyczna</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-silvermedica">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – klinika medyczna, 9 podstron</p>
-              <h3 class="detail-title">Silver Medica</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="silvermedica/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Silver Medica (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/silvermedica" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Silver Medica na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/silvermedica</span></div>
-              <img src="assets/silvermedica.jpg" alt="Strona główna kliniki Silver Medica" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Strona kliniki dla całej rodziny z&nbsp;ofertą specjalizacji, cennikiem, artykułami, FAQ i&nbsp;promocjami zabiegów.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="https://silver-medica.pl/" target="_blank" rel="noopener">Oryginał: silver-medica.pl<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Cennik</li><li>FAQ</li><li>Karuzela promocji</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-azs" data-target="d-azs">
-            <span class="row-name">Portal leczenia AZS</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">Medycyna</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-azs">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – medycyna, 13 podstron</p>
-              <h3 class="detail-title">Portal leczenia AZS</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="azs/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Portal leczenia AZS (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/azs" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Portal leczenia AZS na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/azs</span></div>
-              <img src="assets/azs.jpg" alt="Strona główna portalu o leczeniu AZS" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Serwis o&nbsp;refundowanym leczeniu atopowego zapalenia skóry z&nbsp;bazą specjalistów i&nbsp;ośrodków, aktualnościami, wydarzeniami i&nbsp;strefą dla lekarzy.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="https://azswpolsce.pl/" target="_blank" rel="noopener">Oryginał: azswpolsce.pl<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Baza specjalistów</li><li>Widok rejestracji</li><li>Wydarzenia</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-austrowaren" data-target="d-austrowaren">
-            <span class="row-name">Austrowaren</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">Przemysł</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-austrowaren">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – przemysł, 5 podstron</p>
-              <h3 class="detail-title">Austrowaren</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="austrowaren/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Austrowaren (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/austrowaren" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Austrowaren na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/austrowaren</span></div>
-              <img src="assets/austrowaren.jpg" alt="Strona główna Austrowaren" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Strona firmy projektującej systemy odbioru ścinki papieru, tektury i&nbsp;folii, z&nbsp;ofertą, realizacjami i&nbsp;kontaktem.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="https://austrowaren.com.pl/" target="_blank" rel="noopener">Oryginał: austrowaren.com.pl<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Realizacje</li><li>Slider</li><li>Menu mobilne</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-leadtrust" data-target="d-leadtrust">
-            <span class="row-name">Leadtrust Group</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">HR i&nbsp;rekrutacja</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-leadtrust">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – hr i&nbsp;rekrutacja, 10 podstron</p>
-              <h3 class="detail-title">Leadtrust Group</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="leadtrust/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Leadtrust Group (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/leadtrust" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Leadtrust Group na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/leadtrust</span></div>
-              <img src="assets/leadtrust.jpg" alt="Strona główna Leadtrust" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Strona agencji pracy z&nbsp;osobnymi ścieżkami dla pracowników i&nbsp;pracodawców, ofertami pracy, widokiem formularza aplikacji i&nbsp;strefą pracownika.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="http://www.leadtrust.eu/" target="_blank" rel="noopener">Oryginał: leadtrust.eu<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Oferty pracy</li><li>Widok formularza aplikacji</li><li>Strefa pracownika</li></ul>
-            </div>
-          </div>
-        </li>
-        <li class="item" data-kind="html">
-          <button class="row" type="button" aria-expanded="false" aria-controls="d-staxx" data-target="d-staxx">
-            <span class="row-name">Staxx Polska</span>
-            <span class="row-meta"><span class="badge">Ćwiczenie</span><span class="row-tag">Katalog produktów</span></span>
-            <span class="row-icon" aria-hidden="true"></span>
-          </button>
-          <div class="detail" id="d-staxx">
-            <div class="detail-head">
-              <p class="detail-kind">Projekt treningowy: strona HTML i&nbsp;CSS – katalog produktów, 4 podstrony</p>
-              <h3 class="detail-title">Staxx Polska</h3>
-              <div class="actions">
-                <a class="btn btn-primary" href="staxx/index.html" target="_blank" rel="noopener">Zobacz stronę<span class="sr-only"> Staxx Polska (otworzy się w&nbsp;nowej karcie)</span></a>
-                <a class="btn btn-ghost" href="https://github.com/mateusz-dams/mateusz-dams.github.io/tree/main/staxx" target="_blank" rel="noopener">Zobacz kod<span class="sr-only"> Staxx Polska na GitHubie (otworzy się w&nbsp;nowej karcie)</span></a>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="frame-bar"><span class="frame-addr">mateusz-dams.github.io/staxx</span></div>
-              <img src="assets/staxx.jpg" alt="Strona główna Staxx Polska" width="960" height="600" loading="lazy">
-            </div>
-            <div class="detail-body">
-              
-              <p class="detail-desc">Katalog producenta wózków paletowych z&nbsp;interfejsem wyszukiwarki, rozbudowanym menu kategorii, listą produktów i&nbsp;kartą produktu.</p>
-              <p class="note">Projekt treningowy: kodowanie HTML, CSS i&nbsp;JS na podstawie projektu graficznego agencji Ajmer. <a href="https://staxx.pl/" target="_blank" rel="noopener">Oryginał: staxx.pl<span class="sr-only"> (otworzy się w&nbsp;nowej karcie)</span></a></p>
-              <ul class="chips" aria-label="Najważniejsze elementy"><li>Lista produktów</li><li>Menu kategorii</li><li>Interfejs wyszukiwarki</li></ul>
-            </div>
-          </div>
-        </li>
-        </ul>
-        <div class="preview" id="podglad" aria-live="polite"></div>
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <section class="contact" id="kontakt">
-    <div class="wrap">
-      <div class="contact-box">
-        <div>
-          <h2>Porozmawiajmy o&nbsp;pracy w&nbsp;Twoim zespole</h2>
-          <p>Chętnie opowiem, jak powstawały te projekty i&nbsp;co mogę wnieść do Twojej firmy.</p>
+    <!-- Pasek technologii -->
+    <section class="technologies" aria-label="Technologie, z którymi pracuję">
+        <div class="container">
+            <div class="technologies__box">
+                <div class="technologies__track">
+                    <ul class="technologies__list" id="technologies-list">
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" width="30" height="30">HTML</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/css3/css3-original.svg" alt="" width="30" height="30">CSS</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg" alt="" width="30" height="30">JavaScript</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/php/php-original.svg" alt="" width="30" height="30">PHP</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/wordpress/wordpress-plain.svg" alt="" width="30" height="30">WordPress</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/sqlite/sqlite-original.svg" alt="" width="30" height="30">SQLite</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/git/git-original.svg" alt="" width="30" height="30">Git</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/windows11/windows11-original.svg" alt="" width="30" height="30">Windows</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/linux/linux-original.svg" alt="" width="30" height="30">Linux</li>
+                        <li class="technologies__item"><img src="assets/img/logo/meta.webp" alt="" width="128" height="72">Meta Ads</li>
+                        <li class="technologies__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/google/google-original.svg" alt="" width="30" height="30">Google Ads</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">dams.mateusz@gmail.com</a>
-          <a class="btn btn-ghost" href="tel:+48505309362">505 309 362</a>
-          <a class="btn btn-ghost" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV</a>
+    </section>
+
+    <!-- O mnie -->
+    <section class="section--pt section--pb about-me" id="o-mnie" aria-labelledby="about-me-title">
+        <div class="container about-me__grid">
+            <figure class="about-me__photo reveal">
+                <img src="assets/img/o-mnie/zdjecie-cale.webp" alt="Mateusz Dams na schodach przed kościołem w słoneczny dzień" width="900" height="1200" loading="lazy">
+            </figure>
+            <div class="about-me__text reveal">
+                <h2 class="section__title" id="about-me-title">O mnie</h2>
+                <span class="about-me__line" aria-hidden="true"></span>
+                <div class="about-me__body">
+                    <p>Cześć, jestem Mateusz. Mam 18 lat, mieszkam w&nbsp;Radomiu i&nbsp;chodzę do 4 klasy technikum w&nbsp;Zespole Szkół Elektronicznych im. Bohaterów Westerplatte. Technik informatyk to mój zawód i&nbsp;zainteresowanie, a&nbsp;po szkole jeżdżę na rowerze i&nbsp;słucham muzyki.</p>
+                    <p>Projektuję i&nbsp;koduję strony WWW od podstaw, robię redesigny i&nbsp;wdrażam systemy CRM dla firm. Dzięki praktykom w&nbsp;serwisie mam też doświadczenie w&nbsp;diagnostyce i&nbsp;naprawie sprzętu komputerowego. Najlepiej czuję się tam, gdzie trzeba zrozumieć problem klienta i&nbsp;rozwiązać go technicznie. Od 2025 roku współpracuję ze studiami PM Boxing i&nbsp;Movena Pilates w&nbsp;Radomiu.</p>
+                </div>
+            </div>
+            <aside class="about-me__side reveal" aria-labelledby="about-side-title">
+                <h3 id="about-side-title">Szukam pracy</h3>
+                <p>Staż, zlecenie albo praca popołudniowa: strony WWW, serwis komputerowy, sieci LAN lub sprzedaż sprzętu.</p>
+                <a class="link-arrow" href="#kontakt">Napisz do mnie</a>
+            </aside>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Projekty -->
+    <section class="section--pt section--pb section--white projects" id="projekty" aria-labelledby="projects-title">
+        <div class="container">
+            <header class="section__header reveal">
+                <h2 class="section__title" id="projects-title">Projekty</h2>
+                <p class="section__desc">Strony dla firm z&nbsp;Radomia. Każda ma swoją podstronę z&nbsp;opisem, galerią i&nbsp;tym, co zrobiłem.</p>
+            </header>
+
+            <article class="project project--featured reveal">
+                <a class="browser" href="https://pmboxingstudio.pl/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                    <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">pmboxingstudio.pl</span></span>
+                    <img class="browser__shot" src="assets/img/projekty/pm-boxing.webp" alt="" width="1440" height="900" loading="lazy">
+                </a>
+                <span class="project__phone" aria-hidden="true">
+                    <span class="project__island"></span>
+                    <img src="assets/img/pm-boxing/telefon-start.webp" alt="" width="603" height="1218" loading="lazy">
+                </span>
+                <p class="float-card float-card--project">
+                    <span class="float-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h3M8 16h6"/></svg></span>
+                    <span><strong>CRM studia</strong> grafik, karnety, płatności</span>
+                </p>
+                <div class="project__info">
+                    <p class="project__meta"><span class="tag tag--live">Działa</span>Studio boksu · od 2025</p>
+                    <h3 class="project__title">PM Boxing Studio</h3>
+                    <p class="project__desc">Ręcznie zakodowana strona w&nbsp;HTML, CSS i&nbsp;JS, a&nbsp;potem redesign i&nbsp;przeniesienie na własny motyw WordPress z&nbsp;treściami edytowanymi w&nbsp;panelu. Razem z&nbsp;właścicielem testuję i&nbsp;ulepszam CRM studia, do tego audyt i&nbsp;optymalizacja kampanii reklamowych.</p>
+                    <ul class="chips" aria-label="Technologie">
+                        <li class="chip">WordPress</li><li class="chip">PHP</li><li class="chip">JavaScript</li><li class="chip">Stripe</li><li class="chip">GA4</li>
+                    </ul>
+                    <div class="project__buttons">
+                        <a class="btn btn--fill" href="projekty/pm-boxing.html">Dowiedz się więcej</a>
+                        <a class="btn btn--line" href="https://pmboxingstudio.pl/" target="_blank" rel="noopener">Strona na żywo<span class="sr-only"> (nowa karta)</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project project--reverse reveal">
+                <a class="browser" href="https://movenapilates.pl/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                    <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">movenapilates.pl</span></span>
+                    <img class="browser__shot" src="assets/img/projekty/movena.webp" alt="" width="1440" height="900" loading="lazy">
+                </a>
+                <p class="float-card float-card--project">
+                    <span class="float-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h3l6 4V6L7 10H4Z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg></span>
+                    <span><strong>~100 zgłoszeń</strong> z&nbsp;kampanii Meta Ads i&nbsp;landing page</span>
+                </p>
+                <div class="project__info">
+                    <p class="project__meta"><span class="tag tag--live">Działa</span>Studio pilatesu · 2026</p>
+                    <h3 class="project__title">Movena Pilates Studio</h3>
+                    <p class="project__desc">Strona zakodowana ręcznie przed otwarciem studia, a&nbsp;po otwarciu redesign i&nbsp;przeniesienie na autorski motyw WordPress z&nbsp;treściami edytowanymi w&nbsp;panelu (SCF). Landing page pod reklamy, nowe funkcje CRM zintegrowane ze stroną i&nbsp;kampania, która w&nbsp;3 miesiące przyniosła około 100 zgłoszeń.</p>
+                    <ul class="chips" aria-label="Technologie">
+                        <li class="chip">WordPress</li><li class="chip">Landing page</li><li class="chip">Meta Ads</li><li class="chip">GA4</li>
+                    </ul>
+                    <div class="project__buttons">
+                        <a class="btn btn--fill" href="projekty/movena.html">Dowiedz się więcej</a>
+                        <a class="btn btn--line" href="https://movenapilates.pl/" target="_blank" rel="noopener">Strona na żywo<span class="sr-only"> (nowa karta)</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project reveal">
+                <a class="browser" href="https://cod.biz.pl/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                    <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">cod.biz.pl</span></span>
+                    <img class="browser__shot" src="assets/img/projekty/cod.webp" alt="" width="1440" height="900" loading="lazy">
+                </a>
+                <p class="float-card float-card--project">
+                    <span class="float-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.5 9h-11z"/><circle cx="9" cy="20" r="1.3"/><circle cx="16" cy="20" r="1.3"/><path d="M8 7l1-3h6l1 3"/></svg></span>
+                    <span><strong>Sklep i&nbsp;kursy</strong> działały bez przerwy</span>
+                </p>
+                <div class="project__info">
+                    <p class="project__meta"><span class="tag tag--live">Działa</span>Centrum psychologiczne · zlecenie</p>
+                    <h3 class="project__title">Centrum Odkrywania Doskonałości</h3>
+                    <p class="project__desc">Redesign strony i&nbsp;przeniesienie na nowy autorski motyw WordPress z&nbsp;trybem ciemnym i&nbsp;jasnym, bez utraty sklepu WooCommerce i&nbsp;kursów LearnDash. Do tego projekt, testy i&nbsp;wdrożenie CRM oraz audyt kampanii reklamowych.</p>
+                    <ul class="chips" aria-label="Technologie">
+                        <li class="chip">WordPress</li><li class="chip">WooCommerce</li><li class="chip">LearnDash</li><li class="chip">GTM</li>
+                    </ul>
+                    <div class="project__buttons">
+                        <a class="btn btn--fill" href="projekty/cod.html">Dowiedz się więcej</a>
+                        <a class="btn btn--line" href="https://cod.biz.pl/" target="_blank" rel="noopener">Strona na żywo<span class="sr-only"> (nowa karta)</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project project--reverse reveal">
+                <a class="browser" href="bizzlife/index.html" tabindex="-1" aria-hidden="true">
+                    <span class="browser__bar"><i></i><i></i><i></i><span class="browser__url">Bizzlife – podgląd projektu</span></span>
+                    <img class="browser__shot" src="assets/img/projekty/bizzlife.webp" alt="" width="1440" height="900" loading="lazy">
+                </a>
+                <div class="project__info">
+                    <p class="project__meta"><span class="tag">Zrealizowana</span>Biuro rachunkowe · zlecenie</p>
+                    <h3 class="project__title">Bizzlife</h3>
+                    <p class="project__desc">Redesign strony i&nbsp;przeniesienie z&nbsp;plików statycznych na dwa autorskie motywy WordPress, ciemny i&nbsp;jasny, z&nbsp;treściami edytowanymi w&nbsp;Secure Custom Fields. Instalację i&nbsp;wdrożenie u&nbsp;klienta wykonałem sam. Biuro później zmieniło stronę na inną, dlatego pokazuję ją w&nbsp;podglądzie.</p>
+                    <ul class="chips" aria-label="Technologie">
+                        <li class="chip">WordPress</li><li class="chip">PHP</li><li class="chip">CSS</li>
+                    </ul>
+                    <div class="project__buttons">
+                        <a class="btn btn--fill" href="projekty/bizzlife.html">Dowiedz się więcej</a>
+                        <a class="btn btn--line" href="bizzlife/index.html">Podgląd</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Strony treningowe -->
+    <section class="section--pt section--pb practice-sites" id="cwiczenia" aria-labelledby="practice-sites-title">
+        <div class="container">
+            <header class="section__header reveal">
+                <h2 class="section__title" id="practice-sites-title">Strony treningowe</h2>
+                <p class="section__desc">Kodowałem je w&nbsp;HTML, CSS i&nbsp;JavaScript na podstawie projektów graficznych agencji Ajmer. Projekt i&nbsp;treści nie są moje, moja praca to kod.</p>
+            </header>
+            <div class="slider-nav">
+                <p class="slider-nav__counter" aria-live="polite"><span data-slider-current>1</span> / <span data-slider-total>6</span></p>
+                <button class="slider-nav__btn" type="button" data-slider-prev aria-label="Poprzednia strona"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+                <button class="slider-nav__btn" type="button" data-slider-next aria-label="Następna strona"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+            <ul class="practice-sites__list reveal" id="practice-sites-list" data-slider>
+                <li><a class="practice-sites__link" href="cwiczenia/topblind.html" data-preview="assets/img/cwiczenia/topblind.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/topblind.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">01</span><span class="practice-sites__name">Topblind</span><span class="practice-sites__kind">Sklep z&nbsp;roletami, 9 podstron</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+                <li><a class="practice-sites__link" href="cwiczenia/austrowaren.html" data-preview="assets/img/cwiczenia/austrowaren.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/austrowaren.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">02</span><span class="practice-sites__name">Austrowaren</span><span class="practice-sites__kind">Firma przemysłowa, 5 podstron</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+                <li><a class="practice-sites__link" href="cwiczenia/silvermedica.html" data-preview="assets/img/cwiczenia/silvermedica.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/silvermedica.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">03</span><span class="practice-sites__name">Silver Medica</span><span class="practice-sites__kind">Klinika medyczna, 9 podstron</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+                <li><a class="practice-sites__link" href="cwiczenia/azs.html" data-preview="assets/img/cwiczenia/azs.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/azs.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">04</span><span class="practice-sites__name">Portal leczenia AZS</span><span class="practice-sites__kind">Serwis medyczny, 13 podstron</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+                <li><a class="practice-sites__link" href="cwiczenia/leadtrust.html" data-preview="assets/img/cwiczenia/leadtrust.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/leadtrust.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">05</span><span class="practice-sites__name">Leadtrust Group</span><span class="practice-sites__kind">Agencja pracy, 10 podstron</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+                <li><a class="practice-sites__link" href="cwiczenia/staxx.html" data-preview="assets/img/cwiczenia/staxx.webp"><img class="practice-sites__thumb" src="assets/img/cwiczenia/staxx.webp" alt="" width="960" height="600" loading="lazy"><span class="practice-sites__num">06</span><span class="practice-sites__name">Staxx Polska</span><span class="practice-sites__kind">Katalog produktów, 4 podstrony</span><span class="practice-sites__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+            </ul>
+            <div class="slider-progress" aria-hidden="true"><span data-slider-progress></span></div>
+        </div>
+        <div class="practice-sites__preview" id="practice-sites-preview" aria-hidden="true"><img src="assets/img/cwiczenia/topblind.webp" alt="" width="960" height="600" loading="lazy"></div>
+    </section>
+
+    <!-- Doświadczenie -->
+    <section class="section--pt section--pb section--white experience" id="doswiadczenie" aria-labelledby="experience-title">
+        <div class="container">
+            <header class="section__header reveal">
+                <h2 class="section__title" id="experience-title">Doświadczenie</h2>
+                <p class="section__desc">Praktyki zawodowe i&nbsp;praca dla firm z&nbsp;Radomia.</p>
+            </header>
+            <div class="experience__grid">
+                <article class="experience__card experience__card--main reveal">
+                    <header class="experience__top">
+                        <span class="experience__logos" aria-hidden="true"><span class="experience__logo experience__logo--dark"><img src="assets/img/logo/pm-boxing.svg" alt="" width="40" height="29" loading="lazy"></span><span class="experience__logo experience__logo--movena"><img src="assets/img/logo/movena.webp" alt="" width="120" height="110" loading="lazy"></span></span>
+                        <div>
+                            <h3 class="experience__title">PM Boxing Studio i&nbsp;Movena Pilates</h3>
+                            <p class="experience__where">Radom, współpraca i&nbsp;praktyki zawodowe 5–30.10.2026</p>
+                        </div>
+                        <span class="experience__date">2025 – teraz</span>
+                    </header>
+                    <ul class="experience__list">
+                        <li>Strony obu studiów: od HTML, CSS i&nbsp;JS do własnych motywów WordPress.</li>
+                        <li>CRM studia: grafik, karnety, płatności online i&nbsp;SMS-y.</li>
+                        <li>Kampanie Meta i&nbsp;Google Ads oraz pomiar wyników.</li>
+                        <li>Recepcja: doradzanie klientom w&nbsp;wyborze pakietów treningów i&nbsp;obsługa klienta.</li>
+                    </ul>
+                    <ul class="experience__stats">
+                        <li><strong>2</strong><span>strony na własnych motywach</span></li>
+                        <li><strong>~100</strong><span>zgłoszeń z&nbsp;reklam w&nbsp;3 miesiące</span></li>
+                        <li><strong>CRM</strong><span>budowany we dwóch z&nbsp;właścicielem</span></li>
+                    </ul>
+                </article>
+                <article class="experience__card reveal">
+                    <header class="experience__top">
+                        <span class="experience__logo experience__logo--wide" aria-hidden="true"><img src="assets/img/logo/cezar.webp" alt="" width="480" height="97" loading="lazy"></span>
+                        <div>
+                            <h3 class="experience__title">Serwis komputerowy CEZAR</h3>
+                            <p class="experience__where">CEZAR Cezary Machnio i&nbsp;Piotr Gębka Sp. z&nbsp;o.o., Radom · praktyki zawodowe</p>
+                        </div>
+                        <span class="experience__date">marzec 2026</span>
+                    </header>
+                    <ul class="experience__stats experience__stats--single"><li><strong>30+</strong><span>komputerów naprawionych i&nbsp;przygotowanych do sprzedaży</span></li></ul>
+                    <ul class="experience__list">
+                        <li>Diagnostyka usterek, wymiana podzespołów i&nbsp;składanie nowych zestawów.</li>
+                        <li>Instalacja i&nbsp;konfiguracja Windows oraz ustawień BIOS/UEFI.</li>
+                        <li>Aktualizacja systemu, najnowszych sterowników i&nbsp;BIOS/UEFI.</li>
+                        <li>Bezpieczne przenoszenie danych klientów na nowy sprzęt.</li>
+                        <li>Bezpieczne pakowanie sprzętu i&nbsp;przygotowanie do wysyłki.</li>
+                    </ul>
+                </article>
+                <article class="experience__card reveal">
+                    <header class="experience__top">
+                        <span class="experience__logo experience__logo--light" aria-hidden="true"><img src="assets/img/logo/cod.webp" alt="" width="160" height="70" loading="lazy"></span>
+                        <div>
+                            <h3 class="experience__title">Centrum Odkrywania Doskonałości</h3>
+                            <p class="experience__where">Radom, projekt na zlecenie</p>
+                        </div>
+                        <span class="experience__date">zlecenie</span>
+                    </header>
+                    <ul class="experience__list">
+                        <li>Redesign strony po otwarciu.</li>
+                        <li>Przeniesienie na autorski motyw WordPress z&nbsp;treściami edytowanymi w&nbsp;panelu.</li>
+                        <li>Projekt, testy i&nbsp;wdrożenie CRM zintegrowanego ze stroną.</li>
+                        <li>Kampania reklamowa: prowadzenie, audyt i&nbsp;optymalizacja.</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="education reveal">
+                <p class="education__item"><img class="education__logo" src="assets/img/logo/zse.webp" alt="" width="40" height="40" loading="lazy"><span><strong>Technik informatyk</strong>, ZSE w&nbsp;Radomiu, 2023–2028, klasa 4</span></p>
+                <p class="education__item"><span class="education__logo education__logo--cisco"><img src="assets/img/logo/cisco.svg" alt="" width="108" height="57" loading="lazy"></span><span><strong>Cisco: Introduction to Cybersecurity</strong>, 2023, <a href="https://www.credly.com/badges/55353ccf-3f31-4bdf-bcf1-a36fd44c333d/public_url" target="_blank" rel="noopener">weryfikacja<span class="sr-only"> na Credly (nowa karta)</span></a></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- W czym pracuję -->
+    <section class="section--pt section--pb skills" id="w-czym-pracuje" aria-labelledby="skills-title">
+        <div class="container">
+            <header class="section__header reveal">
+                <h2 class="section__title" id="skills-title">W czym pracuję</h2>
+                <p class="section__desc">Trzy obszary, w&nbsp;których mam doświadczenie z&nbsp;praktyk i&nbsp;pracy dla firm.</p>
+            </header>
+            <div class="skills__grid">
+                <article class="skills__col skills__col--service reveal">
+                    <h3 class="skills__title"><span class="skills__title-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="8.5" y="8.5" width="7" height="7" rx="1.2" fill="#fff" opacity=".9"/></svg></span>Serwis i&nbsp;sprzęt</h3>
+                    <ul class="skills__list">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/windows11/windows11-original.svg" alt="" width="28" height="28" loading="lazy">Windows: instalacja i&nbsp;konfiguracja</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/linux/linux-original.svg" alt="" width="28" height="28" loading="lazy">Linux</li>
+                        <li><img src="assets/img/icons/apple.webp" alt="" width="94" height="112" loading="lazy">macOS</li>
+                        <li><img src="assets/img/icons/klucz.svg" alt="" width="28" height="28" loading="lazy">Diagnostyka i&nbsp;naprawa</li>
+                        <li><img src="assets/img/icons/bios.svg" alt="" width="28" height="28" loading="lazy">Konfiguracja BIOS/UEFI</li>
+                        <li><img src="assets/img/icons/pc.svg" alt="" width="28" height="28" loading="lazy">Dobieranie podzespołów i&nbsp;składanie PC</li>
+                        <li><img src="assets/img/icons/router.svg" alt="" width="28" height="28" loading="lazy">Sieci LAN i&nbsp;Wi-Fi</li>
+                    </ul>
+                </article>
+                <article class="skills__col skills__col--web reveal">
+                    <h3 class="skills__title"><span class="skills__title-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v1.5H2z" fill="#fff" opacity=".35"/><path d="m9.5 11-2.5 2.5 2.5 2.5M14.5 11l2.5 2.5-2.5 2.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Strony WWW i&nbsp;kod</h3>
+                    <ul class="skills__list">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" width="28" height="28" loading="lazy">HTML i&nbsp;CSS</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg" alt="" width="28" height="28" loading="lazy">JavaScript</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/php/php-original.svg" alt="" width="28" height="28" loading="lazy">PHP</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/wordpress/wordpress-plain.svg" alt="" width="28" height="28" loading="lazy">WordPress</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/sqlite/sqlite-original.svg" alt="" width="28" height="28" loading="lazy">SQLite i&nbsp;MySQL</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/git/git-original.svg" alt="" width="28" height="28" loading="lazy">Git i&nbsp;GitHub</li>
+                    </ul>
+                </article>
+                <article class="skills__col skills__col--client reveal">
+                    <h3 class="skills__title"><span class="skills__title-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4h.5A2.5 2.5 0 0 1 3 14.5z"/><circle cx="8.5" cy="10.5" r="1.3" fill="#fff"/><circle cx="12" cy="10.5" r="1.3" fill="#fff"/><circle cx="15.5" cy="10.5" r="1.3" fill="#fff"/></svg></span>Klient i&nbsp;marketing</h3>
+                    <ul class="skills__list">
+                        <li><img src="assets/img/icons/rozmowa.svg" alt="" width="28" height="28" loading="lazy">Doradzanie i&nbsp;sprzedaż</li>
+                        <li><img src="assets/img/logo/meta.webp" alt="" width="128" height="72" loading="lazy">Meta Ads</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/google/google-original.svg" alt="" width="28" height="28" loading="lazy">Google Ads</li>
+                        <li><img src="assets/img/logo/tag-manager.webp" alt="" width="28" height="28" loading="lazy">GA4 i&nbsp;Tag Manager</li>
+                        <li><img src="assets/img/icons/pinezka.svg" alt="" width="28" height="28" loading="lazy">SEO lokalne, Profil firmy w&nbsp;Google</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="contact" id="kontakt" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="contact__box reveal">
+                <h2 class="contact__title" id="contact-title">Porozmawiajmy o&nbsp;stażu albo pracy.</h2>
+                <p class="contact__desc">Chętnie opowiem, jak powstawały te projekty i&nbsp;co mogę wnieść do Twojej firmy. Skontaktuj się ze mną w&nbsp;sprawie pracy lub zlecenia.</p>
+                <div class="contact__mail">
+                    <a class="contact__address" href="mailto:dams.mateusz@gmail.com">dams.mateusz@<wbr>gmail.com</a>
+                    <button class="contact__copy" type="button" id="copy-mail" data-copy="dams.mateusz@gmail.com">Kopiuj</button>
+                </div>
+                <div class="contact__buttons">
+                    <a class="btn btn--white" href="cv/CV-Mateusz-Dams.pdf" download>Pobierz CV (PDF)</a>
+                    <a class="btn btn--ghost" href="tel:+48505309362">Zadzwoń: 505 309 362</a>
+                    <a class="btn btn--ghost" href="https://github.com/mateusz-dams" target="_blank" rel="noopener">GitHub<span class="sr-only"> (nowa karta)</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <span>© 2026 Mateusz Dams</span>
-    <nav class="menu" aria-label="Menu w stopce">
-      <a href="#projekty">Projekty</a>
-      <a href="cv/CV-Mateusz-Dams.pdf">CV</a>
-      <a class="btn btn-primary" href="mailto:dams.mateusz@gmail.com">E-mail</a>
-    </nav>
-  </div>
+<footer class="footer">
+    <div class="container footer__inner">
+        <span>© 2026 Mateusz Dams, Radom</span>
+        <a class="footer__top" href="#">Do góry</a>
+    </div>
 </footer>
 
-<script>
-(function () {
-  var list = document.querySelector('.list'), preview = document.querySelector('.preview');
-  var rows = [].slice.call(document.querySelectorAll('.row'));
-  var wide = window.matchMedia('(min-width: 981px) and (min-height: 701px)');
-  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-  function wire() { rows.forEach(function (r) { r.setAttribute('aria-controls', wide.matches ? 'podglad' : r.dataset.target); }); }
-  wire(); if (wide.addEventListener) wide.addEventListener('change', wire);
-
-  var hoverLock = 0;
-  function show(row, animate) {
-    rows.forEach(function (r) { r.setAttribute('aria-expanded', r === row ? 'true' : 'false'); });
-    var src = document.getElementById(row.dataset.target);
-    preview.innerHTML = '';
-    var copy = src.cloneNode(true); copy.removeAttribute('id');
-    preview.appendChild(copy);
-    if (animate && !calm.matches) { preview.classList.remove('swap'); void preview.offsetWidth; preview.classList.add('swap'); }
-  }
-
-  rows.forEach(function (row) {
-    row.addEventListener('click', function () {
-      if (!wide.matches && row.getAttribute('aria-expanded') === 'true') { row.setAttribute('aria-expanded', 'false'); return; }
-      show(row, true);
-      if (!wide.matches) { setTimeout(function () { row.scrollIntoView({ block: 'start', behavior: calm.matches ? 'auto' : 'smooth' }); }, 60); }
-      else { var top = preview.getBoundingClientRect().top; if (top < 80) { hoverLock = Date.now() + 900; window.scrollBy({ top: top - 88, behavior: calm.matches ? 'auto' : 'smooth' }); } }
-    });
-    row.addEventListener('mouseenter', function () { if (Date.now() < hoverLock) return; if (wide.matches && row.getAttribute('aria-expanded') !== 'true') show(row, true); });
-  });
-
-  [].forEach.call(document.querySelectorAll('.filter'), function (btn) {
-    btn.addEventListener('click', function () {
-      var f = btn.dataset.filter;
-      [].forEach.call(document.querySelectorAll('.filter'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
-      var first = null;
-      [].forEach.call(list.children, function (li) {
-        var on = f === 'all' || li.dataset.kind === f;
-        li.hidden = !on; if (on && !first) first = li;
-      });
-      var active = rows.filter(function (r) { return r.getAttribute('aria-expanded') === 'true' && !r.closest('.item').hidden; })[0];
-      if (!active && first) show(first.querySelector('.row'), true);
-    });
-  });
-
-  show(rows[0], false);
-  if (!wide.matches) rows[0].setAttribute('aria-expanded', 'false');
-})();
-</script>
+<!-- Dolny pasek na telefonie i tablecie, zamiast menu -->
+<nav class="tabbar" aria-label="Menu na telefonie">
+    <a class="tabbar__link" href="#" data-section="top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>Start
+    </a>
+    <a class="tabbar__link" href="#projekty">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>Projekty
+    </a>
+    <a class="tabbar__link" href="#doswiadczenie">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>Praca
+    </a>
+    <a class="tabbar__link" href="#kontakt">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>Kontakt
+    </a>
+</nav>
 </body>
 </html>
