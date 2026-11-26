@@ -3052,32 +3052,52 @@ svg {
 
 .project-end .prev-project {
     display: inline-flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    color: var(--color-muted);
-    font-size: 15px;
-    text-decoration: none;
-}
-
-.project-end .prev-project__cmd {
-    color: var(--color-blue);
-    font: 700 13.5px var(--font-mono);
-    transition: transform .25s var(--ease);
-}
-
-.project-end .prev-project strong {
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 22px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background-color: var(--color-white);
     color: var(--color-ink);
+    font-size: 15px;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: border-color .2s;
+}
+
+.project-end .prev-project svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .3s var(--ease);
+}
+
+.project-end .prev-project__label {
+    color: var(--color-muted);
 }
 
 @media (hover: hover) {
-    .project-end .prev-project:hover .prev-project__cmd {
-        transform: translateX(-4px);
+    .project-end .prev-project:hover {
+        border-color: var(--color-ink);
     }
 
-    .project-end .prev-project:hover strong {
-        text-decoration: underline;
-        text-underline-offset: 4px;
+    .project-end .prev-project:hover svg {
+        transform: translateX(-3px);
+    }
+}
+
+@media (max-width: 576px) {
+    .project-end .prev-project {
+        display: flex;
+        justify-content: center;
+        border-radius: 24px;
+        text-align: center;
     }
 }
 
@@ -4240,7 +4260,7 @@ svg {
     bottom: 0;
     width: 23%;
     /* Procent w padding liczy się od szerokości rodzica, więc 3,4% szerokości telefonu */
-    padding: calc(23% * .034);
+    padding: calc(23% * .032);
 }
 
 @media (max-width: 768px) {
@@ -4248,7 +4268,7 @@ svg {
         position: relative;
         width: 62%;
         margin: -120px 0 0 auto;
-        padding: calc(62% * .034);
+        padding: calc(62% * .032);
     }
 }
 
@@ -4294,7 +4314,7 @@ svg {
         align-self: center;
         width: 30%;
         margin: 0 22px 0 0;
-        padding: calc(30% * .034);
+        padding: calc(30% * .032);
     }
 }
 
@@ -4302,61 +4322,65 @@ svg {
     .devices .phone.device {
         width: 36%;
         margin-right: 14px;
-        padding: calc(36% * .034);
+        padding: calc(36% * .032);
     }
 }
 
-/* --- Telefon: .device (w .devices i w .gallery), proporcje iPhone'a 18 Pro ---
+/* --- Telefon: .device (w .devices i w .gallery), wygląd iPhone'a 18 Pro ---
    Obudowa 71,9 × 150 mm, ekran 402 × 874 punkty (1206 × 2622 px).
-   Wymiary w procentach i cqw (procent szerokości ekranu), więc telefon
-   wygląda tak samo przy każdej wielkości */
+   Na krawędzi wąski pasek srebrnego aluminium, pod szkłem cienka czarna ramka.
+   Wymiary w procentach i cqw (procent szerokości telefonu albo ekranu),
+   więc telefon wygląda tak samo przy każdej wielkości */
 
 .device {
     position: relative;
     aspect-ratio: 71.9 / 150;
-    padding: 3.7%;
+    padding: 3.2%;
+    container-type: inline-size;
     border-radius: 15.5% / 7.4%;
-    /* Czarna ramka wokół ekranu, a na krawędzi pasek z jasnego tytanu */
-    background-color: #050506;
+    /* Srebrne aluminium: matowe, z jaśniejszym odbiciem u góry i u dołu */
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0) 86%, rgba(255, 255, 255, .4)),
+        linear-gradient(90deg, #a9adb3, #e3e5e8 9%, #c9ccd1 50%, #e3e5e8 91%, #a9adb3);
     box-shadow:
-        inset 0 0 0 1px #f6f4f0,
-        inset 0 0 0 3px #b8b5b0,
-        inset 0 0 0 4px #77746f,
-        0 0 0 1px #8d8a85,
-        0 24px 44px rgba(18, 22, 32, .24),
-        0 6px 12px rgba(18, 22, 32, .14);
+        inset 0 0 0 1px rgba(255, 255, 255, .75),
+        0 0 0 1px #9a9ea5,
+        0 26px 48px rgba(18, 22, 32, .22),
+        0 6px 14px rgba(18, 22, 32, .14);
 }
 
-/* Przyciski z boku: z lewej Action i głośność, z prawej zasilanie i Camera Control */
+/* Przyciski z boku. Z lewej: Action i dwa przyciski głośności.
+   Z prawej: przycisk boczny i niżej Camera Control */
 
 .device::before,
 .device::after {
     content: '';
     position: absolute;
-    width: 1.3%;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #8d8a85, #d9d6d1);
+    top: 0;
+    width: 1.2%;
+    height: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
 .device::before {
-    left: -1.1%;
-    top: 17%;
-    height: 4.5%;
-    box-shadow:
-        0 calc(var(--device-gap, 9px) * 3.4) 0 #b3b0ab,
-        0 calc(var(--device-gap, 9px) * 6.6) 0 #b3b0ab;
+    left: -1%;
+    border-radius: 2px 0 0 2px;
+    background-image:
+        linear-gradient(90deg, #8e9299, #d6d8dc),
+        linear-gradient(90deg, #8e9299, #d6d8dc),
+        linear-gradient(90deg, #8e9299, #d6d8dc);
+    background-size: 100% 3.6%, 100% 6.4%, 100% 6.4%;
+    background-position: 0 19.7%, 0 28.9%, 0 38%;
 }
 
 .device::after {
-    right: -1.1%;
-    top: 25%;
-    height: 10%;
-    background: linear-gradient(270deg, #8d8a85, #d9d6d1);
-    box-shadow: 0 calc(var(--device-gap, 9px) * 15) 0 -.5px #a19e99;
-}
-
-.gallery .gallery-phones .device {
-    --device-gap: 5.5px;
+    right: -1%;
+    background-image:
+        linear-gradient(270deg, #8e9299, #d6d8dc),
+        linear-gradient(270deg, #6f737a, #a3a7ae);
+    background-size: 100% 10%, 100% 8.4%;
+    background-position: 0 30%, 0 61.1%;
 }
 
 .device__screen {
@@ -4368,6 +4392,8 @@ svg {
     container-type: inline-size;
     border-radius: 13.7% / 6.3%;
     background-color: #0a0a0a;
+    /* Cienka czarna ramka wokół ekranu, pod tym samym szkłem */
+    box-shadow: 0 0 0 2cqw #050506;
 }
 
 /* Odblask na szkle */
@@ -4422,10 +4448,10 @@ svg {
 
 .device__island {
     position: absolute;
-    top: 2.7cqw;
+    top: 2.9cqw;
     left: 50%;
-    width: 31.3cqw;
-    height: 9.3cqw;
+    width: 25.5cqw;
+    height: 8.6cqw;
     border-radius: 99px;
     background-color: #000000;
     transform: translateX(-50%);
@@ -4436,9 +4462,9 @@ svg {
 .device__camera {
     position: absolute;
     top: 50%;
-    right: 7%;
-    width: 4.2cqw;
-    height: 4.2cqw;
+    right: 8%;
+    width: 4cqw;
+    height: 4cqw;
     border-radius: 50%;
     background: radial-gradient(circle at 38% 35%, #3d4d78 0, #141a2c 45%, #050608 75%);
     transform: translateY(-50%);
@@ -4743,169 +4769,294 @@ html:not(.js) .client-brief .client-brief__badge {
     }
 }
 
-/* --- Galeria: .gallery --- */
+/* --- Galeria: .gallery ---
+   Z lewej spis sekcji strony, z prawej zrzut w oknie przeglądarki.
+   Kliknięcie w spis albo strzałki zmienia zrzut. Na tablecie i telefonie
+   spis zamienia się w przewijane przyciski pod zrzutem */
 
-.gallery .gallery__header {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 32px;
+.gallery .gallery__title {
+    margin-bottom: 40px;
 }
 
-.gallery .gallery__nav {
+.gallery .gallery__body {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.gallery .gallery__toc {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid var(--color-line);
+}
+
+.gallery .gallery__tab {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-left: -2px;
+    padding: 10px 0 10px 20px;
+    border: 0;
+    border-left: 2px solid transparent;
+    background: none;
+    color: var(--color-muted);
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.35;
+    text-align: left;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.gallery .gallery__tab:hover {
+    color: var(--color-ink);
+}
+
+.gallery .gallery__tab.is-active {
+    border-image: var(--gradient) 1;
+    color: var(--color-ink);
+    font-weight: 700;
+}
+
+.gallery .gallery__tab:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+}
+
+/* Okno przeglądarki ze zrzutem */
+
+.gallery .gallery__window {
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(18, 22, 32, .05), 0 24px 50px rgba(18, 22, 32, .12);
+}
+
+.gallery .gallery__bar {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-line);
+    background-color: #f7f8fb;
 }
 
-@media (max-width: 576px) {
-    .gallery .gallery__nav {
-        gap: 6px;
-    }
-}
-
-.gallery .gallery__counter {
-    min-width: 64px;
-    margin-right: 6px;
-    color: var(--color-muted);
-    font-size: 15px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    text-align: right;
-}
-
-@media (max-width: 576px) {
-    .gallery .gallery__counter {
-        min-width: 0;
-        margin-right: 2px;
-        font-size: 14px;
-    }
-}
-
-.gallery .gallery__counter span:first-child {
-    color: var(--color-ink);
-    font-weight: 800;
-}
-
-.gallery .gallery__btn {
+.gallery .gallery__dots {
+    display: flex;
     flex: none;
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border: 1.5px solid var(--color-line-strong);
+    gap: 6px;
+}
+
+.gallery .gallery__dots i {
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-ink);
-    cursor: pointer;
-    transition: background-color .25s, color .25s, border-color .25s;
+    background-color: #d3d7e1;
 }
 
-@media (max-width: 576px) {
-    .gallery .gallery__btn {
-        width: 40px;
-        height: 40px;
-    }
+.gallery .gallery__url {
+    flex: 0 1 380px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 5px 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background-color: #ffffff;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.gallery .gallery__btn:disabled {
-    opacity: .35;
-    cursor: default;
-    pointer-events: none;
-}
-
-.gallery .gallery__btn:hover {
-    background: var(--gradient);
-    border-color: transparent;
-    color: var(--color-white);
-}
-
-.gallery .gallery__btn svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2.2;
-}
+/* Wszystkie zrzuty leżą w jednym miejscu, widać tylko aktywny */
 
 .gallery .gallery__list {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 72%;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding-bottom: 8px;
-    cursor: grab;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    touch-action: pan-y;
 }
 
-@media (max-width: 768px) {
-    .gallery .gallery__list {
-        grid-auto-columns: 88%;
-    }
-}
-
-.gallery .gallery__list::-webkit-scrollbar {
-    display: none;
-}
-
-/* Podczas przeciągania myszką przyciąganie do slajdu jest wyłączone */
-
-.gallery .gallery__list.is-dragging {
-    cursor: grabbing;
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-}
-
-.gallery .gallery__list.is-dragging img {
-    pointer-events: none;
+.gallery .gallery__list:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: -2px;
 }
 
 .gallery .gallery__item {
-    scroll-snap-align: start;
-    opacity: .45;
-    transition: opacity .4s;
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s var(--ease), visibility 0s .35s;
 }
 
 .gallery .gallery__item.is-active {
     opacity: 1;
+    visibility: visible;
+    transition: opacity .35s var(--ease);
 }
 
 .gallery .gallery__item img {
-    -webkit-user-drag: none;
-    user-select: none;
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     object-position: top;
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
-/* Pasek postępu pod slajdami */
-
-.gallery .gallery__progress {
-    height: 4px;
-    margin-top: 28px;
-    overflow: hidden;
-    border-radius: 2px;
-    background-color: var(--color-line);
+.gallery .gallery__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.gallery .gallery__progress-bar {
-    display: block;
-    width: 10%;
-    height: 100%;
-    border-radius: 2px;
-    background: var(--gradient);
-    transition: width .3s var(--ease);
-}
-
-.gallery .gallery__item p {
-    margin-top: 12px;
+.gallery .gallery__caption {
+    margin: 0;
     color: var(--color-muted);
     font-size: 15px;
+}
+
+.gallery .gallery__nav {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.gallery .gallery__counter {
+    margin: 0 6px 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.gallery .gallery__counter span:first-child {
+    color: var(--color-ink);
+    font-weight: 700;
+}
+
+.gallery .gallery__btn {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: background-color .2s, color .2s, border-color .2s;
+}
+
+.gallery .gallery__btn:hover {
+    border-color: var(--color-ink);
+    background-color: var(--color-ink);
+    color: #ffffff;
+}
+
+.gallery .gallery__btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 992px) {
+    .gallery .gallery__body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    /* Spis jako przewijany rząd przycisków pod zrzutem */
+    .gallery .gallery__toc {
+        --gallery-pad: 32px;
+        order: 2;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        margin: 0 calc(var(--gallery-pad) * -1);
+        padding: 2px var(--gallery-pad);
+        border: 0;
+        scrollbar-width: none;
+        scroll-padding: 0 var(--gallery-pad);
+    }
+
+    .gallery .gallery__toc::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery .gallery__tab {
+        margin: 0;
+        padding: 9px 16px;
+        border: 1px solid var(--color-line);
+        border-radius: 999px;
+        background-color: #ffffff;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .gallery .gallery__tab.is-active {
+        border-color: var(--color-ink);
+        border-image: none;
+        background-color: var(--color-ink);
+        color: #ffffff;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery .gallery__toc {
+        --gallery-pad: 18px;
+    }
+
+    .gallery .gallery__title {
+        margin-bottom: 28px;
+    }
+
+    .gallery .gallery__bar {
+        gap: 10px;
+        padding: 9px 12px;
+    }
+
+    .gallery .gallery__dots i {
+        width: 8px;
+        height: 8px;
+    }
+
+    .gallery .gallery__url {
+        padding: 4px 12px;
+        font-size: 11px;
+    }
+
+    .gallery .gallery__foot {
+        align-items: flex-start;
+        margin-top: 14px;
+    }
+
+    .gallery .gallery__caption {
+        font-size: 14px;
+    }
+
+    .gallery .gallery__counter {
+        display: none;
+    }
+
+    .gallery .gallery__btn {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .gallery .gallery-phones {
@@ -4925,7 +5076,11 @@ html:not(.js) .client-brief .client-brief__badge {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
-        padding: 32px 4px 8px;
+        /* Telefony przewijają się od krawędzi do krawędzi ekranu,
+           a zapas na dole mieści cień, żeby nie był ucięty */
+        margin: 48px -32px -40px;
+        padding: 24px 32px 40px;
+        scroll-padding: 0 32px;
     }
 }
 
@@ -4933,6 +5088,9 @@ html:not(.js) .client-brief .client-brief__badge {
     .gallery .gallery-phones {
         grid-auto-columns: 46%;
         gap: 14px;
+        margin: 40px -18px -40px;
+        padding: 20px 18px 40px;
+        scroll-padding: 0 18px;
     }
 }
 
@@ -4944,8 +5102,12 @@ html:not(.js) .client-brief .client-brief__badge {
     scroll-snap-align: start;
 }
 
-.gallery .gallery-phones__item:nth-child(even) {
-    margin-top: 32px;
+.gallery .gallery-phones__item p {
+    margin: 16px 0 0;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.35;
+    text-align: center;
 }
 
 /* --- Ćwiczenie: znacznik i breakpointy w górnej sekcji --- */
@@ -5501,12 +5663,6 @@ html:not(.js) .client-brief .client-brief__badge {
     font-size: 15px;
 }
 
-.project-end .next-project__cmd {
-    margin-top: 4px;
-    color: var(--color-blue);
-    font: 700 13.5px var(--font-mono);
-}
-
 .project-end .next-project__title {
     margin-top: 6px;
     max-width: 10ch;
@@ -5539,28 +5695,38 @@ html:not(.js) .client-brief .client-brief__badge {
     transform: translateY(12px);
 }
 
-.project-end .next-project__arrow {
-    position: absolute;
-    top: 28px;
-    right: 28px;
-    display: grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
+/* Przycisk „Zobacz projekt” w karcie następnego projektu */
+
+.project-end .next-project__btn {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 10px;
+    height: 48px;
+    margin-top: 22px;
+    padding: 0 22px;
+    border-radius: 999px;
     background: var(--gradient);
     color: var(--color-white);
-    transition: transform .35s var(--ease);
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(46, 75, 245, .28);
 }
 
-.project-end .next-project:hover .next-project__arrow {
-    transform: rotate(-45deg);
-}
-
-.project-end .next-project__arrow svg {
-    width: 22px;
-    height: 22px;
+.project-end .next-project__btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
     stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .3s var(--ease);
+}
+
+.project-end .next-project:hover .next-project__btn svg {
+    transform: translateX(4px);
 }
 
 /* --- Ograniczenie ruchu --- */

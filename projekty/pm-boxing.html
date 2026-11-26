@@ -19,9 +19,9 @@
     <link rel="preload" href="../assets/fonts/bricolage-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/jetbrains-mono-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/style.css?v=17">
+    <link rel="stylesheet" href="../css/style.css?v=18">
     <script>document.documentElement.classList.add('js');</script>
-    <script src="../js/main.js?v=16" defer></script>
+    <script src="../js/main.js?v=17" defer></script>
 </head>
 <body>
 <a class="skip" href="#tresc">Przejdź do treści</a>
@@ -166,73 +166,76 @@
     <!-- Galeria -->
     <section class="section--pt section--pb section--white gallery" id="galeria" aria-labelledby="gallery-title">
         <div class="container">
-            <header class="gallery__header">
-                <h2 class="section__title reveal" id="gallery-title">Galeria</h2>
-                <div class="gallery__nav">
-                    <p class="gallery__counter" aria-live="polite"><span id="gallery-current">1</span> / <span id="gallery-total">10</span></p>
-                    <button class="gallery__btn" type="button" data-gallery="prev" aria-label="Poprzednie zdjęcie">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
-                    </button>
-                    <button class="gallery__btn" type="button" data-gallery="next" aria-label="Następne zdjęcie">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                    </button>
+            <h2 class="section__title gallery__title reveal" id="gallery-title">Galeria</h2>
+
+            <div class="gallery__body">
+                <ol class="gallery__toc" aria-label="Sekcje strony">
+                    <li><button class="gallery__tab is-active" type="button" data-gallery-tab="0" aria-current="true">Rezerwacja online</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="1">Metoda treningu</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="2">Proces nauki</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="3">KO Coach ITS®</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="4">O trenerze i studiu</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="5">Sala</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="6">Inspiracje trenera</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="7">Grafik zajęć</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="8">Opinie z Google</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="9">Kontakt</button></li>
+                </ol>
+
+                <div class="gallery__stage reveal">
+                    <div class="gallery__window">
+                        <div class="gallery__bar" aria-hidden="true"><span class="gallery__dots"><i></i><i></i><i></i></span><span class="gallery__url">pmboxingstudio.pl</span></div>
+                        <ul class="gallery__list" id="gallery" tabindex="0" aria-label="Zrzuty strony z komputera, przełączane strzałkami albo spisem sekcji">
+                            <li class="gallery__item is-active" data-caption="Rezerwacja: dzień, godzina i przejście do płatności">
+                                <img src="../assets/img/pm-boxing/rezerwacja.webp" alt="Rezerwacja treningu wdrożeniowego z wyborem dnia i godziny" width="1200" height="791" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Metoda treningu w sześciu kartach">
+                                <img src="../assets/img/pm-boxing/jak-trenujemy.webp" alt="Sekcja o metodzie treningu ze zdjęciem trenera i sześcioma elementami" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Proces nauki krok po kroku">
+                                <img src="../assets/img/pm-boxing/proces.webp" alt="Sześć etapów nauki boksu" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="KO Coach ITS®: stacja tarcz opisana liczbami">
+                                <img src="../assets/img/pm-boxing/ko-coach.webp" alt="Sekcja KO Coach ze zdjęciem stacji i liczbami" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="O trenerze i studiu">
+                                <img src="../assets/img/pm-boxing/o-studiu.webp" alt="Sekcja o trenerze i studiu" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Sala na dwóch dużych zdjęciach">
+                                <img src="../assets/img/pm-boxing/sala.webp" alt="Sekcja z salą treningową" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Inspiracje trenera, edytowane w panelu">
+                                <img src="../assets/img/pm-boxing/inspiracje.webp" alt="Sekcja inspiracji trenera" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Grafik zajęć grupowych w tabeli">
+                                <img src="../assets/img/pm-boxing/grafik.webp" alt="Tabela grafiku zajęć grupowych" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Opinie z Google">
+                                <img src="../assets/img/pm-boxing/opinie.webp" alt="Opinie z Google w trzech kartach" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Kontakt i formularz, który wysyła zgłoszenie do CRM">
+                                <img src="../assets/img/pm-boxing/kontakt.webp" alt="Dane kontaktowe i formularz zapisu" width="1600" height="1000" loading="lazy">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gallery__foot">
+                        <p class="gallery__caption" id="gallery-caption" aria-live="polite">Rezerwacja: dzień, godzina i&nbsp;przejście do płatności</p>
+                        <div class="gallery__nav">
+                            <p class="gallery__counter"><span id="gallery-current">1</span> / <span id="gallery-total">10</span></p>
+                            <button class="gallery__btn" type="button" data-gallery="prev" aria-label="Poprzednie zdjęcie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+                            <button class="gallery__btn" type="button" data-gallery="next" aria-label="Następne zdjęcie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+                        </div>
+                    </div>
                 </div>
-            </header>
-
-            <ul class="gallery__list" id="gallery" tabindex="0" aria-label="Zrzuty strony z komputera, przewijane strzałkami">
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/rezerwacja.webp" alt="Rezerwacja treningu wdrożeniowego z wyborem dnia i godziny" width="1200" height="791" loading="lazy">
-                    <p>Rezerwacja: dzień, godzina i&nbsp;przejście do płatności</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/jak-trenujemy.webp" alt="Sekcja o metodzie treningu ze zdjęciem trenera i sześcioma elementami" width="1600" height="1000" loading="lazy">
-                    <p>Metoda treningu w&nbsp;sześciu kartach</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/proces.webp" alt="Sześć etapów nauki boksu" width="1600" height="1000" loading="lazy">
-                    <p>Proces nauki krok po kroku</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/ko-coach.webp" alt="Sekcja KO Coach ze zdjęciem stacji i liczbami" width="1600" height="1000" loading="lazy">
-                    <p>KO Coach ITS®: stacja tarcz opisana liczbami</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/o-studiu.webp" alt="Sekcja o trenerze i studiu" width="1600" height="1000" loading="lazy">
-                    <p>O trenerze i&nbsp;studiu</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/sala.webp" alt="Sekcja z salą treningową" width="1600" height="1000" loading="lazy">
-                    <p>Sala na dwóch dużych zdjęciach</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/inspiracje.webp" alt="Sekcja inspiracji trenera" width="1600" height="1000" loading="lazy">
-                    <p>Inspiracje trenera, edytowane w&nbsp;panelu</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/grafik.webp" alt="Tabela grafiku zajęć grupowych" width="1600" height="1000" loading="lazy">
-                    <p>Grafik zajęć grupowych w&nbsp;tabeli</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/opinie.webp" alt="Opinie z Google w trzech kartach" width="1600" height="1000" loading="lazy">
-                    <p>Opinie z&nbsp;Google</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/pm-boxing/kontakt.webp" alt="Dane kontaktowe i formularz zapisu" width="1600" height="1000" loading="lazy">
-                    <p>Kontakt i&nbsp;formularz, który wysyła zgłoszenie do CRM</p>
-                </li>
-            </ul>
-
-            <div class="gallery__progress" aria-hidden="true">
-                <span class="gallery__progress-bar" id="gallery-progress"></span>
             </div>
 
             <ul class="gallery-phones reveal" aria-label="Strona na telefonie">
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-oferta.webp" alt="Oferta na telefonie jako przewijane karty" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-jak-trenujemy.webp" alt="Metoda treningu na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-ko-coach.webp" alt="KO Coach na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-o-studiu.webp" alt="O trenerze na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-sala.webp" alt="Sala na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-kontakt.webp" alt="Kontakt na telefonie" width="603" height="1218" loading="lazy"></div></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-oferta.webp" alt="Oferta na telefonie jako przewijane karty" width="603" height="1218" loading="lazy"></div></div><p>Oferta w kartach</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-jak-trenujemy.webp" alt="Metoda treningu na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Metoda treningu</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-ko-coach.webp" alt="KO Coach na telefonie" width="603" height="1218" loading="lazy"></div></div><p>KO Coach ITS®</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-o-studiu.webp" alt="O trenerze na telefonie" width="603" height="1218" loading="lazy"></div></div><p>O trenerze</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-sala.webp" alt="Sala na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Sala</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/pm-boxing/telefon2-kontakt.webp" alt="Kontakt na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Kontakt</p></li>
             </ul>
         </div>
     </section>
@@ -270,14 +273,14 @@
             </div>
 
             <a class="next-project reveal" href="movena.html">
-                <span class="next-project__label">Następny projekt</span><span class="next-project__cmd" aria-hidden="true">$ cd ../movena</span>
+                <span class="next-project__label">Następny projekt</span>
                 <span class="next-project__title">Movena Pilates Studio</span>
+                <span class="next-project__btn">Zobacz projekt <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 <img class="next-project__shot" src="../assets/img/projekty/movena.webp" alt="" width="1440" height="900" loading="lazy">
-                <span class="next-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </a>
         </div>
         <div class="container project-end__more">
-            <a class="prev-project" href="bizzlife.html"><span class="prev-project__cmd" aria-hidden="true">← $ cd ../bizzlife</span><span class="prev-project__label">Poprzedni projekt: <strong>Bizzlife</strong></span></a>
+            <a class="prev-project" href="bizzlife.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="prev-project__text"><span class="prev-project__label">Poprzedni:</span> <strong>Bizzlife</strong></span></a>
         </div>
     </section>
 </main>

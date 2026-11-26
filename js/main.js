@@ -999,47 +999,63 @@ function initGallery() {
     if (!gallery) return;
 
     const items = [...gallery.children];
+    const tabs = [...document.querySelectorAll('[data-gallery-tab]')];
     const prev = document.querySelector('[data-gallery="prev"]');
     const next = document.querySelector('[data-gallery="next"]');
     const current = document.getElementById('gallery-current');
-    const progress = document.getElementById('gallery-progress');
+    const caption = document.getElementById('gallery-caption');
+    const toc = tabs[0]?.closest('.gallery__toc');
+    let index = 0;
 
     document.getElementById('gallery-total').textContent = items.length;
 
-    const max = () => gallery.scrollWidth - gallery.clientWidth;
-    const step = () => items[0].offsetWidth + parseFloat(getComputedStyle(gallery).columnGap || 20);
+    const show = (target, fromTab = false) => {
+        index = (target + items.length) % items.length;
 
-    const goTo = (index) => {
-        const target = Math.max(0, Math.min(items.length - 1, index));
-        gallery.scrollTo({ left: items[target].offsetLeft - items[0].offsetLeft, behavior: scrollBehavior });
-    };
-
-    // Który slajd jest teraz na początku listy
-    const activeIndex = () => (gallery.scrollLeft >= max() - 2 ? items.length - 1 : Math.round(gallery.scrollLeft / step()));
-
-    const update = () => {
-        const index = activeIndex();
+        items.forEach((item, i) => item.classList.toggle('is-active', i === index));
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('is-active', i === index);
+            if (i === index) tab.setAttribute('aria-current', 'true');
+            else tab.removeAttribute('aria-current');
+        });
 
         current.textContent = index + 1;
-        progress.style.width = `${((index + 1) / items.length) * 100}%`;
-        prev.disabled = gallery.scrollLeft <= 2;
-        next.disabled = gallery.scrollLeft >= max() - 2;
-        items.forEach((item, i) => item.classList.toggle('is-active', i === index));
+        caption.textContent = items[index].dataset.caption;
+
+        // Na telefonie przewiń rząd przycisków tak, żeby aktywny był widoczny
+        const tab = tabs[index];
+        if (toc && tab && !fromTab && toc.scrollWidth > toc.clientWidth) {
+            toc.scrollTo({ left: tab.offsetLeft - (toc.clientWidth - tab.offsetWidth) / 2, behavior: scrollBehavior });
+        }
     };
 
-    prev.addEventListener('click', () => goTo(activeIndex() - 1));
-    next.addEventListener('click', () => goTo(activeIndex() + 1));
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => show(i, true)));
+    prev.addEventListener('click', () => show(index - 1));
+    next.addEventListener('click', () => show(index + 1));
 
     gallery.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') goTo(activeIndex() + 1);
-        if (event.key === 'ArrowLeft') goTo(activeIndex() - 1);
+        if (event.key === 'ArrowRight') show(index + 1);
+        if (event.key === 'ArrowLeft') show(index - 1);
     });
 
-    gallery.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
+    // Przesunięcie palcem w bok zmienia zrzut
+    let startX = null;
+    let startY = 0;
 
-    enableMouseDrag(gallery, () => true, () => goTo(Math.round(gallery.scrollLeft / step())));
+    gallery.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    }, { passive: true });
+
+    gallery.addEventListener('touchend', (event) => {
+        if (startX === null) return;
+        const dx = event.changedTouches[0].clientX - startX;
+        const dy = event.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
+        startX = null;
+    }, { passive: true });
+
+    show(0, true);
 }
 
 /* --- Podgląd ćwiczenia (live-preview): strona w ramce, skalowana do szerokości sceny --- */

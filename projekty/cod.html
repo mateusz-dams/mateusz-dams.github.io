@@ -19,9 +19,9 @@
     <link rel="preload" href="../assets/fonts/bricolage-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/jetbrains-mono-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/style.css?v=17">
+    <link rel="stylesheet" href="../css/style.css?v=18">
     <script>document.documentElement.classList.add('js');</script>
-    <script src="../js/main.js?v=16" defer></script>
+    <script src="../js/main.js?v=17" defer></script>
 </head>
 <body>
 <a class="skip" href="#tresc">Przejdź do treści</a>
@@ -166,69 +166,72 @@
     <!-- Galeria -->
     <section class="section--pt section--pb section--white gallery" id="galeria" aria-labelledby="gallery-title">
         <div class="container">
-            <header class="gallery__header">
-                <h2 class="section__title reveal" id="gallery-title">Galeria</h2>
-                <div class="gallery__nav">
-                    <p class="gallery__counter" aria-live="polite"><span id="gallery-current">1</span> / <span id="gallery-total">9</span></p>
-                    <button class="gallery__btn" type="button" data-gallery="prev" aria-label="Poprzednie zdjęcie">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
-                    </button>
-                    <button class="gallery__btn" type="button" data-gallery="next" aria-label="Następne zdjęcie">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-                    </button>
+            <h2 class="section__title gallery__title reveal" id="gallery-title">Galeria</h2>
+
+            <div class="gallery__body">
+                <ol class="gallery__toc" aria-label="Sekcje strony">
+                    <li><button class="gallery__tab is-active" type="button" data-gallery-tab="0" aria-current="true">Kreator „Od czego zacząć?”</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="1">Oferta w zakładkach</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="2">Tryb ciemny</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="3">O założycielce</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="4">Pierwszy kontakt</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="5">Zespół</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="6">Opinie klientów</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="7">Pytania przed wizytą</button></li>
+                    <li><button class="gallery__tab" type="button" data-gallery-tab="8">Kontakt</button></li>
+                </ol>
+
+                <div class="gallery__stage reveal">
+                    <div class="gallery__window">
+                        <div class="gallery__bar" aria-hidden="true"><span class="gallery__dots"><i></i><i></i><i></i></span><span class="gallery__url">cod.biz.pl</span></div>
+                        <ul class="gallery__list" id="gallery" tabindex="0" aria-label="Zrzuty strony z komputera, przełączane strzałkami albo spisem sekcji">
+                            <li class="gallery__item is-active" data-caption="Kreator „Od czego zacząć?”: dwa pytania i propozycja usługi">
+                                <img src="../assets/img/cod/znajdz.webp" alt="Kreator „Od czego zacząć?”" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Oferta w zakładkach: dzieci i rodzice, dorośli, firmy">
+                                <img src="../assets/img/cod/oferta.webp" alt="Oferta w zakładkach" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Tryb ciemny włączany według ustawień urządzenia">
+                                <img src="../assets/img/cod/oferta-ciemny.webp" alt="Oferta w trybie ciemnym" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="O założycielce centrum">
+                                <img src="../assets/img/cod/o-mnie.webp" alt="Sekcja o założycielce centrum" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Jak wygląda pierwszy kontakt">
+                                <img src="../assets/img/cod/jak-zaczac.webp" alt="Jak wygląda pierwszy kontakt" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Zespół: kto będzie z Tobą pracować">
+                                <img src="../assets/img/cod/zespol.webp" alt="Zespół centrum" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Opinie klientów">
+                                <img src="../assets/img/cod/opinie.webp" alt="Opinie klientów" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Pytania przed pierwszą wizytą">
+                                <img src="../assets/img/cod/pytania.webp" alt="Najczęstsze pytania" width="1600" height="1000" loading="lazy">
+                            </li>
+                            <li class="gallery__item" data-caption="Kontakt, godziny na żywo i formularz">
+                                <img src="../assets/img/cod/kontakt.webp" alt="Kontakt i formularz" width="1600" height="1000" loading="lazy">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gallery__foot">
+                        <p class="gallery__caption" id="gallery-caption" aria-live="polite">Kreator „Od czego zacząć?”: dwa pytania i&nbsp;propozycja usługi</p>
+                        <div class="gallery__nav">
+                            <p class="gallery__counter"><span id="gallery-current">1</span> / <span id="gallery-total">9</span></p>
+                            <button class="gallery__btn" type="button" data-gallery="prev" aria-label="Poprzednie zdjęcie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+                            <button class="gallery__btn" type="button" data-gallery="next" aria-label="Następne zdjęcie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+                        </div>
+                    </div>
                 </div>
-            </header>
-
-            <ul class="gallery__list" id="gallery" tabindex="0" aria-label="Zrzuty strony z komputera, przewijane strzałkami">
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/znajdz.webp" alt="Kreator „Od czego zacząć?”" width="1600" height="1000" loading="lazy">
-                    <p>Kreator „Od czego zacząć?”: dwa pytania i&nbsp;propozycja usługi</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/oferta.webp" alt="Oferta w zakładkach" width="1600" height="1000" loading="lazy">
-                    <p>Oferta w&nbsp;zakładkach: dzieci i&nbsp;rodzice, dorośli, firmy</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/oferta-ciemny.webp" alt="Oferta w trybie ciemnym" width="1600" height="1000" loading="lazy">
-                    <p>Tryb ciemny włączany według ustawień urządzenia</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/o-mnie.webp" alt="Sekcja o założycielce centrum" width="1600" height="1000" loading="lazy">
-                    <p>O założycielce centrum</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/jak-zaczac.webp" alt="Jak wygląda pierwszy kontakt" width="1600" height="1000" loading="lazy">
-                    <p>Jak wygląda pierwszy kontakt</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/zespol.webp" alt="Zespół centrum" width="1600" height="1000" loading="lazy">
-                    <p>Zespół: kto będzie z&nbsp;Tobą pracować</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/opinie.webp" alt="Opinie klientów" width="1600" height="1000" loading="lazy">
-                    <p>Opinie klientów</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/pytania.webp" alt="Najczęstsze pytania" width="1600" height="1000" loading="lazy">
-                    <p>Pytania przed pierwszą wizytą</p>
-                </li>
-                <li class="gallery__item">
-                    <img src="../assets/img/cod/kontakt.webp" alt="Kontakt i formularz" width="1600" height="1000" loading="lazy">
-                    <p>Kontakt, godziny na żywo i&nbsp;formularz</p>
-                </li>
-            </ul>
-
-            <div class="gallery__progress" aria-hidden="true">
-                <span class="gallery__progress-bar" id="gallery-progress"></span>
             </div>
 
             <ul class="gallery-phones reveal" aria-label="Strona na telefonie">
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-start.webp" alt="Strona główna na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-znajdz.webp" alt="Kreator na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-oferta.webp" alt="Oferta na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-ciemny.webp" alt="Tryb ciemny na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-zespol.webp" alt="Zespół na telefonie" width="603" height="1218" loading="lazy"></div></li>
-                <li class="gallery-phones__item device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-kontakt.webp" alt="Kontakt na telefonie" width="603" height="1218" loading="lazy"></div></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-start.webp" alt="Strona główna na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Strona główna</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-znajdz.webp" alt="Kreator na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Kreator</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-oferta.webp" alt="Oferta na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Oferta</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-ciemny.webp" alt="Tryb ciemny na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Tryb ciemny</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-zespol.webp" alt="Zespół na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Zespół</p></li>
+                <li class="gallery-phones__item"><div class="device"><div class="device__screen"><span class="device__bar" aria-hidden="true"><span class="device__time">9:41</span><i class="device__island"><i class="device__camera"></i></i><svg class="device__status" viewBox="0 0 70 13"><rect x="0" y="7.5" width="3.2" height="4.5" rx="1" fill="#fff"/><rect x="4.6" y="5.5" width="3.2" height="6.5" rx="1" fill="#fff"/><rect x="9.2" y="3.2" width="3.2" height="8.8" rx="1" fill="#fff"/><rect x="13.8" y="1" width="3.2" height="11" rx="1" fill="#fff"/><path d="M22.6 4.6a9.6 9.6 0 0 1 13.4 0M25.2 7.2a5.9 5.9 0 0 1 8.2 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M29.3 11.6l-2.3-2.3a3.3 3.3 0 0 1 4.6 0Z" fill="#fff" stroke="#fff" stroke-width="1" stroke-linejoin="round"/><rect x="41.5" y=".7" width="24" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38"/><rect x="43.3" y="2.5" width="20.4" height="8" rx="2.2" fill="#fff"/><path d="M67 4.6v3.8a2 2 0 0 0 0-3.8Z" fill="#fff" fill-opacity=".45"/></svg></span><img src="../assets/img/cod/telefon-kontakt.webp" alt="Kontakt na telefonie" width="603" height="1218" loading="lazy"></div></div><p>Kontakt</p></li>
             </ul>
         </div>
     </section>
@@ -265,14 +268,14 @@
             </div>
 
             <a class="next-project reveal" href="bizzlife.html">
-                <span class="next-project__label">Następny projekt</span><span class="next-project__cmd" aria-hidden="true">$ cd ../bizzlife</span>
+                <span class="next-project__label">Następny projekt</span>
                 <span class="next-project__title">Bizzlife</span>
+                <span class="next-project__btn">Zobacz projekt <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 <img class="next-project__shot" src="../assets/img/projekty/bizzlife.webp" alt="" width="1440" height="900" loading="lazy">
-                <span class="next-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </a>
         </div>
         <div class="container project-end__more">
-            <a class="prev-project" href="movena.html"><span class="prev-project__cmd" aria-hidden="true">← $ cd ../movena</span><span class="prev-project__label">Poprzedni projekt: <strong>Movena Pilates Studio</strong></span></a>
+            <a class="prev-project" href="movena.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="prev-project__text"><span class="prev-project__label">Poprzedni:</span> <strong>Movena Pilates Studio</strong></span></a>
         </div>
     </section>
 </main>
