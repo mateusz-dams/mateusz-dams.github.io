@@ -592,22 +592,15 @@ svg {
     background-color: #ff5f57;
 }
 
-/* Komenda powrotu na start: po najechaniu myszką na podstronach
-   i na stronie głównej, gdy odwiedzający jest niżej niż pierwsza sekcja (.is-away) */
+/* Komenda „ $ cd ~”: wpisuje ją main.js (płynnie po najechaniu myszką albo po kliknięciu),
+   a stały element w HTML zostaje ukryty */
 .terminal .terminal__cmd {
     display: none;
     color: #5ee0a0;
     white-space: pre;
 }
 
-@media (hover: hover) and (min-width: 1201px) {
-    .terminal--deep:hover .terminal__cmd,
-    .terminal--deep:focus-visible .terminal__cmd,
-    .terminal.is-away:hover .terminal__cmd,
-    .terminal.is-away:focus-visible .terminal__cmd {
-        display: inline;
-    }
-}
+
 
 .terminal .terminal__cursor {
     display: inline-block;
@@ -3820,6 +3813,40 @@ svg {
 .tabbar .tabbar__link svg {
     width: 21px;
     height: 21px;
+}
+
+/* Podstrony: pierwsza zakładka „Start” wraca na stronę główną, oddzielona kreską od zakładek tej strony */
+@media (max-width: 768px) {
+    .tabbar.tabbar--home {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        width: min(calc(100% - 20px), 480px);
+    }
+}
+
+.tabbar .tabbar__link--home {
+    position: relative;
+    color: var(--color-ink);
+}
+
+.tabbar .tabbar__link--home::after {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    bottom: 12px;
+    width: 1px;
+    background-color: var(--color-line);
+    content: "";
+}
+
+.tabbar .tabbar__link--home svg {
+    fill: none;
+}
+
+@media (max-width: 374px) {
+    .tabbar.tabbar--home .tabbar__link {
+        padding-inline: 2px;
+        font-size: 10.5px;
+    }
 }
 
 .tabbar .tabbar__link[aria-current='true'] {

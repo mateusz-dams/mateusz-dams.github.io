@@ -88,6 +88,7 @@ function initTerminal() {
     let timer = null;
     let current = '';
     let jumping = false;
+    let pathTyping = false;
 
     // Rysuje pierwsze „count” znaków ścieżki, z kolorami jej części
     const render = (parts, count) => {
@@ -110,6 +111,10 @@ function initTerminal() {
     // „fresh” – wpisuje całą ścieżkę od zera (wejście na stronę).
     const change = (from, to, { fresh = false, done } = {}) => {
         clearTimeout(timer);
+
+        // Zmiana ścieżki przerywa wpisaną po najechaniu komendę
+        clearTimeout(cmdTimer);
+        cmdCount = 0;
 
         const oldText = toText(from);
         const text = toText(to);
@@ -137,6 +142,7 @@ function initTerminal() {
         }
 
         logo.classList.add('is-typing');
+        pathTyping = true;
         render(from, start);
         show();
 
@@ -145,6 +151,7 @@ function initTerminal() {
             if (index >= steps.length) {
                 if (to === base) path.innerHTML = original;
                 logo.classList.remove('is-typing');
+                pathTyping = false;
                 done?.();
                 return;
             }
@@ -158,27 +165,55 @@ function initTerminal() {
         next();
     };
 
-    // Dopisuje „ $ cd ~” za obecną ścieżką, a potem wywołuje „then”
-    const typeCd = (then) => {
-        const command = [...shown, { text: ' $ cd ~', className: 'terminal__cmd' }];
-        let count = toText(shown).length;
+    // Komenda „ $ cd ~” za ścieżką. Na komputerze wpisuje się płynnie po najechaniu myszką
+    // i kasuje po zjechaniu; kliknięcie używa już wpisanej komendy (nie pisze jej drugi raz).
+    const CMD = { text: ' $ cd ~', className: 'terminal__cmd' };
+    const hoverable = window.matchMedia('(hover: hover) and (min-width: 1201px)');
+    let cmdCount = 0;
+    let cmdTimer = null;
+    let going = false;
 
-        clearTimeout(timer);
+    const animateCmd = (target, then) => {
+        clearTimeout(cmdTimer);
         logo.classList.add('is-typing');
 
-        const type = () => {
-            count += 1;
-            render(command, count);
-
-            if (count < toText(command).length) timer = setTimeout(type, 45);
-            else {
-                shown = command;
-                timer = setTimeout(then, 220);
+        const step = () => {
+            if (cmdCount === target) {
+                logo.classList.remove('is-typing');
+                then?.();
+                return;
             }
+
+            const typing = cmdCount < target;
+            cmdCount += typing ? 1 : -1;
+            render([...shown, CMD], toText(shown).length + cmdCount);
+            cmdTimer = setTimeout(step, typing ? 45 : 22);
         };
 
-        type();
+        step();
     };
+
+    const canHover = () => hoverable.matches && !pathTyping && !going
+        && (deep || logo.classList.contains('is-away'));
+
+    logo.addEventListener('mouseenter', () => {
+        if (canHover()) animateCmd(CMD.text.length);
+    });
+
+    logo.addEventListener('mouseleave', () => {
+        if (!going && cmdCount > 0) animateCmd(0);
+    });
+
+    // Po powrocie przyciskiem „wstecz” przeglądarka pokazuje zapamiętaną stronę – logo wraca do stanu wyjściowego
+    window.addEventListener('pageshow', (event) => {
+        if (!event.persisted) return;
+        clearTimeout(cmdTimer);
+        going = false;
+        cmdCount = 0;
+        shown = base;
+        path.innerHTML = original;
+        logo.classList.remove('is-typing');
+    });
 
     // Wejście na stronę: cała ścieżka wpisuje się od nowa
     const begin = () => change(base, base, { fresh: true, done: watchSections });
@@ -214,6 +249,7 @@ function initTerminal() {
             if (jumping) {
                 if (window.scrollY > 2) return;
                 jumping = false;
+                going = false;
                 current = '';
                 logo.classList.remove('is-away');
                 change(shown, base);
@@ -243,12 +279,19 @@ function initTerminal() {
     logo.addEventListener('click', (event) => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-        // Podstrona: „$ cd ~” i przejście na stronę główną
+        const full = CMD.text.length;
+
+        // Podstrona: dopisuje brakującą część „$ cd ~” (albo nic, gdy już wpisana) i przechodzi na start
         if (deep) {
             if (reduceMotion) return;
             event.preventDefault();
+            if (going) return;
+            going = true;
+
             const href = logo.href;
-            typeCd(() => { window.location.href = href; });
+            const leave = () => setTimeout(() => { window.location.href = href; }, cmdCount === full ? 120 : 180);
+            if (cmdCount === full) leave();
+            else animateCmd(full, leave);
             return;
         }
 
@@ -262,16 +305,26 @@ function initTerminal() {
             return;
         }
 
+        if (going) return;
+        going = true;
+
         // Od kliknięcia logo nie reaguje na przewijanie, dopóki strona nie wróci na górę
         jumping = true;
 
         const goUp = () => {
+            // Komenda staje się częścią ścieżki – po dotarciu na górę skasuje się razem z nią
+            if (cmdCount === full) {
+                shown = [...shown, CMD];
+                cmdCount = 0;
+            }
+
             window.scrollTo({ top: 0, behavior });
 
             // Gdy ktoś przerwie przewijanie, logo po chwili znowu śledzi sekcje
             setTimeout(() => {
                 if (!jumping) return;
                 jumping = false;
+                going = false;
                 current = null;
                 watchSections.update?.();
             }, 2500);
@@ -279,7 +332,8 @@ function initTerminal() {
 
         // Na telefonie bez dopisywania komendy, żeby logo nie najechało na plakietkę
         if (reduceMotion || mobile.matches) goUp();
-        else typeCd(goUp);
+        else if (cmdCount === full) goUp();
+        else animateCmd(full, goUp);
     });
 }
 
@@ -911,7 +965,8 @@ function initCopy() {
 /* --- Dolny pasek na telefonie (tabbar): podświetla sekcję, w której jest odwiedzający --- */
 
 function initTabbar() {
-    const links = [...document.querySelectorAll('.tabbar__link')];
+    // „Start” na podstronach to link na stronę główną, nie sekcja tej strony
+    const links = [...document.querySelectorAll('.tabbar__link:not(.tabbar__link--home)')];
 
     if (!links.length) return;
 

@@ -19,9 +19,9 @@
     <link rel="preload" href="../assets/fonts/bricolage-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/jetbrains-mono-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/style.css?v=16">
+    <link rel="stylesheet" href="../css/style.css?v=17">
     <script>document.documentElement.classList.add('js');</script>
-    <script src="../js/main.js?v=15" defer></script>
+    <script src="../js/main.js?v=16" defer></script>
 </head>
 <body>
 <a class="skip" href="#tresc">Przejdź do treści</a>
@@ -305,7 +305,10 @@
 </footer>
 
 <!-- Dolny pasek na telefonie i tablecie, zamiast menu -->
-<nav class="tabbar" aria-label="Na tej stronie">
+<nav class="tabbar tabbar--home" aria-label="Na tej stronie">
+    <a class="tabbar__link tabbar__link--home" href="../index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg>Start
+    </a>
     <a class="tabbar__link" href="#" data-section="top">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>Ćwiczenie
     </a>
