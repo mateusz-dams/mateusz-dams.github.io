@@ -2,24 +2,33 @@
 <html lang="pl">
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="Mateusz Dams">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Staxx Polska – strona treningowa | Mateusz Dams</title>
     <meta name="description" content="Ćwiczenie z kodowania: Staxx Polska. Katalog producenta wózków paletowych.">
+    <meta property="og:title" content="Staxx Polska – strona treningowa | Mateusz Dams">
+    <meta property="og:description" content="Ćwiczenie z kodowania: Staxx Polska. Katalog producenta wózków paletowych.">
+    <meta property="og:image" content="https://mateusz-dams.github.io/assets/og-portfolio.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://mateusz-dams.github.io/cwiczenia/staxx.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#f4f6fb">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="../assets/fonts/bricolage-regular.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="../assets/fonts/bricolage-bold.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="../css/style.css?v=4">
+    <link rel="preload" href="../assets/fonts/bricolage-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/jetbrains-mono-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../css/style.css?v=16">
     <script>document.documentElement.classList.add('js');</script>
-    <script src="../js/main.js?v=4" defer></script>
+    <script src="../js/main.js?v=15" defer></script>
 </head>
 <body>
 <a class="skip" href="#tresc">Przejdź do treści</a>
 
 <header class="header" id="header">
     <div class="container header__inner">
-        <a class="header__logo" href="../index.html" aria-label="Mateusz Dams – strona główna">MD</a>
+        <a class="header__logo terminal terminal--deep" href="../index.html" aria-label="Mateusz Dams – strona główna"><span class="terminal__path"><span class="terminal__home">~/</span><span class="terminal__name">mateusz-dams/</span><span class="terminal__dir">cwiczenia/</span><span class="terminal__page">staxx</span></span><span class="terminal__cmd" aria-hidden="true"> $ cd ~</span><span class="terminal__cursor" aria-hidden="true"></span></a>
         <nav class="header__menu" id="menu" aria-label="Menu">
             <a class="header__link" href="../index.html#o-mnie">O mnie</a>
             <a class="header__link" href="../index.html#projekty">Projekty</a>
@@ -146,9 +155,9 @@
             <div class="tech-stack__box reveal">
                 <h2 class="tech-stack__title">Technologie</h2>
                 <ul class="tech-stack__list">
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" width="26" height="26">HTML</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/css3/css3-original.svg" alt="" width="26" height="26">CSS</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg" alt="" width="26" height="26">JavaScript</li>
+                    <li><img src="../assets/img/tech/html5-original.svg" alt="" width="26" height="26">HTML</li>
+                    <li><img src="../assets/img/tech/css3-original.svg" alt="" width="26" height="26">CSS</li>
+                    <li><img src="../assets/img/tech/javascript-original.svg" alt="" width="26" height="26">JavaScript</li>
                 </ul>
             </div>
         </div>
@@ -167,19 +176,68 @@
             </div>
 
             <a class="next-project reveal" href="topblind.html">
-                <span class="next-project__label">Następne ćwiczenie</span>
+                <span class="next-project__label">Następne ćwiczenie</span><span class="next-project__cmd" aria-hidden="true">$ cd ../topblind</span>
                 <span class="next-project__title">Topblind</span>
                 <img class="next-project__shot" src="../assets/img/cwiczenia/topblind.webp" alt="" width="960" height="600" loading="lazy">
                 <span class="next-project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </a>
         </div>
+        <div class="container project-end__more">
+            <a class="prev-project" href="leadtrust.html"><span class="prev-project__cmd" aria-hidden="true">← $ cd ../leadtrust</span><span class="prev-project__label">Poprzednie ćwiczenie: <strong>Leadtrust Group</strong></span></a>
+        </div>
     </section>
 </main>
 
 <footer class="footer">
+    <div class="container footer__main">
+        <div class="footer__about">
+            <a class="footer__logo" href="../index.html" aria-label="Mateusz Dams – strona główna"><span class="footer__logo-home">~/</span>mateusz-dams<span class="footer__logo-cursor" aria-hidden="true"></span></a>
+            <div class="footer__live" data-available>
+                <p class="footer__live-top"><span data-radom-time>Radom</span><span>pon–pt 16–22</span></p>
+                <p class="footer__live-now"><i class="footer__live-dot" aria-hidden="true"></i><span data-available-text>Dostępny pon–pt 16–22</span></p>
+                <p class="footer__live-text">Szukam stażu, pracy lub zleceń. Strony WWW, serwis komputerowy i&nbsp;praca z&nbsp;klientem.</p>
+                <div class="footer__live-btns">
+                    <a class="footer__btn footer__btn--fill" href="mailto:dams.mateusz@gmail.com">Napisz e-mail</a>
+                    <a class="footer__btn" href="tel:+48505309362">505 309 362</a>
+                    <a class="footer__btn" href="../cv/CV-Mateusz-Dams.pdf" download>Pobierz CV</a>
+                </div>
+                <p class="footer__live-mail">dams.mateusz@gmail.com</p>
+            </div>
+        </div>
+        <nav class="footer__col" aria-label="Sekcje strony">
+            <h2 class="footer__title">Strona</h2>
+            <ul class="footer__tree">
+                <li><a href="../index.html#o-mnie">O mnie</a></li>
+                <li><a href="../index.html#projekty">Projekty</a></li>
+                <li><a href="../index.html#cwiczenia">Strony treningowe</a></li>
+                <li><a href="../index.html#doswiadczenie">Doświadczenie</a></li>
+                <li><a href="../index.html#w-czym-pracuje">W czym pracuję</a></li>
+                <li><a href="../index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Projekty">
+            <h2 class="footer__title">Projekty</h2>
+            <ul class="footer__tree footer__projects">
+                <li><a class="footer__project" href="../projekty/pm-boxing.html"><img src="../assets/img/projekty/mini/pm-boxing.webp" alt="" width="56" height="40" loading="lazy"><span><b>PM Boxing Studio</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Studio boksu</small></span></a></li>
+                <li><a class="footer__project" href="../projekty/movena.html"><img src="../assets/img/projekty/mini/movena.webp" alt="" width="56" height="40" loading="lazy"><span><b>Movena Pilates Studio</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Studio pilatesu</small></span></a></li>
+                <li><a class="footer__project" href="../projekty/cod.html"><img src="../assets/img/projekty/mini/cod.webp" alt="" width="56" height="40" loading="lazy"><span><b>Centrum Odkrywania Doskonałości</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Centrum psychologiczne</small></span></a></li>
+                <li><a class="footer__project" href="../projekty/bizzlife.html"><img src="../assets/img/projekty/mini/bizzlife.webp" alt="" width="56" height="40" loading="lazy"><span><b>Bizzlife</b><small><i class="footer__project-dot footer__project-dot--done" aria-hidden="true"></i>Zrealizowana · Biuro rachunkowe</small></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container footer__status">
+        <p class="status-bar">
+            <span class="status-bar__branch"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="3" r="1.6"/><circle cx="4" cy="13" r="1.6"/><circle cx="12" cy="4.5" r="1.6"/><path d="M4 4.6v6.8M12 6.1c0 3.2-4.3 2.6-7.2 5.3"/></svg><span class="status-bar__branch-name">main</span></span>
+            <span class="status-bar__item" data-last-commit hidden></span>
+            <span class="status-bar__item status-bar__stack">HTML · CSS · JS</span>
+            <span class="status-bar__item status-bar__meta">UTF-8</span>
+            <span class="status-bar__item status-bar__meta">PL</span>
+            <a class="status-bar__link" href="https://github.com/mateusz-dams/mateusz-dams.github.io" target="_blank" rel="noopener"><span class="status-bar__long">kod na </span>GitHub<span class="status-bar__long">ie</span> <span aria-hidden="true">↗</span><span class="sr-only"> (otworzy się w nowej karcie)</span></a>
+        </p>
+    </div>
     <div class="container footer__inner">
         <p>© 2026 Mateusz Dams, Radom</p>
-        <a class="footer__top" href="#">Do góry</a>
+        <a class="footer__top" href="#">Do góry <span aria-hidden="true">↑</span></a>
     </div>
 </footer>
 

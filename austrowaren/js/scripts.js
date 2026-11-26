@@ -1,3 +1,4 @@
+/* Autor: Mateusz Dams */
 $( document ).ready(function($) {
   $('.hero__slider').slick({
       dots: true,

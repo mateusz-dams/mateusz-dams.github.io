@@ -1,8 +1,10 @@
 /* ==========================================================================
    Portfolio Mateusz Dams – skrypty strony
+   Autor: Mateusz Dams
    Każda funkcja odpowiada za jedną rzecz i uruchamia się tylko wtedy,
    gdy na stronie jest jej element. Kolejność jak sekcje na stronach.
-   ========================================================================== */
+   ==========================================================================
+*/
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const scrollBehavior = reduceMotion ? 'auto' : 'smooth';
@@ -58,6 +60,625 @@ function enableMouseDrag(list, canStart, onEnd) {
     list.addEventListener('pointercancel', stop);
 }
 
+/* --- Logo w stylu terminala (.terminal) ---
+   Przy każdym wejściu na stronę ścieżka wpisuje się od nowa, cała, jak w terminalu.
+   Na stronie głównej ścieżka podąża za przewijaniem (~/mateusz-dams/projekty).
+   Kliknięcie w logo wpisuje „$ cd ~”: na podstronie przechodzi na start,
+   a na stronie głównej (poniżej pierwszej sekcji) wraca na górę strony. --- */
+
+function initTerminal() {
+    const logo = document.querySelector('.terminal');
+    const path = logo?.querySelector('.terminal__path');
+
+    if (!path) return;
+
+    const original = path.innerHTML;
+    const deep = logo.classList.contains('terminal--deep');
+    const mobile = window.matchMedia('(max-width: 768px)');
+    const show = () => logo.classList.add('is-ready');
+    const toText = (parts) => parts.map((part) => part.text).join('');
+
+    // Widoczne części ścieżki tej strony (na telefonie i tablecie część jest ukryta)
+    const pageParts = () => [...path.querySelectorAll(':scope > span')]
+        .filter((part) => part.getClientRects().length)
+        .map((part) => ({ text: part.textContent, className: part.className }));
+
+    const base = pageParts();
+    let shown = base;
+    let timer = null;
+    let current = '';
+    let jumping = false;
+
+    // Rysuje pierwsze „count” znaków ścieżki, z kolorami jej części
+    const render = (parts, count) => {
+        path.textContent = '';
+        let left = count;
+
+        parts.forEach((part) => {
+            if (left <= 0) return;
+
+            const span = document.createElement('span');
+            span.className = part.className;
+            span.textContent = part.text.slice(0, left);
+            span.style.display = 'inline';
+            path.append(span);
+            left -= part.text.length;
+        });
+    };
+
+    // Zmienia ścieżkę z „from” na „to”: kasuje różnicę i dopisuje nową część.
+    // „fresh” – wpisuje całą ścieżkę od zera (wejście na stronę).
+    const change = (from, to, { fresh = false, done } = {}) => {
+        clearTimeout(timer);
+
+        const oldText = toText(from);
+        const text = toText(to);
+        const home = text.startsWith('~/') && oldText.startsWith('~/') ? 2 : 0;
+
+        let keep = 0;
+        while (keep < text.length && keep < oldText.length && text[keep] === oldText[keep]) keep += 1;
+        keep = Math.max(home, Math.min(keep, oldText.length));
+        if (fresh) keep = 0;
+
+        const start = fresh ? 0 : oldText.length;
+        const steps = [];
+        for (let i = start - 1; i >= keep; i -= 1) steps.push([from, i, 26]);
+        const erased = steps.length;
+        for (let i = keep + 1; i <= text.length; i += 1) steps.push([to, i, fresh ? 45 : 50]);
+
+        shown = to;
+
+        if (reduceMotion || !steps.length) {
+            if (to === base) path.innerHTML = original;
+            else render(to, text.length);
+            show();
+            done?.();
+            return;
+        }
+
+        logo.classList.add('is-typing');
+        render(from, start);
+        show();
+
+        let index = 0;
+        const next = () => {
+            if (index >= steps.length) {
+                if (to === base) path.innerHTML = original;
+                logo.classList.remove('is-typing');
+                done?.();
+                return;
+            }
+
+            const [source, count, delay] = steps[index];
+            render(source, count);
+            index += 1;
+            timer = setTimeout(next, erased && index === erased ? 160 : delay);
+        };
+
+        next();
+    };
+
+    // Dopisuje „ $ cd ~” za obecną ścieżką, a potem wywołuje „then”
+    const typeCd = (then) => {
+        const command = [...shown, { text: ' $ cd ~', className: 'terminal__cmd' }];
+        let count = toText(shown).length;
+
+        clearTimeout(timer);
+        logo.classList.add('is-typing');
+
+        const type = () => {
+            count += 1;
+            render(command, count);
+
+            if (count < toText(command).length) timer = setTimeout(type, 45);
+            else {
+                shown = command;
+                timer = setTimeout(then, 220);
+            }
+        };
+
+        type();
+    };
+
+    // Wejście na stronę: cała ścieżka wpisuje się od nowa
+    const begin = () => change(base, base, { fresh: true, done: watchSections });
+
+    if (reduceMotion) begin();
+    else document.fonts.ready.then(() => setTimeout(begin, 200));
+
+    // Strona główna: ścieżka podąża za sekcją, którą ogląda odwiedzający
+    function watchSections() {
+        const sections = [...document.querySelectorAll('main > section[id]')];
+
+        if (!sections.length || deep || watchSections.on) return;
+        watchSections.on = true;
+
+        let waiting = null;
+
+        // Na telefonie i tablecie krótsze nazwy, żeby ścieżka zmieściła się w nagłówku
+        const short = { doswiadczenie: 'praca', 'w-czym-pracuje': 'narzedzia' };
+
+        // Tablet i mały laptop: bez „mateusz-dams/”, żeby menu obok logo się nie łamało
+        const compact = window.matchMedia('(max-width: 1200px)');
+        const narrow = window.matchMedia('(max-width: 900px)');
+
+        const partsFor = (id) => {
+            if (!id) return base;
+            if (narrow.matches) return [base[0], { text: short[id] || id, className: 'terminal__page' }];
+            if (compact.matches) return [base[0], { text: id, className: 'terminal__page' }];
+            return [...base, { text: `/${id}`, className: 'terminal__dir' }];
+        };
+
+        const update = () => {
+            // W czasie powrotu na górę logo nie pisze mijanych sekcji
+            if (jumping) {
+                if (window.scrollY > 2) return;
+                jumping = false;
+                current = '';
+                logo.classList.remove('is-away');
+                change(shown, base);
+                return;
+            }
+
+            const line = window.innerHeight * .4;
+            let id = '';
+
+            sections.forEach((section) => {
+                if (section.getBoundingClientRect().top < line) id = section.id;
+            });
+
+            if (id === current) return;
+            current = id;
+            logo.classList.toggle('is-away', id !== '');
+
+            // Krótka zwłoka, żeby przy szybkim przewijaniu logo nie pisało każdej mijanej sekcji
+            clearTimeout(waiting);
+            waiting = setTimeout(() => change(shown, partsFor(current)), 180);
+        };
+
+        watchSections.update = update;
+        onScrollFrame(update);
+    }
+
+    logo.addEventListener('click', (event) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        // Podstrona: „$ cd ~” i przejście na stronę główną
+        if (deep) {
+            if (reduceMotion) return;
+            event.preventDefault();
+            const href = logo.href;
+            typeCd(() => { window.location.href = href; });
+            return;
+        }
+
+        // Strona główna: w pierwszej sekcji zwykły powrót na górę,
+        // niżej „$ cd ~” i powrót na górę z kasowaniem ścieżki
+        event.preventDefault();
+        const behavior = reduceMotion ? 'auto' : 'smooth';
+
+        if (!logo.classList.contains('is-away')) {
+            window.scrollTo({ top: 0, behavior });
+            return;
+        }
+
+        // Od kliknięcia logo nie reaguje na przewijanie, dopóki strona nie wróci na górę
+        jumping = true;
+
+        const goUp = () => {
+            window.scrollTo({ top: 0, behavior });
+
+            // Gdy ktoś przerwie przewijanie, logo po chwili znowu śledzi sekcje
+            setTimeout(() => {
+                if (!jumping) return;
+                jumping = false;
+                current = null;
+                watchSections.update?.();
+            }, 2500);
+        };
+
+        // Na telefonie bez dopisywania komendy, żeby logo nie najechało na plakietkę
+        if (reduceMotion || mobile.matches) goUp();
+        else typeCd(goUp);
+    });
+}
+
+/* --- Strona 404 (not-found): terminal wpisuje zły adres, pokazuje błąd i listę miejsc,
+   a potem przyjmuje komendy. Wszystko, co przychodzi z adresu albo od odwiedzającego,
+   trafia na stronę tylko jako zwykły tekst. --- */
+
+function initNotFound() {
+    const box = document.querySelector('[data-not-found]');
+
+    if (!box) return;
+
+    const screen = box.querySelector('[data-not-found-screen]');
+    const output = box.querySelector('[data-not-found-output]');
+    const form = box.querySelector('[data-not-found-form]');
+    const input = form.querySelector('input');
+
+    const sections = ['o-mnie', 'projekty', 'cwiczenia', 'doswiadczenie', 'w-czym-pracuje', 'kontakt'];
+    const projects = [['pm-boxing', 'PM Boxing Studio'], ['movena', 'Movena Pilates Studio'], ['cod', 'Centrum Odkrywania Doskonałości'], ['bizzlife', 'Bizzlife']];
+    const drills = [['topblind', 'Topblind'], ['austrowaren', 'Austrowaren'], ['silvermedica', 'Silver Medica'], ['azs', 'Portal leczenia AZS'], ['leadtrust', 'Leadtrust Group'], ['staxx', 'Staxx Polska']];
+    const commands = ['help', 'ls', 'cd', 'whoami', 'projekty', 'cv', 'kontakt', 'clear'];
+    const cvUrl = '/cv/CV-Mateusz-Dams.pdf';
+
+    // Zły adres, pod który ktoś próbował wejść
+    let wrong = '';
+    try {
+        wrong = decodeURIComponent(window.location.pathname);
+    } catch {
+        wrong = window.location.pathname;
+    }
+    wrong = wrong.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '');
+    if (!wrong || wrong === '404') wrong = 'zly-adres';
+    if (wrong.length > 80) wrong = `${wrong.slice(0, 80)}…`;
+
+    // Pomocnicze: tworzenie elementów tylko z tekstem
+    const el = (tag, className, text) => {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+    };
+
+    const link = (href, text, newTab) => {
+        const a = el('a', '', text);
+        a.href = href;
+        if (newTab) {
+            a.target = '_blank';
+            a.rel = 'noopener';
+        }
+        return a;
+    };
+
+    const line = (...parts) => {
+        const row = el('div');
+        parts.forEach((part) => row.append(typeof part === 'string' ? document.createTextNode(part) : part));
+        output.append(row);
+        screen.scrollTop = screen.scrollHeight;
+        return row;
+    };
+
+    const prompt = () => [el('span', 'not-found__home', '~/mateusz-dams'), ' ', el('span', 'not-found__dollar', '$'), ' '];
+
+    // Wpisuje komendę literka po literce (albo od razu, gdy system prosi o ograniczenie ruchu)
+    const typeCommand = (text) => new Promise((resolve) => {
+        const typed = el('span');
+        line(...prompt(), typed);
+
+        if (reduceMotion) {
+            typed.textContent = text;
+            resolve();
+            return;
+        }
+
+        const delay = Math.max(18, Math.min(55, 1400 / text.length));
+        let i = 0;
+        const step = () => {
+            i += 1;
+            typed.textContent = text.slice(0, i);
+            if (i < text.length) setTimeout(step, delay);
+            else setTimeout(resolve, 280);
+        };
+        setTimeout(step, 250);
+    });
+
+    const pause = (ms) => new Promise((resolve) => setTimeout(resolve, reduceMotion ? 0 : ms));
+
+    // --- Odpowiedzi komend ---
+
+    const placesList = () => {
+        const row = el('div', 'not-found__list');
+        sections.forEach((id) => row.append(link(`/#${id}`, `${id}/`)));
+        row.append(link(cvUrl, 'cv.pdf', true));
+        output.append(row);
+    };
+
+    const listOf = (items, folder) => {
+        const row = el('div', 'not-found__list');
+        items.forEach(([file]) => row.append(link(`/${folder}/${file}.html`, `${folder}/${file}`)));
+        output.append(row);
+    };
+
+    const help = () => {
+        const list = el('dl', 'not-found__help');
+        [
+            ['help', 'ta lista komend'],
+            ['ls', 'co jest na stronie (klikalne miejsca)'],
+            ['cd projekty', 'przejście do sekcji, np. cd kontakt; cd ~ to strona główna'],
+            ['cd projekty/movena', 'otwiera projekt albo ćwiczenie'],
+            ['whoami', 'kilka słów o mnie'],
+            ['projekty', 'wszystkie projekty i ćwiczenia z linkami'],
+            ['cv', 'otwiera CV (PDF)'],
+            ['kontakt', 'e-mail i telefon'],
+            ['clear', 'czyści ekran'],
+        ].forEach(([name, desc]) => list.append(el('dt', '', name), el('dd', '', desc)));
+        output.append(list);
+        line(el('span', 'not-found__muted', 'Tab dokańcza komendę, strzałki ↑ ↓ przywołują poprzednie.'));
+    };
+
+    const resolveTarget = (raw) => {
+        const target = raw.replace(/^~\/|^\.\/|^\/+|\/+$/g, '').replace(/^mateusz-dams\/?/, '').replace(/\.html$/, '').toLowerCase();
+
+        if (['', '~', '..', '.'].includes(target)) return '/';
+        if (sections.includes(target)) return `/#${target}`;
+        if (['cv', 'cv.pdf'].includes(target)) return cvUrl;
+
+        const [folder, file] = target.split('/');
+        const inFolder = (items, name) => items.some(([id]) => id === name);
+
+        if (folder === 'projekty' && inFolder(projects, file)) return `/projekty/${file}.html`;
+        if (folder === 'cwiczenia' && inFolder(drills, file)) return `/cwiczenia/${file}.html`;
+        if (!file && inFolder(projects, folder)) return `/projekty/${folder}.html`;
+        if (!file && inFolder(drills, folder)) return `/cwiczenia/${folder}.html`;
+        return null;
+    };
+
+    // Odległość między słowami (do podpowiedzi przy literówce)
+    const distance = (a, b) => {
+        const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+        for (let i = 1; i <= a.length; i += 1) {
+            let prev = row[0];
+            row[0] = i;
+            for (let j = 1; j <= b.length; j += 1) {
+                const keep = row[j];
+                row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+                prev = keep;
+            }
+        }
+        return row[b.length];
+    };
+
+    const run = (raw) => {
+        const text = raw.trim();
+        line(...prompt(), text);
+
+        if (!text) return;
+
+        const [name, ...rest] = text.split(/\s+/);
+        const arg = rest.join(' ');
+        const command = name.toLowerCase();
+
+        if (command === 'help') help();
+        else if (command === 'ls') {
+            if (/^projekty\/?$/.test(arg)) listOf(projects, 'projekty');
+            else if (/^cwiczenia\/?$/.test(arg)) listOf(drills, 'cwiczenia');
+            else placesList();
+        } else if (command === 'cd') {
+            const href = resolveTarget(arg);
+            if (!href) {
+                line(el('span', 'not-found__error', `bash: cd: ${arg}: Nie ma takiego pliku ani katalogu`));
+                return;
+            }
+            line(el('span', 'not-found__muted', `przechodzę do ${href === '/' ? 'strony głównej' : href}…`));
+            setTimeout(() => {
+                if (href === cvUrl) window.open(href, '_blank', 'noopener');
+                else window.location.href = href;
+            }, reduceMotion ? 0 : 400);
+        } else if (command === 'whoami') {
+            line('Mateusz Dams, technik informatyk z Radomia.');
+            line('Strony WWW, serwis komputerowy i praca z klientem. Szukam stażu, pracy lub zleceń.');
+        } else if (command === 'projekty') {
+            line(el('span', 'not-found__muted', '# strony dla firm'));
+            listOf(projects, 'projekty');
+            line(el('span', 'not-found__muted', '# strony treningowe'));
+            listOf(drills, 'cwiczenia');
+        } else if (command === 'cv') {
+            line(el('span', 'not-found__ok', 'otwieram cv.pdf…'));
+            window.open(cvUrl, '_blank', 'noopener');
+        } else if (command === 'kontakt') {
+            line('e-mail: ', link('mailto:dams.mateusz@gmail.com', 'dams.mateusz@gmail.com'));
+            line('telefon: ', link('tel:+48505309362', '505 309 362'));
+            line('github: ', link('https://github.com/mateusz-dams', 'github.com/mateusz-dams', true));
+        } else if (command === 'clear') {
+            output.textContent = '';
+        } else if (command === 'sudo') {
+            line(el('span', 'not-found__error', 'sudo: nie tym razem 😉 Tutaj wszystko zrobisz bez uprawnień administratora.'));
+        } else if (command === 'rm' || command === 'mkfs' || command === 'shutdown' || command === 'reboot' || text.startsWith(':(){')) {
+            line(el('span', 'not-found__error', `${command}: nie tym razem, to portfolio jest mi jeszcze potrzebne 😉`));
+        } else {
+            const close = commands.find((known) => distance(command, known) <= 2 && command.length > 1);
+            line(el('span', 'not-found__error', `bash: ${name}: nie znaleziono polecenia.`), close ? ` Czy chodziło Ci o: ${close}?` : ' Wpisz help, żeby zobaczyć listę.');
+        }
+    };
+
+    // --- Pisanie komend: Enter, Tab (dokańczanie) i strzałki (historia) ---
+
+    const history = [];
+    let back = 0;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const value = input.value;
+        if (value.trim()) history.push(value);
+        back = history.length;
+        input.value = '';
+        run(value);
+        screen.scrollTop = screen.scrollHeight;
+    });
+
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp' && history.length) {
+            event.preventDefault();
+            back = Math.max(0, back - 1);
+            input.value = history[back];
+        } else if (event.key === 'ArrowDown' && history.length) {
+            event.preventDefault();
+            back = Math.min(history.length, back + 1);
+            input.value = history[back] || '';
+        } else if (event.key === 'Tab') {
+            const value = input.value;
+            const options = value.startsWith('cd ')
+                ? ['~', ...sections, ...projects.map(([id]) => `projekty/${id}`), ...drills.map(([id]) => `cwiczenia/${id}`)].map((item) => `cd ${item}`)
+                : commands;
+            const match = options.filter((option) => option.startsWith(value));
+
+            if (value && match.length) {
+                event.preventDefault();
+
+                if (match.length === 1) {
+                    // Jedna pasująca: wpisuje ją całą (po „cd” zostawia spację na nazwę miejsca)
+                    input.value = match[0] === 'cd' ? 'cd ' : match[0];
+                } else {
+                    // Kilka pasujących: dopisuje ich wspólny początek
+                    input.value = match.reduce((a, b) => {
+                        let i = 0;
+                        while (i < a.length && a[i] === b[i]) i += 1;
+                        return a.slice(0, i);
+                    });
+                }
+            }
+        }
+    });
+
+    // Kliknięcie w terminal ustawia kursor w polu do pisania (bez zaznaczania tekstu)
+    screen.addEventListener('click', (event) => {
+        if (!form.hidden && !event.target.closest('a') && !window.getSelection().toString()) input.focus();
+    });
+
+    // --- Start: wpisanie złego adresu, błąd, lista miejsc i podpowiedź ---
+
+    (async () => {
+        await typeCommand(`cd ${wrong}`);
+        line(el('span', 'not-found__error', `bash: cd: ${wrong}: Nie ma takiego pliku ani katalogu`));
+        await pause(450);
+        await typeCommand('ls');
+        placesList();
+        await pause(350);
+        line(el('span', 'not-found__muted', '# wpisz help i naciśnij Enter, żeby zobaczyć, co tu można zrobić'));
+        form.hidden = false;
+        if (window.matchMedia('(pointer: fine)').matches) input.focus({ preventScroll: true });
+    })();
+}
+
+/* --- Stopka: panel dostępności (.footer__live) ---
+   Godzina w Radomiu i stan liczone na żywo w czasie polskim, więc działa tak samo z każdego kraju.
+   Pon–pt 16:00–22:00: zielona kropka „Dostępny teraz”, poza tym szara i informacja, kiedy będę dostępny. --- */
+
+function initAvailability() {
+    const panel = document.querySelector('[data-available]');
+    const text = document.querySelector('[data-available-text]');
+    const clock = document.querySelector('[data-radom-time]');
+
+    if (!panel || !text || !window.Intl) return;
+
+    const format = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Warsaw', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+    });
+
+    const tick = () => {
+        const parts = Object.fromEntries(format.formatToParts(new Date()).map((part) => [part.type, part.value]));
+        const hour = Number(parts.hour);
+        const day = parts.weekday;
+        const workday = !['Sat', 'Sun'].includes(day);
+        const now = workday && hour >= 16 && hour < 22;
+
+        let label = 'Dostępny teraz';
+        if (!now) {
+            if (workday && hour < 16) label = 'Dostępny dziś od 16:00';
+            else if (['Mon', 'Tue', 'Wed', 'Thu'].includes(day)) label = 'Dostępny jutro od 16:00';
+            else label = 'Dostępny w pon. od 16:00';
+        }
+
+        panel.classList.toggle('is-now', now);
+        text.textContent = label;
+        if (clock) clock.textContent = `Radom · ${parts.hour}:${parts.minute}`;
+    };
+
+    tick();
+    setInterval(tick, 30 * 1000);
+}
+
+/* --- Pasek stanu: data ostatniej zmiany strony.
+   Najpierw z nagłówka serwera (bez zapytań, więc bez limitu GitHuba),
+   a gdy go brak – z API GitHuba z zapamiętaniem wyniku. Bez daty pasek pokazuje się bez niej. --- */
+
+function initStatusBar() {
+    const slot = document.querySelector('[data-last-commit]');
+
+    if (!slot || !window.fetch) return;
+
+    const ago = (iso) => {
+        const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+
+        if (days <= 0) return 'dzisiaj';
+        if (days === 1) return 'wczoraj';
+        if (days < 7) return `${days} dni temu`;
+        if (days < 14) return 'tydzień temu';
+        if (days < 30) return `${Math.floor(days / 7)} tygodnie temu`;
+
+        // Starsze zmiany: sama data (krótka, więc pasek zawsze mieści się w jednej linii)
+        return new Date(iso).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    };
+
+    const show = (iso) => {
+        slot.textContent = '';
+        const label = document.createElement('span');
+        label.className = 'status-bar__long';
+        label.textContent = 'ostatnia ';
+        slot.append(label, `zmiana: ${ago(iso)}`);
+        slot.title = new Date(iso).toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' });
+        slot.hidden = false;
+    };
+
+    // 1. Data publikacji strony z nagłówka serwera (GitHub Pages podaje ją przy każdej stronie).
+    //    Nie wymaga żadnego zapytania, więc limit GitHuba (60 zapytań na godzinę) jej nie dotyczy.
+    const published = new Date(document.lastModified);
+    if (!Number.isNaN(published.getTime()) && Date.now() - published.getTime() > 60 * 1000) {
+        show(published.toISOString());
+        return;
+    }
+
+    // 2. Zapas: API GitHuba. Wynik zapamiętany na 6 godzin, a po odmowie (np. limit)
+    //    przez godzinę nie pytamy ponownie – pokazujemy ostatnią znaną datę albo nic.
+    const KEY = 'last-commit';
+    let saved = null;
+
+    try {
+        saved = JSON.parse(localStorage.getItem(KEY));
+    } catch {
+        saved = null;
+    }
+
+    const remember = (data) => {
+        try {
+            localStorage.setItem(KEY, JSON.stringify(data));
+        } catch {
+            // Pamięć niedostępna: data i tak już się pokazała
+        }
+    };
+
+    if (saved?.date) show(saved.date);
+    if (saved && Date.now() - saved.checked < (saved.failed ? 60 : 6 * 60) * 60 * 1000) return;
+
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 4000);
+
+    fetch('https://api.github.com/repos/mateusz-dams/mateusz-dams.github.io/commits?per_page=1', { signal: controller.signal })
+        .then((response) => (response.ok ? response.json() : Promise.reject()))
+        .then(([last]) => {
+            const date = last?.commit?.committer?.date;
+            if (!date) return;
+            show(date);
+            remember({ date, checked: Date.now() });
+        })
+        .catch(() => remember({ date: saved?.date || null, checked: Date.now(), failed: true }));
+}
+
+/* --- Powitanie w konsoli dla osób, które zaglądają do kodu --- */
+
+function greetDevelopers() {
+    console.log(
+        '%c~/%cmateusz-dams%c▍\n%cCześć! Widzę, że zaglądasz do kodu 👋\nTo portfolio napisałem w HTML, CSS i JavaScript, bez frameworków.\nKod: https://github.com/mateusz-dams/mateusz-dams.github.io\nCV: https://mateusz-dams.github.io/cv/CV-Mateusz-Dams.pdf · e-mail: dams.mateusz@gmail.com\n%c$ szukam stażu, pracy lub zleceń – odezwij się :)',
+        'color:#8f9cff;font:700 20px monospace',
+        'color:#121620;background:#fff;font:700 20px monospace',
+        'color:#14a466;font:700 20px monospace',
+        'font:13px/1.7 monospace',
+        'color:#14a466;font:700 13px/1.7 monospace',
+    );
+}
+
 /* --- Nagłówek: tło po przewinięciu strony --- */
 
 function initHeader() {
@@ -68,26 +689,36 @@ function initHeader() {
     onScrollFrame(() => header.classList.toggle('is-scrolled', window.scrollY > 10));
 }
 
-/* --- Menu: podkreślenie sekcji, w której jest odwiedzający --- */
+/* --- Menu: podkreślenie sekcji, w której jest odwiedzający ---
+   Ta sama zasada co w logo: liczy się sekcja, której góra minęła 40% wysokości ekranu.
+   Na samej górze (pierwsza sekcja) nic nie jest podkreślone; „Strony treningowe” podkreślają „Projekty”. --- */
 
 function initMenuSpy() {
     const links = [...document.querySelectorAll('.header__link[href^="#"]')];
-    const sections = links.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const sections = [...document.querySelectorAll('main > section[id]')];
 
-    if (!sections.length) return;
+    if (!links.length || !sections.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
+    const linkFor = { cwiczenia: 'projekty' };
+    let current = null;
 
-            links.forEach((link) => {
-                if (link.getAttribute('href') === `#${entry.target.id}`) link.setAttribute('aria-current', 'true');
-                else link.removeAttribute('aria-current');
-            });
+    onScrollFrame(() => {
+        const line = window.innerHeight * .4;
+        let id = '';
+
+        sections.forEach((section) => {
+            if (section.getBoundingClientRect().top < line) id = section.id;
         });
-    }, { rootMargin: '-40% 0px -55% 0px' });
 
-    sections.forEach((section) => observer.observe(section));
+        id = linkFor[id] || id;
+        if (id === current) return;
+        current = id;
+
+        links.forEach((link) => {
+            if (link.getAttribute('href') === `#${id}`) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+        });
+    });
 }
 
 /* --- Wypływanie elementów przy przewijaniu --- */
@@ -244,23 +875,35 @@ function initPracticeSitesSlider() {
     });
 }
 
-/* --- Kontakt (contact): kopiowanie e-maila --- */
+/* --- Kontakt (contact): kopiowanie e-maila z komunikatem w stylu terminala --- */
 
 function initCopy() {
     document.querySelectorAll('[data-copy]').forEach((button) => {
-        const label = button.textContent;
+        const toast = document.createElement('span');
+        toast.className = 'copy-toast';
+        toast.setAttribute('role', 'status');
+        button.append(toast);
+
+        let timer = null;
+
+        const say = (ok) => {
+            toast.textContent = '';
+            const mark = document.createElement('span');
+            mark.className = ok ? 'copy-toast__ok' : 'copy-toast__error';
+            mark.textContent = ok ? '✓ ' : '✗ ';
+            toast.append(mark, ok ? 'skopiowano do schowka' : 'zaznacz adres i skopiuj ręcznie');
+            toast.classList.add('is-visible');
+            clearTimeout(timer);
+            timer = setTimeout(() => toast.classList.remove('is-visible'), 2200);
+        };
 
         button.addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(button.dataset.copy);
-                button.textContent = 'Skopiowano';
+                say(true);
             } catch {
-                button.textContent = 'Zaznacz i skopiuj';
+                say(false);
             }
-
-            setTimeout(() => {
-                button.textContent = label;
-            }, 2000);
         });
     });
 }
@@ -420,6 +1063,8 @@ function initSiteMap() {
 /* --- Start --- */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initTerminal();
+    initNotFound();
     initHeader();
     initMenuSpy();
     initReveal();
@@ -431,4 +1076,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGallery();
     initLivePreview();
     initSiteMap();
+    initStatusBar();
+    initAvailability();
+    greetDevelopers();
 });

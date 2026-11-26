@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Mateusz Dams">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nie ma takiej strony (404) | Mateusz Dams</title>
+    <meta name="description" content="Tej strony nie ma. Wróć na stronę główną portfolio Mateusza Damsa.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f4f6fb">
+    <!-- Strona 404 pokazuje się pod dowolnym złym adresem, dlatego wszystkie ścieżki zaczynają się od „/” -->
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/bricolage-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/bricolage-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/jetbrains-mono-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/jetbrains-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/style.css?v=16">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="/js/main.js?v=15" defer></script>
+</head>
+<body class="page-404">
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a class="header__logo terminal terminal--deep terminal--error" href="/" aria-label="Strona nie istnieje (błąd 404). Wróć na stronę główną"><span class="terminal__path"><span class="terminal__error">✗ 404</span><span class="terminal__note"> strona nie istnieje</span></span><span class="terminal__cursor" aria-hidden="true"></span></a>
+        <nav class="header__menu" id="menu" aria-label="Menu">
+            <a class="header__link" href="/#o-mnie">O mnie</a>
+            <a class="header__link" href="/#projekty">Projekty</a>
+            <a class="header__link" href="/#doswiadczenie">Doświadczenie</a>
+            <a class="header__link" href="/#w-czym-pracuje">W czym pracuję</a>
+            <a class="btn btn--line btn--small" href="/#kontakt">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<main id="tresc">
+    <!-- Strona 404 (not-found): terminal wpisuje zły adres, a potem można w nim pisać komendy -->
+    <section class="not-found">
+        <div class="container not-found__inner">
+            <h1 class="not-found__title">404</h1>
+            <p class="not-found__lead">Tej strony nie ma. Może zmieniła adres albo w&nbsp;linku jest literówka.</p>
+
+            <div class="not-found__terminal" data-not-found>
+                <div class="not-found__bar" aria-hidden="true">
+                    <span class="not-found__dots"><i></i><i></i><i></i></span>
+                    <span class="not-found__name">mateusz-dams — bash</span>
+                </div>
+                <div class="not-found__screen" data-not-found-screen>
+                    <div class="not-found__output" data-not-found-output aria-live="polite"></div>
+                    <form class="not-found__prompt" data-not-found-form hidden>
+                        <label class="not-found__ps" for="not-found-input"><span class="not-found__home">~/mateusz-dams</span> <span class="not-found__dollar">$</span><span class="sr-only"> Wpisz komendę, na przykład help, i naciśnij Enter</span></label>
+                        <input class="not-found__input" id="not-found-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go">
+                    </form>
+                </div>
+            </div>
+
+            <a class="btn btn--fill not-found__back" href="/"><code>cd ~</code> Wróć na stronę główną</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__main">
+        <div class="footer__about">
+            <a class="footer__logo" href="/" aria-label="Mateusz Dams – strona główna"><span class="footer__logo-home">~/</span>mateusz-dams<span class="footer__logo-cursor" aria-hidden="true"></span></a>
+            <div class="footer__live" data-available>
+                <p class="footer__live-top"><span data-radom-time>Radom</span><span>pon–pt 16–22</span></p>
+                <p class="footer__live-now"><i class="footer__live-dot" aria-hidden="true"></i><span data-available-text>Dostępny pon–pt 16–22</span></p>
+                <p class="footer__live-text">Szukam stażu, pracy lub zleceń. Strony WWW, serwis komputerowy i&nbsp;praca z&nbsp;klientem.</p>
+                <div class="footer__live-btns">
+                    <a class="footer__btn footer__btn--fill" href="mailto:dams.mateusz@gmail.com">Napisz e-mail</a>
+                    <a class="footer__btn" href="tel:+48505309362">505 309 362</a>
+                    <a class="footer__btn" href="/cv/CV-Mateusz-Dams.pdf" download>Pobierz CV</a>
+                </div>
+                <p class="footer__live-mail">dams.mateusz@gmail.com</p>
+            </div>
+        </div>
+        <nav class="footer__col" aria-label="Sekcje strony">
+            <h2 class="footer__title">Strona</h2>
+            <ul class="footer__tree">
+                <li><a href="/#o-mnie">O mnie</a></li>
+                <li><a href="/#projekty">Projekty</a></li>
+                <li><a href="/#cwiczenia">Strony treningowe</a></li>
+                <li><a href="/#doswiadczenie">Doświadczenie</a></li>
+                <li><a href="/#w-czym-pracuje">W czym pracuję</a></li>
+                <li><a href="/#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav class="footer__col" aria-label="Projekty">
+            <h2 class="footer__title">Projekty</h2>
+            <ul class="footer__tree footer__projects">
+                <li><a class="footer__project" href="/projekty/pm-boxing.html"><img src="/assets/img/projekty/mini/pm-boxing.webp" alt="" width="56" height="40" loading="lazy"><span><b>PM Boxing Studio</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Studio boksu</small></span></a></li>
+                <li><a class="footer__project" href="/projekty/movena.html"><img src="/assets/img/projekty/mini/movena.webp" alt="" width="56" height="40" loading="lazy"><span><b>Movena Pilates Studio</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Studio pilatesu</small></span></a></li>
+                <li><a class="footer__project" href="/projekty/cod.html"><img src="/assets/img/projekty/mini/cod.webp" alt="" width="56" height="40" loading="lazy"><span><b>Centrum Odkrywania Doskonałości</b><small><i class="footer__project-dot" aria-hidden="true"></i>Działa · Centrum psychologiczne</small></span></a></li>
+                <li><a class="footer__project" href="/projekty/bizzlife.html"><img src="/assets/img/projekty/mini/bizzlife.webp" alt="" width="56" height="40" loading="lazy"><span><b>Bizzlife</b><small><i class="footer__project-dot footer__project-dot--done" aria-hidden="true"></i>Zrealizowana · Biuro rachunkowe</small></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container footer__status">
+        <p class="status-bar">
+            <span class="status-bar__branch"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="3" r="1.6"/><circle cx="4" cy="13" r="1.6"/><circle cx="12" cy="4.5" r="1.6"/><path d="M4 4.6v6.8M12 6.1c0 3.2-4.3 2.6-7.2 5.3"/></svg><span class="status-bar__branch-name">main</span></span>
+            <span class="status-bar__item" data-last-commit hidden></span>
+            <span class="status-bar__item status-bar__stack">HTML · CSS · JS</span>
+            <span class="status-bar__item status-bar__meta">UTF-8</span>
+            <span class="status-bar__item status-bar__meta">PL</span>
+            <a class="status-bar__link" href="https://github.com/mateusz-dams/mateusz-dams.github.io" target="_blank" rel="noopener"><span class="status-bar__long">kod na </span>GitHub<span class="status-bar__long">ie</span> <span aria-hidden="true">↗</span><span class="sr-only"> (otworzy się w nowej karcie)</span></a>
+        </p>
+    </div>
+    <div class="container footer__inner">
+        <p>© 2026 Mateusz Dams, Radom</p>
+        <a class="footer__top" href="#">Do góry <span aria-hidden="true">↑</span></a>
+    </div>
+</footer>
+</body>
+</html>

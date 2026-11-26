@@ -2,7 +2,9 @@
    - plakietka „Projekt treningowy” z powrotem do portfolio,
    - komunikat przy linkach do podstron, których nie obejmowało ćwiczenie,
    - formularze w trybie pokazowym (nic nie jest wysyłane),
-   - menu mobilne tam, gdzie projekt go nie miał, i obsługa przycisku menu klawiaturą. */
+   - menu mobilne tam, gdzie projekt go nie miał, i obsługa przycisku menu klawiaturą.
+   Autor: Mateusz Dams
+*/
 (function () {
   'use strict';
   var LINK_MSG = 'Ta podstrona nie była częścią projektu treningowego.';

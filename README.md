@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://mateusz-dams.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/readme/baner-ciemny.webp"><img src="assets/img/readme/baner.webp" alt="Mateusz Dams – strony WWW, serwis komputerowy i praca z klientem. Szukam stażu lub pracy popołudniowej, Radom." width="100%"></picture></a>
+<a href="https://mateusz-dams.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/readme/baner-ciemny.webp"><img src="assets/img/readme/baner.webp" alt="Mateusz Dams – strony WWW, serwis komputerowy i praca z klientem. Szukam stażu, pracy lub zleceń, Radom." width="100%"></picture></a>
 </p>
 
 <p align="center">
@@ -103,4 +103,10 @@ topblind/, austrowaren/, silvermedica/, azs/, leadtrust/, staxx/
 
 <br>
 
-<sub>Fragmenty kodu motywów WordPress są pokazane wyłącznie do wglądu. Prawa do motywów, treści i zdjęć należą do firm, dla których powstały (zobacz [LICENSE](LICENSE)). Projekty graficzne ćwiczeń: agencja Ajmer.</sub>
+<p align="center"><a href="https://mateusz-dams.github.io/"><img src="assets/img/readme/stopka.webp" alt="Mateusz Dams – strony WWW, serwis komputerowy i praca z klientem. Radom, stacjonarnie lub zdalnie. Szukam stażu, pracy lub zleceń. Kontakt: dams.mateusz@gmail.com, 505 309 362." width="100%"></a></p>
+
+<p align="center"><sub><a href="https://mateusz-dams.github.io/">Portfolio</a> · <a href="cv/CV-Mateusz-Dams.pdf">CV (PDF)</a> · <a href="mailto:dams.mateusz@gmail.com">dams.mateusz@gmail.com</a> · tel. 505 309 362</sub></p>
+
+<br>
+
+<sub>Autor kodu portfolio i stron treningowych: Mateusz Dams. Fragmenty kodu motywów WordPress są pokazane wyłącznie do wglądu. Prawa do motywów, treści i zdjęć należą do firm, dla których powstały (zobacz [LICENSE](LICENSE)). Projekty graficzne ćwiczeń: agencja Ajmer.</sub>

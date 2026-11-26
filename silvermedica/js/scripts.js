@@ -1,3 +1,4 @@
+/* Autor: Mateusz Dams */
 $( document ).ready(function($) {
     $('.header__hamburger--open').click(function(){
         $('.menu-mobile').slideDown('slow');

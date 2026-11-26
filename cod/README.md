@@ -4,7 +4,7 @@ Redesign strony i motyw WordPress dla Centrum Odkrywania Doskonałości, centrum
 
 **Status:** Wdrożona, działa na [cod.biz.pl](https://cod.biz.pl/)  
 **Moja rola:** redesign i motyw WordPress, wdrożenie u klienta (treści, sklep, kursy, formularz, pomiar), projekt, testy i wdrożenie CRM oraz audyt kampanii reklamowych  
-**Narzędzia:** kod pisany z pomocą narzędzi AI (Claude), nadzór i decyzje po stronie właściciela
+**Narzędzia:** kod pisany z pomocą narzędzi AI, nadzór i decyzje po stronie właściciela
 
 | | |
 |---|---|

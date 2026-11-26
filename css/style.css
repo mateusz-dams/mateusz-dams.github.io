@@ -1,23 +1,40 @@
 /* ==========================================================================
    Portfolio Mateusz Dams
+   Autor: Mateusz Dams
    Układ pliku: zmienne → podstawy → elementy wspólne → sekcje w kolejności
    ze strony. Media query są zawsze pod regułą, której dotyczą.
    Progi: 1600, 1200, 992, 768, 576 i 360 dla najmniejszych telefonów.
-   ========================================================================== */
+   ==========================================================================
+*/
 
 /* --- Czcionka (pliki w assets/fonts, licencja OFL) --- */
 
 @font-face {
     font-family: 'Bricolage Grotesque';
-    src: url('../assets/fonts/bricolage-regular.woff') format('woff');
+    src: url('../assets/fonts/bricolage-regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Bricolage Grotesque';
-    src: url('../assets/fonts/bricolage-bold.woff') format('woff');
+    src: url('../assets/fonts/bricolage-bold.woff2') format('woff2');
     font-weight: 600 800;
+    font-display: swap;
+}
+
+/* Czcionka logo w stylu terminala (okrojona do znaków ścieżki, licencja OFL) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../assets/fonts/jetbrains-mono-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../assets/fonts/jetbrains-mono-regular.woff2') format('woff2');
+    font-weight: 400;
     font-display: swap;
 }
 
@@ -40,6 +57,7 @@
     --shadow-hover: 0 24px 50px rgba(18, 22, 32, .14);
 
     --font: 'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
 
     --radius: 16px;
     --radius-big: 28px;
@@ -365,6 +383,10 @@ svg {
     color: var(--color-ink);
 }
 
+.pill__time {
+    white-space: nowrap;
+}
+
 .tag {
     display: inline-block;
     padding: 4px 12px;
@@ -490,16 +512,146 @@ svg {
 }
 
 .header .header__logo {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    background: var(--gradient);
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 12px;
+    border-radius: 10px;
+    background-color: var(--color-ink);
     color: var(--color-white);
-    font-weight: 800;
+    font-family: var(--font-mono);
+    font-weight: 700;
     font-size: 15px;
+    line-height: 1.2;
+    white-space: nowrap;
     text-decoration: none;
+}
+
+/* Logo w stylu terminala (.terminal): ścieżka do miejsca, w którym jest odwiedzający.
+   Strona główna: ~/mateusz-dams, podstrony: ~/mateusz-dams/projekty/movena.
+   Tablet: ~/projekty/movena, telefon: ~/mateusz albo ~/movena, żeby zmieściło się w nagłówku. */
+
+.terminal .terminal__path {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.terminal .terminal__home {
+    color: #8f9cff;
+}
+
+.terminal .terminal__dir {
+    color: #9aa3b5;
+}
+
+.terminal .terminal__short {
+    display: none;
+}
+
+/* Podstrony na tablecie i małym laptopie: bez nazwy, żeby zmieściło się menu */
+@media (max-width: 1200px) {
+    .terminal--deep .terminal__name {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .terminal--deep .terminal__dir {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .terminal .terminal__name,
+    .terminal .terminal__dir {
+        display: none;
+    }
+
+    .terminal .terminal__short {
+        display: inline;
+    }
+}
+
+/* Logo na stronie 404 na tablecie: sam „✗ 404”, żeby zmieściło się menu (na telefonie menu jest na dole) */
+@media (min-width: 769px) and (max-width: 900px) {
+    .terminal .terminal__note {
+        display: none;
+    }
+}
+
+/* Logo na stronie 404 (.terminal--error): czerwone „✗ 404” i opis błędu */
+.terminal .terminal__error {
+    color: #ff8a8a;
+}
+
+.terminal .terminal__note {
+    color: #c3c9d6;
+    white-space: pre;
+}
+
+.terminal--error .terminal__cursor {
+    background-color: #ff5f57;
+}
+
+/* Komenda powrotu na start: po najechaniu myszką na podstronach
+   i na stronie głównej, gdy odwiedzający jest niżej niż pierwsza sekcja (.is-away) */
+.terminal .terminal__cmd {
+    display: none;
+    color: #5ee0a0;
+    white-space: pre;
+}
+
+@media (hover: hover) and (min-width: 1201px) {
+    .terminal--deep:hover .terminal__cmd,
+    .terminal--deep:focus-visible .terminal__cmd,
+    .terminal.is-away:hover .terminal__cmd,
+    .terminal.is-away:focus-visible .terminal__cmd {
+        display: inline;
+    }
+}
+
+.terminal .terminal__cursor {
+    display: inline-block;
+    width: .55em;
+    height: 1.05em;
+    margin-left: 3px;
+    border-radius: 1px;
+    background-color: var(--color-green);
+    animation: terminal-blink 1.1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Ścieżka czeka niewidoczna, aż skrypt narysuje pierwszą klatkę pisania.
+   Gdyby skrypt się nie wczytał, i tak pokaże się po 1,5 sekundy. */
+.js .terminal:not(.is-ready) .terminal__path {
+    visibility: hidden;
+    animation: terminal-show 0s 1.5s forwards;
+}
+
+@keyframes terminal-show {
+    to {
+        visibility: visible;
+    }
+}
+
+/* W trakcie pisania kursor świeci cały czas, jak w prawdziwym terminalu,
+   a podpowiedź „$ cd ~” znika, żeby nie dublowała wpisywanej komendy */
+.terminal.is-typing .terminal__cursor {
+    animation: none;
+}
+
+.terminal.is-typing > .terminal__cmd {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal .terminal__cursor {
+        animation: none;
+    }
 }
 
 .header .header__menu {
@@ -527,6 +679,7 @@ svg {
     font-weight: 600;
     font-size: 15.5px;
     text-decoration: none;
+    white-space: nowrap;
     transition: color .25s;
 }
 
@@ -572,6 +725,49 @@ svg {
         box-shadow: var(--shadow);
         font-size: 13px;
         font-weight: 700;
+        white-space: nowrap;
+    }
+}
+
+/* Na węższych telefonach krótsza wersja etykiety, żeby zmieściła się obok logo */
+.header .header__status-short {
+    display: none;
+}
+
+@media (max-width: 430px) {
+    .header .header__status-full {
+        display: none;
+    }
+
+    .header .header__status-short {
+        display: inline;
+    }
+}
+
+/* Najmniejsze telefony: logo i etykieta mieszczą się w jednej linii */
+@media (max-width: 360px) {
+    .header .header__status {
+        gap: 6px;
+        padding: 6px 10px;
+        font-size: 11.5px;
+    }
+
+    .header .header__logo {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 340px) {
+    .header .header__status {
+        gap: 5px;
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .header .header__logo {
+        padding: 7px 9px;
+        font-size: 13px;
     }
 }
 
@@ -907,8 +1103,14 @@ svg {
     .hero .float-card--top {
         grid-area: s1;
         border-color: transparent;
-        background: var(--gradient);
+        background: var(--color-dark);
         color: var(--color-white);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .float-card--top .float-card__icon {
+        background: rgba(255, 255, 255, .14);
     }
 }
 
@@ -2615,6 +2817,19 @@ svg {
     stroke: none;
 }
 
+/* Znaki w nagłówkach kolumn: linia „</>” i kropki w dymku w kolorze kolumny */
+.skills .skills__title-icon .skills__glyph-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.skills .skills__title-icon .skills__glyph-dot {
+    fill: var(--accent);
+}
+
 .skills .skills__list {
     display: grid;
     gap: 12px;
@@ -2815,6 +3030,7 @@ svg {
 }
 
 .contact .contact__copy {
+    position: relative;
     padding: 9px 16px;
     border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 999px;
@@ -2836,15 +3052,705 @@ svg {
     margin-top: 34px;
 }
 
-/* --- Stopka: .footer --- */
+/* Poprzedni projekt / ćwiczenie pod kartami (jak „cd ../nazwa” w terminalu) */
+.project-end .project-end__more {
+    margin-top: 18px;
+}
+
+.project-end .prev-project {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    color: var(--color-muted);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.project-end .prev-project__cmd {
+    color: var(--color-blue);
+    font: 700 13.5px var(--font-mono);
+    transition: transform .25s var(--ease);
+}
+
+.project-end .prev-project strong {
+    color: var(--color-ink);
+}
+
+@media (hover: hover) {
+    .project-end .prev-project:hover .prev-project__cmd {
+        transform: translateX(-4px);
+    }
+
+    .project-end .prev-project:hover strong {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+}
+
+/* Komunikat po skopiowaniu e-maila, w stylu logo */
+.copy-toast {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    z-index: 2;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+    color: var(--color-ink);
+    font: 700 13px var(--font-mono);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 4px);
+    transition: opacity .2s, transform .2s;
+}
+
+.copy-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.copy-toast__ok {
+    color: var(--color-green);
+}
+
+.copy-toast__error {
+    color: #d93838;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .copy-toast {
+        transition: none;
+    }
+}
+
+/* --- Strona 404: .not-found ---
+   Okno terminala, które wpisuje zły adres, pokazuje błąd i listę miejsc,
+   a potem przyjmuje komendy (help, ls, cd, whoami, projekty, cv, kontakt, clear).
+   Stopka zawsze stoi na dole ekranu, nawet gdy treści jest mało. */
+
+.page-404 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.page-404 main {
+    flex: 1;
+}
+
+.not-found {
+    padding: 40px 0 80px;
+}
+
+@media (max-width: 768px) {
+    .not-found {
+        padding: 16px 0 48px;
+    }
+}
+
+.not-found .not-found__inner {
+    max-width: 840px;
+}
+
+.not-found .not-found__title {
+    font-size: clamp(56px, 9vw, 88px);
+    line-height: 1;
+    letter-spacing: -.03em;
+}
+
+.not-found .not-found__lead {
+    margin: 12px 0 30px;
+    color: var(--color-muted);
+    font-size: 18px;
+}
+
+.not-found .not-found__terminal {
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: var(--color-ink);
+    box-shadow: 0 24px 50px rgba(18, 22, 32, .18);
+}
+
+.not-found .not-found__bar {
+    display: flex;
+    align-items: center;
+    padding: 13px 16px;
+    background-color: #1b2130;
+}
+
+.not-found .not-found__dots {
+    display: flex;
+    gap: 7px;
+}
+
+.not-found .not-found__dots i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #ff5f57;
+}
+
+.not-found .not-found__dots i:nth-child(2) {
+    background-color: #febc2e;
+}
+
+.not-found .not-found__dots i:nth-child(3) {
+    background-color: #28c840;
+}
+
+.not-found .not-found__name {
+    flex: 1;
+    margin-right: 47px;
+    color: #9aa3b5;
+    font: 400 13px var(--font-mono);
+    text-align: center;
+}
+
+.not-found .not-found__screen {
+    max-height: min(62vh, 560px);
+    overflow-y: auto;
+    padding: 20px 24px 24px;
+    color: #e6e9f2;
+    font: 400 15px/1.75 var(--font-mono);
+    overflow-wrap: anywhere;
+    cursor: text;
+}
+
+@media (max-width: 576px) {
+    .not-found .not-found__screen {
+        padding: 16px 16px 20px;
+        font-size: 13px;
+    }
+}
+
+.not-found .not-found__home {
+    color: #8f9cff;
+}
+
+.not-found .not-found__dollar {
+    color: #5ee0a0;
+}
+
+.not-found .not-found__error {
+    color: #ff8a8a;
+}
+
+.not-found .not-found__muted {
+    color: #9aa3b5;
+}
+
+.not-found .not-found__ok {
+    color: #5ee0a0;
+}
+
+/* Lista miejsc po „ls”: każda pozycja w całości, lista łamie się na kolejne linie */
+.not-found .not-found__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 18px;
+}
+
+.not-found .not-found__list a {
+    white-space: nowrap;
+}
+
+.not-found .not-found__screen a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #5a6476;
+    text-underline-offset: 4px;
+}
+
+.not-found .not-found__screen a:hover {
+    text-decoration-color: #8f9cff;
+}
+
+/* Tabela komend po „help” */
+.not-found .not-found__help {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0 22px;
+}
+
+@media (max-width: 576px) {
+    .not-found .not-found__help {
+        grid-template-columns: 1fr;
+    }
+
+    .not-found .not-found__help dd {
+        margin-bottom: 6px;
+    }
+}
+
+.not-found .not-found__help dt {
+    color: #5ee0a0;
+}
+
+.not-found .not-found__help dd {
+    margin: 0;
+    color: #c3c9d6;
+}
+
+.not-found .not-found__prompt {
+    display: flex;
+    gap: 9px;
+}
+
+.not-found .not-found__prompt[hidden] {
+    display: none;
+}
+
+.not-found .not-found__ps {
+    flex: none;
+}
+
+.not-found .not-found__input {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: #fff;
+    font: inherit;
+    caret-color: #14a466;
+}
+
+.not-found .not-found__back {
+    margin-top: 26px;
+}
+
+.not-found .not-found__back code {
+    margin-right: 8px;
+    font: 700 15px var(--font-mono);
+    opacity: .85;
+}
+
+/* --- Stopka: .footer ---
+   Ciemna, jak terminal, taka sama na każdej stronie. Trzy części (.footer__main):
+   panel dostępności na żywo z przyciskami kontaktu, „Strona” i „Projekty” jako drzewo
+   połączone jedną linią (.footer__tree). Pod spodem pasek stanu (.status-bar). */
+
+.footer {
+    background-color: var(--color-dark);
+    color: #9aa3b5;
+}
+
+.footer .footer__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, .65fr) minmax(0, 1.25fr);
+    gap: 44px;
+    padding: 72px 32px 40px;
+}
+
+.footer .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    background-color: #1b2130;
+    color: var(--color-white);
+    font: 700 15px/1 var(--font-mono);
+    text-decoration: none;
+}
+
+.footer .footer__logo-home {
+    color: #8f9cff;
+}
+
+.footer .footer__logo-cursor {
+    display: inline-block;
+    width: .55em;
+    height: 1.05em;
+    margin-left: 3px;
+    border-radius: 1px;
+    background-color: #5ee0a0;
+}
+
+/* Panel dostępności: godzina w Radomiu i stan liczone na żywo (initAvailability w main.js) */
+.footer .footer__live {
+    padding: 22px;
+    border: 1px solid #262c3a;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #1a2030, #141924);
+}
+
+.footer .footer__live p {
+    margin: 0;
+}
+
+.footer .footer__live-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #9aa3b5;
+    font: 400 13px/1.2 var(--font-mono);
+}
+
+.footer .footer__live-now {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px !important;
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.footer .footer__live-dot {
+    width: 12px;
+    height: 12px;
+    flex: none;
+    border-radius: 50%;
+    background-color: #6b7385;
+}
+
+.footer .footer__live.is-now .footer__live-dot {
+    background-color: #5ee0a0;
+    box-shadow: 0 0 0 5px rgba(94, 224, 160, .18);
+}
+
+.footer .footer__live-text {
+    margin-top: 8px !important;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.footer .footer__live-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.footer .footer__btn {
+    padding: 9px 14px;
+    border: 1px solid #2f3647;
+    border-radius: 999px;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.footer .footer__btn:hover {
+    border-color: #4a5368;
+}
+
+.footer .footer__btn--fill {
+    border-color: transparent;
+    background: var(--gradient);
+}
+
+.footer .footer__btn--fill:hover {
+    border-color: transparent;
+    box-shadow: 0 8px 22px rgba(46, 75, 245, .35);
+}
+
+.footer .footer__live-mail {
+    margin-top: 14px !important;
+    color: #7b8496;
+    font: 400 13px/1.3 var(--font-mono);
+    user-select: all;
+}
+
+.footer .footer__title {
+    margin: 0 0 16px;
+    color: var(--color-white);
+    font: 700 14px/1.2 var(--font-mono);
+}
+
+/* Drzewo: jedna pionowa linia i krótka kreska do każdej pozycji */
+.footer .footer__tree {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0 0 0 22px;
+    list-style: none;
+}
+
+.footer .footer__tree::before {
+    position: absolute;
+    top: 4px;
+    bottom: 10px;
+    left: 0;
+    width: 1px;
+    background-color: #343c4f;
+    content: "";
+}
+
+.footer .footer__tree > li {
+    position: relative;
+    line-height: 1.4;
+}
+
+.footer .footer__tree > li::before {
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 14px;
+    height: 1px;
+    background-color: #343c4f;
+    content: "";
+}
+
+.footer .footer__projects::before {
+    bottom: 22px;
+}
+
+.footer .footer__tree a {
+    color: #c3c9d6;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.footer .footer__tree a:hover,
+.footer .footer__tree a[aria-current="page"] {
+    color: var(--color-white);
+}
+
+.footer .footer__tree > li > a:not(.footer__project):hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer .footer__project {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+
+.footer .footer__project img {
+    width: 56px;
+    height: 40px;
+    border: 1px solid #232a38;
+    border-radius: 7px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.footer .footer__project b {
+    display: block;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.footer .footer__project:hover b,
+.footer .footer__project[aria-current="page"] b {
+    color: var(--color-white);
+}
+
+.footer .footer__project:hover b {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer .footer__project[aria-current="page"] img {
+    border-color: #5b6cff;
+}
+
+.footer .footer__project small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 3px;
+    color: #7b8496;
+    font-size: 12.5px;
+}
+
+.footer .footer__project-dot {
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background-color: #5ee0a0;
+}
+
+.footer .footer__project-dot--done {
+    background-color: #8f9cff;
+}
+
+.footer a:focus-visible {
+    outline-color: #8f9cff;
+}
+
+/* Tablet: panel na całą szerokość, pod nim dwie kolumny */
+@media (max-width: 1100px) {
+    .footer .footer__main {
+        grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+        gap: 40px 32px;
+    }
+
+    .footer .footer__about {
+        grid-column: 1 / -1;
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .footer__main {
+        gap: 36px 16px;
+        padding: 48px 18px 32px;
+    }
+
+    .footer .footer__live-now {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer .footer__live-now {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 340px) {
+    .footer .footer__live-now {
+        font-size: 17.5px;
+    }
+}
+
+/* Mały tablet i telefon: wszystko jedno pod drugim */
+@media (max-width: 700px) {
+    .footer .footer__main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .footer .footer__about {
+        max-width: none;
+    }
+}
+
+/* Telefon */
+@media (max-width: 576px) {
+
+    .footer .footer__live {
+        padding: 18px;
+    }
+
+    /* Przyciski: e-mail na całą szerokość, telefon i CV obok siebie */
+    .footer .footer__live-btns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer .footer__btn {
+        text-align: center;
+    }
+
+    .footer .footer__btn--fill {
+        grid-column: 1 / -1;
+    }
+
+    .footer .footer__tree a {
+        font-size: 14.5px;
+    }
+}
+
+/* Pasek stanu: gałąź, ostatnia zmiana, technologie, link do kodu */
+.status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 22px;
+    margin: 0;
+    padding: 10px 16px;
+    border: 1px solid #1f2533;
+    border-radius: 10px;
+    background-color: #0b0e15;
+    color: #9aa3b5;
+    font: 400 13px/1.4 var(--font-mono);
+}
+
+.status-bar .status-bar__branch {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #5ee0a0;
+}
+
+.status-bar .status-bar__branch svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+}
+
+.status-bar .status-bar__link {
+    margin-left: auto;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.status-bar .status-bar__link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Mały laptop i tablet: bez technologii, kodowania i języka */
+@media (max-width: 1250px) {
+    .status-bar .status-bar__stack,
+    .status-bar .status-bar__meta {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .status-bar .status-bar__long {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .footer__status {
+        padding: 0 18px;
+    }
+}
+
+/* Telefon: jedna linia – gałąź, data i link do kodu */
+@media (max-width: 700px) {
+    .status-bar {
+        flex-wrap: nowrap;
+        gap: 14px;
+        padding: 10px 14px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 374px) {
+    .status-bar {
+        gap: 12px;
+        padding: 9px 12px;
+        font-size: 11.5px;
+    }
+
+    .status-bar .status-bar__branch {
+        display: none;
+    }
+}
 
 .footer .footer__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 28px 32px 40px;
-    color: var(--color-muted);
+    padding: 20px 32px 40px;
+    color: #7b8496;
     font-size: 14.5px;
 }
 
@@ -2857,8 +3763,13 @@ svg {
 
 .footer .footer__top {
     flex: none;
+    color: #c3c9d6;
     font-weight: 600;
     white-space: nowrap;
+}
+
+.footer .footer__top:hover {
+    color: var(--color-white);
 }
 
 @media (max-width: 768px) {
@@ -3317,6 +4228,13 @@ svg {
 .devices .float-card--stage-a {
     top: 12%;
     left: -28px;
+}
+
+/* Na węższych ekranach karta nie może wychodzić poza krawędź */
+@media (max-width: 1300px) {
+    .devices .float-card--stage-a {
+        left: 12px;
+    }
 }
 
 .devices .float-card--stage-b {
@@ -4556,6 +5474,12 @@ html:not(.js) .client-brief .client-brief__badge {
     font-size: 15px;
 }
 
+.project-end .next-project__cmd {
+    margin-top: 4px;
+    color: var(--color-blue);
+    font: 700 13.5px var(--font-mono);
+}
+
 .project-end .next-project__title {
     margin-top: 6px;
     max-width: 10ch;
@@ -4629,5 +5553,23 @@ html:not(.js) .client-brief .client-brief__badge {
     .js .reveal {
         opacity: 1;
         transform: none;
+    }
+}
+
+/* --- Płynne przejścia między stronami (Chrome i Edge; inne przeglądarki: zwykłe przejście).
+   Nagłówek z logo stoi w miejscu, a treść łagodnie się podmienia. --- */
+
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+
+    .header {
+        view-transition-name: site-header;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: .25s;
     }
 }

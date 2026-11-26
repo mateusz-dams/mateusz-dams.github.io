@@ -4,7 +4,7 @@ Strona i motyw WordPress dla PM Boxing Studio, studia boksu w Radomiu (treningi 
 
 **Status:** Wdrożona, działa na [pmboxingstudio.pl](https://pmboxingstudio.pl/)  
 **Moja rola:** strona i motyw WordPress, rozwijanie, testowanie i wdrażanie firmowego CRM oraz kampanie reklamowe, w zespole z właścicielem  
-**Narzędzia:** kod pisany ręcznie i z pomocą narzędzi AI (Claude)
+**Narzędzia:** kod pisany ręcznie i z pomocą narzędzi AI
 
 | | |
 |---|---|

@@ -4,7 +4,7 @@ Strona i motyw WordPress dla Movena Pilates Studio, studia pilatesu na reformera
 
 **Status:** Wdrożona, działa na [movenapilates.pl](https://movenapilates.pl/)  
 **Moja rola:** strona od podstaw, redesign i motyw WordPress, landingi pod reklamy, nowe funkcje CRM zintegrowane ze stroną oraz kampania Meta Ads, w zespole z właścicielem  
-**Narzędzia:** kod pisany ręcznie i z pomocą narzędzi AI (Claude)
+**Narzędzia:** kod pisany ręcznie i z pomocą narzędzi AI
 
 | | |
 |---|---|

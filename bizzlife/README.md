@@ -4,7 +4,7 @@ Redesign strony i motyw WordPress dla biura rachunkowego Bizzlife z Radomia, w d
 
 **Status:** Zrealizowana (wdrożona u klienta, obecnie zastąpiona inną stroną)  
 **Moja rola:** projekt strony (redesign), motyw WordPress w dwóch wersjach kolorystycznych, instalacja i wdrożenie u klienta  
-**Narzędzia:** kod pisany z pomocą narzędzi AI (Claude), kluczowe decyzje projektowe po stronie zleceniodawcy
+**Narzędzia:** kod pisany z pomocą narzędzi AI, kluczowe decyzje projektowe po stronie zleceniodawcy
 
 | | |
 |---|---|
@@ -17,7 +17,7 @@ Redesign strony i motyw WordPress dla biura rachunkowego Bizzlife z Radomia, w d
 | | |
 |---|---|
 | **Cel** | Nowoczesna strona biura rachunkowego, która jasno pokazuje usługi i zachęca do kontaktu, a biuro może ją edytować samo, bez page buildera. |
-| **Mój zakres** | Nowy projekt strony (redesign) i motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. Kod pisałem z pomocą Claude. Instalację i wdrożenie u klienta wykonałem sam. Kluczowe decyzje projektowe należały do zleceniodawcy. |
+| **Mój zakres** | Nowy projekt strony (redesign) i motyw WordPress w dwóch wersjach kolorystycznych, z treściami startowymi tworzonymi automatycznie. Kod pisałem z pomocą narzędzi AI. Kluczowe decyzje projektowe należały do zleceniodawcy. |
 | **Weryfikacja** | Wszystkie 19 podstron sprawdzone w przeglądarce na komputerze i telefonie: brak błędów skryptów, brak przewijania w bok, działające linki i kotwice, formularz w trybie pokazowym. |
 | **Efekt** | Motyw wdrożony u klienta. Biuro później zastąpiło go inną stroną, więc ten projekt można dziś obejrzeć w podglądzie z linków powyżej. |
 

@@ -1,3 +1,4 @@
+/* Autor: Mateusz Dams */
 $( document ).ready(function($) {
   $(window).scroll(function() {
     var sticky = $('body.front'),
